@@ -1,0 +1,57 @@
+#include "reservation.h"
+
+Reservation::Reservation()
+{
+id_client=0;
+id_reservation=0;
+nb_personne=0;
+nom_film="";
+date_res="";
+}
+
+Reservation::Reservation(int id_client,int id_reservation,int nb_personne,QString nom_film,QString date_res){
+   this->id_client = id_client;
+    this->id_reservation = id_reservation;
+    this->nb_personne = nb_personne;
+    this->nom_film=nom_film;
+this->date_res=date_res;
+}
+int Reservation::get_id_client(){return id_client;}
+int Reservation::get_id_reservation(){return id_reservation;}
+int Reservation::get_nb_personne(){return nb_personne;}
+QString Reservation::get_nom_film(){return nom_film;}
+QString Reservation::get_date_res(){return date_res;}
+
+bool Reservation::ajouter_res(){
+    QSqlQuery query;
+    QString res=QString::number(id_client);
+    query.prepare("INSERT INTO reservation(id_client,id_reservation,nb_personne,nom_film,date_res)"
+                  "Values (:id_client,:id_reservation,:nb_personne,:nom_film,:date_res)");
+
+query.bindValue(":id_client",id_client);
+query.bindValue(":id_reservation",id_reservation);
+query.bindValue(":nb_personne",nb_personne);
+query.bindValue(":nom_film",nom_film);
+query.bindValue(":date_res",date_res);
+
+return query.exec();
+}
+QSqlQueryModel * Reservation ::afficher_res(){
+    QSqlQueryModel *model = new QSqlQueryModel();
+    model->setQuery("select * from reservation");
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID Client"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("ID Reservation"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("NB Personne"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("Nom Film"));
+      model->setHeaderData(4,Qt::Horizontal,QObject::tr("Date Reservation"));
+    return model;
+
+}
+bool Reservation::supprimer_res(int id_client){
+QSqlQuery query;
+QString res = QString::number(id_client);
+query.prepare("Delete from reservation where id_client=:id_client");
+query.bindValue(":id_client",res);
+return query.exec();
+
+}

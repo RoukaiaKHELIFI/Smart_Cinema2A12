@@ -1,0 +1,1327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>424</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>781</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Triangular</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="Salle">
+     <attribute name="title">
+      <string>Salle</string>
+     </attribute>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>751</width>
+        <height>341</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton:hover:!pressed {
+display: inline-block;
+  padding: 20px 14px;
+
+  cursor: pointer;
+font-size: 11px;
+outline: none;
+	color: rgb(255, 255, 255);
+	background-color: rgb(255, 170, 255);
+  /*color: #fff;*/
+ /* background-color: #4CAF50;*/
+  border: none;
+ text-align: center;
+  text-decoration: none;
+  box-shadow: 0 9px #999;
+}
+QPushButton:hover {/*background-color: #3e8e41*/
+	background-color: rgb(170, 85, 255);
+
+
+}
+QPushButton:active {
+/*  background-color: #3e8e41;*/
+	background-color: rgb(170, 170, 255);
+
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+
+}
+
+QLabel{
+font-size :14px;
+font-weight:bold;
+font-family: 'Source Code Pro', monospace;
+}
+QLineEdit{ background-color:#ffffff;
+
+border: 2px solid gray;
+border-radius: 10px;
+padding: 0 8px;
+}
+QLineEdit:focus {
+	background-color: rgb(200, 200, 200);
+ }</string>
+      </property>
+      <widget class="QWidget" name="Main">
+       <widget class="QTableView" name="tableView">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>60</y>
+          <width>471</width>
+          <height>271</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 170, 255);
+</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>143</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Ajouter</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>172</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Modifier</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>201</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> padding: 20px 10px;</string>
+        </property>
+        <property name="text">
+         <string>Supprimer</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>230</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Trier</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_5">
+        <property name="geometry">
+         <rect>
+          <x>11</x>
+          <y>21</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> padding: 20px 10px;</string>
+        </property>
+        <property name="text">
+         <string> Rechercher</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="expertCode">
+        <property name="geometry">
+         <rect>
+          <x>620</x>
+          <y>-20</y>
+          <width>141</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Pathe">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>210</y>
+          <width>151</width>
+          <height>101</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="recherche_salle">
+        <property name="geometry">
+         <rect>
+          <x>92</x>
+          <y>22</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="Ajout_Reservation">
+       <property name="styleSheet">
+        <string notr="true">QPushButton:hover:!pressed {
+display: inline-block;
+  padding: 20px 14px;
+ 
+  cursor: pointer;
+font-size: 11px;
+outline: none;
+	color: rgb(255, 255, 255);
+	background-color: rgb(255, 170, 255);
+  /*color: #fff;*/
+ /* background-color: #4CAF50;*/
+  border: none;
+ text-align: center;
+  text-decoration: none;
+  box-shadow: 0 9px #999;
+}
+QPushButton:hover {/*background-color: #3e8e41*/
+	background-color: rgb(170, 85, 255);
+
+}
+QPushButton:active {
+/*  background-color: #3e8e41;*/
+	background-color: rgb(170, 170, 255);
+
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}</string>
+       </property>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>241</x>
+          <y>79</y>
+          <width>96</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Numero Salle</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="nb_baffles_ajout">
+        <property name="geometry">
+         <rect>
+          <x>343</x>
+          <y>131</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_6">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>190</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Quitter</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="return_from_ajout">
+        <property name="geometry">
+         <rect>
+          <x>410</x>
+          <y>190</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Undo</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>241</x>
+          <y>105</y>
+          <width>72</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>NB Chaise</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="nb_chaise_ajout">
+        <property name="geometry">
+         <rect>
+          <x>343</x>
+          <y>105</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_7">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>190</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Ajouter</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="nm_salle_ajout">
+        <property name="geometry">
+         <rect>
+          <x>343</x>
+          <y>79</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>241</x>
+          <y>157</y>
+          <width>64</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>NB Ecran</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>241</x>
+          <y>131</y>
+          <width>80</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>NB Baffles</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="nb_ecrans_ajout">
+        <property name="geometry">
+         <rect>
+          <x>343</x>
+          <y>157</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="Modifier_Reservation">
+       <widget class="QPushButton" name="pushButton_8">
+        <property name="geometry">
+         <rect>
+          <x>191</x>
+          <y>203</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Modifier</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_5">
+        <property name="geometry">
+         <rect>
+          <x>191</x>
+          <y>177</y>
+          <width>64</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>NB Ecran</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_9">
+        <property name="geometry">
+         <rect>
+          <x>286</x>
+          <y>203</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Quitter</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_6">
+        <property name="geometry">
+         <rect>
+          <x>191</x>
+          <y>125</y>
+          <width>72</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>NB Chaise</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="nm_salle_modif">
+        <property name="geometry">
+         <rect>
+          <x>381</x>
+          <y>99</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_7">
+        <property name="geometry">
+         <rect>
+          <x>191</x>
+          <y>99</y>
+          <width>184</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Numero Salle a Modifier</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="nb_chaise_modif">
+        <property name="geometry">
+         <rect>
+          <x>381</x>
+          <y>125</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="nb_baffles_modif">
+        <property name="geometry">
+         <rect>
+          <x>381</x>
+          <y>151</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="return_from_ajout_2">
+        <property name="geometry">
+         <rect>
+          <x>432</x>
+          <y>203</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Undo</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_8">
+        <property name="geometry">
+         <rect>
+          <x>191</x>
+          <y>151</y>
+          <width>80</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>NB Baffles</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="nb_ecrans_modif">
+        <property name="geometry">
+         <rect>
+          <x>381</x>
+          <y>177</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="Supprimer_Reservation">
+       <widget class="QPushButton" name="pushButton_10">
+        <property name="geometry">
+         <rect>
+          <x>251</x>
+          <y>157</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Supprimer</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_11">
+        <property name="geometry">
+         <rect>
+          <x>332</x>
+          <y>157</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Quitter</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="nm_salle_supp">
+        <property name="geometry">
+         <rect>
+          <x>362</x>
+          <y>131</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_9">
+        <property name="geometry">
+         <rect>
+          <x>251</x>
+          <y>131</y>
+          <width>96</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Numero Salle</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="return_from_ajout_3">
+        <property name="geometry">
+         <rect>
+          <x>413</x>
+          <y>157</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Undo</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Reservation">
+     <attribute name="title">
+      <string>Reservation</string>
+     </attribute>
+     <widget class="QStackedWidget" name="stackedWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>751</width>
+        <height>321</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton:hover:!pressed {
+display: inline-block;
+  padding: 20px 14px;
+
+  cursor: pointer;
+font-size: 11px;
+outline: none;
+	color: rgb(255, 255, 255);
+	background-color: rgb(255, 170, 255);
+  /*color: #fff;*/
+ /* background-color: #4CAF50;*/
+  border: none;
+ text-align: center;
+  text-decoration: none;
+  box-shadow: 0 9px #999;
+}
+QPushButton:hover {/*background-color: #3e8e41*/
+	background-color: rgb(170, 85, 255);
+
+
+}
+QPushButton:active {
+/*  background-color: #3e8e41;*/
+	background-color: rgb(170, 170, 255);
+
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+
+}
+
+QLabel{
+font-size :14px;
+font-weight:bold;
+font-family: 'Source Code Pro', monospace;
+}
+QLineEdit{ background-color:#ffffff;
+
+border: 2px solid gray;
+border-radius: 10px;
+padding: 0 8px;
+}
+QLineEdit:focus {
+	background-color: rgb(200, 200, 200);
+ }</string>
+      </property>
+      <widget class="QWidget" name="Main_Reservation">
+       <widget class="QTableView" name="affichage_reservation">
+        <property name="geometry">
+         <rect>
+          <x>15</x>
+          <y>60</y>
+          <width>471</width>
+          <height>261</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 170, 255);
+</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="rech_reservation">
+        <property name="geometry">
+         <rect>
+          <x>19</x>
+          <y>19</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> padding: 20px 10px;</string>
+        </property>
+        <property name="text">
+         <string> Rechercher</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="recherche_reservation">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>20</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_12">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>239</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Trier</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_13">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>152</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Ajouter</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_14">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>181</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Modifier</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_15">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>210</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> padding: 20px 10px;</string>
+        </property>
+        <property name="text">
+         <string>Supprimer</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Pathe_2">
+        <property name="geometry">
+         <rect>
+          <x>620</x>
+          <y>230</y>
+          <width>151</width>
+          <height>101</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="expertCode_2">
+        <property name="geometry">
+         <rect>
+          <x>630</x>
+          <y>0</y>
+          <width>141</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="Ajout_Reservation_2">
+       <widget class="QPushButton" name="pushButton_16">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>210</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Ajouter</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_10">
+        <property name="geometry">
+         <rect>
+          <x>251</x>
+          <y>147</y>
+          <width>111</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Nom Film</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_17">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>210</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Quitter</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_11">
+        <property name="geometry">
+         <rect>
+          <x>251</x>
+          <y>95</y>
+          <width>112</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>ID Reservation</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="id_client">
+        <property name="geometry">
+         <rect>
+          <x>369</x>
+          <y>69</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_12">
+        <property name="geometry">
+         <rect>
+          <x>251</x>
+          <y>69</y>
+          <width>111</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>ID Client</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="id_reservation">
+        <property name="geometry">
+         <rect>
+          <x>369</x>
+          <y>95</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="nb_personne">
+        <property name="geometry">
+         <rect>
+          <x>369</x>
+          <y>121</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="return_from_ajout_4">
+        <property name="geometry">
+         <rect>
+          <x>410</x>
+          <y>210</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Undo</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_13">
+        <property name="geometry">
+         <rect>
+          <x>251</x>
+          <y>121</y>
+          <width>121</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Nb Personne</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_14">
+        <property name="geometry">
+         <rect>
+          <x>251</x>
+          <y>171</y>
+          <width>51</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Date</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="nom_film">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>150</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="date_res">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>180</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="Modifier_Reservation_2">
+       <widget class="QLabel" name="label_15">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>68</y>
+          <width>111</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>ID Client</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="id_client_2">
+        <property name="geometry">
+         <rect>
+          <x>378</x>
+          <y>68</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="nb_personne_2">
+        <property name="geometry">
+         <rect>
+          <x>378</x>
+          <y>120</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_18">
+        <property name="geometry">
+         <rect>
+          <x>259</x>
+          <y>209</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Modifier</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="id_reservation_2">
+        <property name="geometry">
+         <rect>
+          <x>378</x>
+          <y>94</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="return_from_ajout_5">
+        <property name="geometry">
+         <rect>
+          <x>419</x>
+          <y>209</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Undo</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_nomfilm_ajout_4">
+        <property name="geometry">
+         <rect>
+          <x>378</x>
+          <y>146</y>
+          <width>35</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_16">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>146</y>
+          <width>111</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Nom Film</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_17">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>170</y>
+          <width>51</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Date</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_19">
+        <property name="geometry">
+         <rect>
+          <x>339</x>
+          <y>209</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Quitter</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_18">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>94</y>
+          <width>112</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>ID Reservation</string>
+        </property>
+       </widget>
+       <widget class="QDateTimeEdit" name="dateTimeEdit_2">
+        <property name="geometry">
+         <rect>
+          <x>319</x>
+          <y>170</y>
+          <width>110</width>
+          <height>18</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_19">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>120</y>
+          <width>121</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Nb Personne</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="Supprimer_Reservation_2">
+       <widget class="QPushButton" name="pushButton_20">
+        <property name="geometry">
+         <rect>
+          <x>342</x>
+          <y>147</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Quitter</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_21">
+        <property name="geometry">
+         <rect>
+          <x>261</x>
+          <y>147</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Supprimer</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_20">
+        <property name="geometry">
+         <rect>
+          <x>261</x>
+          <y>121</y>
+          <width>111</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>ID Client</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="return_from_ajout_6">
+        <property name="geometry">
+         <rect>
+          <x>423</x>
+          <y>147</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Undo</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="id_client_3">
+        <property name="geometry">
+         <rect>
+          <x>372</x>
+          <y>121</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
