@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>424</height>
+    <height>462</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,9 +18,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>0</y>
+      <y>20</y>
       <width>781</width>
-      <height>391</height>
+      <height>421</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -30,7 +30,7 @@
      <enum>QTabWidget::Triangular</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Salle">
      <attribute name="title">
@@ -42,7 +42,7 @@
         <x>10</x>
         <y>20</y>
         <width>751</width>
-        <height>341</height>
+        <height>371</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -90,7 +90,11 @@ padding: 0 8px;
 }
 QLineEdit:focus {
 	background-color: rgb(200, 200, 200);
- }</string>
+ }
+</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Main">
        <widget class="QTableView" name="tableView">
@@ -207,14 +211,39 @@ QLineEdit:focus {
        <widget class="QLineEdit" name="recherche_salle">
         <property name="geometry">
          <rect>
-          <x>92</x>
-          <y>22</y>
+          <x>91</x>
+          <y>21</y>
           <width>126</width>
           <height>20</height>
          </rect>
         </property>
         <property name="styleSheet">
          <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="x1">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>10</y>
+          <width>341</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Terminal</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(0, 0, 0, 0);
+border-color:rgba(0, 0, 0, 0);</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
         </property>
        </widget>
       </widget>
@@ -251,8 +280,8 @@ QPushButton:active {
        <widget class="QLabel" name="label">
         <property name="geometry">
          <rect>
-          <x>241</x>
-          <y>79</y>
+          <x>231</x>
+          <y>101</y>
           <width>96</width>
           <height>18</height>
          </rect>
@@ -264,8 +293,8 @@ QPushButton:active {
        <widget class="QLineEdit" name="nb_baffles_ajout">
         <property name="geometry">
          <rect>
-          <x>343</x>
-          <y>131</y>
+          <x>371</x>
+          <y>153</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -277,8 +306,8 @@ QPushButton:active {
        <widget class="QPushButton" name="pushButton_6">
         <property name="geometry">
          <rect>
-          <x>330</x>
-          <y>190</y>
+          <x>332</x>
+          <y>241</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -296,8 +325,8 @@ QPushButton:active {
        <widget class="QPushButton" name="return_from_ajout">
         <property name="geometry">
          <rect>
-          <x>410</x>
-          <y>190</y>
+          <x>413</x>
+          <y>241</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -315,8 +344,8 @@ QPushButton:active {
        <widget class="QLabel" name="label_2">
         <property name="geometry">
          <rect>
-          <x>241</x>
-          <y>105</y>
+          <x>231</x>
+          <y>127</y>
           <width>72</width>
           <height>18</height>
          </rect>
@@ -328,8 +357,8 @@ QPushButton:active {
        <widget class="QLineEdit" name="nb_chaise_ajout">
         <property name="geometry">
          <rect>
-          <x>343</x>
-          <y>105</y>
+          <x>371</x>
+          <y>127</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -341,8 +370,8 @@ QPushButton:active {
        <widget class="QPushButton" name="pushButton_7">
         <property name="geometry">
          <rect>
-          <x>250</x>
-          <y>190</y>
+          <x>251</x>
+          <y>241</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -360,8 +389,8 @@ QPushButton:active {
        <widget class="QLineEdit" name="nm_salle_ajout">
         <property name="geometry">
          <rect>
-          <x>343</x>
-          <y>79</y>
+          <x>371</x>
+          <y>101</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -373,8 +402,8 @@ QPushButton:active {
        <widget class="QLabel" name="label_3">
         <property name="geometry">
          <rect>
-          <x>241</x>
-          <y>157</y>
+          <x>231</x>
+          <y>179</y>
           <width>64</width>
           <height>18</height>
          </rect>
@@ -386,8 +415,8 @@ QPushButton:active {
        <widget class="QLabel" name="label_4">
         <property name="geometry">
          <rect>
-          <x>241</x>
-          <y>131</y>
+          <x>231</x>
+          <y>153</y>
           <width>80</width>
           <height>18</height>
          </rect>
@@ -399,8 +428,34 @@ QPushButton:active {
        <widget class="QLineEdit" name="nb_ecrans_ajout">
         <property name="geometry">
          <rect>
-          <x>343</x>
-          <y>157</y>
+          <x>371</x>
+          <y>179</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_21">
+        <property name="geometry">
+         <rect>
+          <x>231</x>
+          <y>205</y>
+          <width>104</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Disponibilite</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="dispo">
+        <property name="geometry">
+         <rect>
+          <x>371</x>
+          <y>205</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -414,8 +469,8 @@ QPushButton:active {
        <widget class="QPushButton" name="pushButton_8">
         <property name="geometry">
          <rect>
-          <x>191</x>
-          <y>203</y>
+          <x>230</x>
+          <y>240</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -434,7 +489,7 @@ QPushButton:active {
         <property name="geometry">
          <rect>
           <x>191</x>
-          <y>177</y>
+          <y>178</y>
           <width>64</width>
           <height>18</height>
          </rect>
@@ -446,8 +501,8 @@ QPushButton:active {
        <widget class="QPushButton" name="pushButton_9">
         <property name="geometry">
          <rect>
-          <x>286</x>
-          <y>203</y>
+          <x>311</x>
+          <y>240</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -466,7 +521,7 @@ QPushButton:active {
         <property name="geometry">
          <rect>
           <x>191</x>
-          <y>125</y>
+          <y>126</y>
           <width>72</width>
           <height>18</height>
          </rect>
@@ -479,7 +534,7 @@ QPushButton:active {
         <property name="geometry">
          <rect>
           <x>381</x>
-          <y>99</y>
+          <y>100</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -492,7 +547,7 @@ QPushButton:active {
         <property name="geometry">
          <rect>
           <x>191</x>
-          <y>99</y>
+          <y>100</y>
           <width>184</width>
           <height>18</height>
          </rect>
@@ -505,7 +560,7 @@ QPushButton:active {
         <property name="geometry">
          <rect>
           <x>381</x>
-          <y>125</y>
+          <y>126</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -518,7 +573,7 @@ QPushButton:active {
         <property name="geometry">
          <rect>
           <x>381</x>
-          <y>151</y>
+          <y>152</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -530,8 +585,8 @@ QPushButton:active {
        <widget class="QPushButton" name="return_from_ajout_2">
         <property name="geometry">
          <rect>
-          <x>432</x>
-          <y>203</y>
+          <x>392</x>
+          <y>240</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -550,7 +605,7 @@ QPushButton:active {
         <property name="geometry">
          <rect>
           <x>191</x>
-          <y>151</y>
+          <y>152</y>
           <width>80</width>
           <height>18</height>
          </rect>
@@ -563,13 +618,39 @@ QPushButton:active {
         <property name="geometry">
          <rect>
           <x>381</x>
-          <y>177</y>
+          <y>178</y>
           <width>126</width>
           <height>20</height>
          </rect>
         </property>
         <property name="styleSheet">
          <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="dispo_2">
+        <property name="geometry">
+         <rect>
+          <x>381</x>
+          <y>204</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_22">
+        <property name="geometry">
+         <rect>
+          <x>191</x>
+          <y>204</y>
+          <width>104</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Disponibilite</string>
         </property>
        </widget>
       </widget>
@@ -670,7 +751,7 @@ QPushButton:active {
         <x>10</x>
         <y>20</y>
         <width>751</width>
-        <height>321</height>
+        <height>371</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -845,6 +926,31 @@ QLineEdit:focus {
          <string>TextLabel</string>
         </property>
        </widget>
+       <widget class="QLineEdit" name="x1_2">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>10</y>
+          <width>361</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Terminal</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(0, 0, 0, 0);
+border-color:rgba(0, 0, 0, 0);</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="Ajout_Reservation_2">
        <widget class="QPushButton" name="pushButton_16">
@@ -869,9 +975,9 @@ QLineEdit:focus {
        <widget class="QLabel" name="label_10">
         <property name="geometry">
          <rect>
-          <x>251</x>
-          <y>147</y>
-          <width>111</width>
+          <x>253</x>
+          <y>149</y>
+          <width>64</width>
           <height>18</height>
          </rect>
         </property>
@@ -901,8 +1007,8 @@ QLineEdit:focus {
        <widget class="QLabel" name="label_11">
         <property name="geometry">
          <rect>
-          <x>251</x>
-          <y>95</y>
+          <x>253</x>
+          <y>97</y>
           <width>112</width>
           <height>18</height>
          </rect>
@@ -914,8 +1020,8 @@ QLineEdit:focus {
        <widget class="QLineEdit" name="id_client">
         <property name="geometry">
          <rect>
-          <x>369</x>
-          <y>69</y>
+          <x>371</x>
+          <y>71</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -927,9 +1033,9 @@ QLineEdit:focus {
        <widget class="QLabel" name="label_12">
         <property name="geometry">
          <rect>
-          <x>251</x>
-          <y>69</y>
-          <width>111</width>
+          <x>253</x>
+          <y>71</y>
+          <width>72</width>
           <height>18</height>
          </rect>
         </property>
@@ -940,8 +1046,8 @@ QLineEdit:focus {
        <widget class="QLineEdit" name="id_reservation">
         <property name="geometry">
          <rect>
-          <x>369</x>
-          <y>95</y>
+          <x>371</x>
+          <y>97</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -953,8 +1059,8 @@ QLineEdit:focus {
        <widget class="QLineEdit" name="nb_personne">
         <property name="geometry">
          <rect>
-          <x>369</x>
-          <y>121</y>
+          <x>371</x>
+          <y>123</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -985,9 +1091,9 @@ QLineEdit:focus {
        <widget class="QLabel" name="label_13">
         <property name="geometry">
          <rect>
-          <x>251</x>
-          <y>121</y>
-          <width>121</width>
+          <x>253</x>
+          <y>123</y>
+          <width>88</width>
           <height>18</height>
          </rect>
         </property>
@@ -998,9 +1104,9 @@ QLineEdit:focus {
        <widget class="QLabel" name="label_14">
         <property name="geometry">
          <rect>
-          <x>251</x>
-          <y>171</y>
-          <width>51</width>
+          <x>253</x>
+          <y>175</y>
+          <width>32</width>
           <height>18</height>
          </rect>
         </property>
@@ -1011,8 +1117,8 @@ QLineEdit:focus {
        <widget class="QLineEdit" name="nom_film">
         <property name="geometry">
          <rect>
-          <x>370</x>
-          <y>150</y>
+          <x>371</x>
+          <y>149</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -1021,17 +1127,79 @@ QLineEdit:focus {
          <string notr="true"/>
         </property>
        </widget>
-       <widget class="QLineEdit" name="date_res">
+       <widget class="QDateEdit" name="date_res">
         <property name="geometry">
          <rect>
-          <x>370</x>
-          <y>180</y>
-          <width>126</width>
-          <height>20</height>
+          <x>371</x>
+          <y>175</y>
+          <width>79</width>
+          <height>18</height>
          </rect>
         </property>
+        <property name="mouseTracking">
+         <bool>false</bool>
+        </property>
         <property name="styleSheet">
-         <string notr="true"/>
+         <string notr="true">background-color: rgb(192,192,192); 
+selection-background-color: yellow;
+selection-color: black;</string>
+        </property>
+        <property name="time">
+         <time>
+          <hour>0</hour>
+          <minute>0</minute>
+          <second>0</second>
+         </time>
+        </property>
+        <property name="maximumDateTime">
+         <datetime>
+          <hour>23</hour>
+          <minute>59</minute>
+          <second>59</second>
+          <year>2020</year>
+          <month>12</month>
+          <day>30</day>
+         </datetime>
+        </property>
+        <property name="minimumDateTime">
+         <datetime>
+          <hour>0</hour>
+          <minute>0</minute>
+          <second>0</second>
+          <year>2020</year>
+          <month>11</month>
+          <day>1</day>
+         </datetime>
+        </property>
+        <property name="maximumDate">
+         <date>
+          <year>2020</year>
+          <month>12</month>
+          <day>30</day>
+         </date>
+        </property>
+        <property name="minimumDate">
+         <date>
+          <year>2020</year>
+          <month>11</month>
+          <day>1</day>
+         </date>
+        </property>
+        <property name="displayFormat">
+         <string>dd-MM-yyyy</string>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+        <property name="timeSpec">
+         <enum>Qt::TimeZone</enum>
+        </property>
+        <property name="date">
+         <date>
+          <year>2020</year>
+          <month>11</month>
+          <day>25</day>
+         </date>
         </property>
        </widget>
       </widget>
@@ -1040,8 +1208,8 @@ QLineEdit:focus {
         <property name="geometry">
          <rect>
           <x>260</x>
-          <y>68</y>
-          <width>111</width>
+          <y>69</y>
+          <width>72</width>
           <height>18</height>
          </rect>
         </property>
@@ -1053,7 +1221,7 @@ QLineEdit:focus {
         <property name="geometry">
          <rect>
           <x>378</x>
-          <y>68</y>
+          <y>69</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -1066,7 +1234,7 @@ QLineEdit:focus {
         <property name="geometry">
          <rect>
           <x>378</x>
-          <y>120</y>
+          <y>121</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -1078,8 +1246,8 @@ QLineEdit:focus {
        <widget class="QPushButton" name="pushButton_18">
         <property name="geometry">
          <rect>
-          <x>259</x>
-          <y>209</y>
+          <x>260</x>
+          <y>199</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -1098,7 +1266,7 @@ QLineEdit:focus {
         <property name="geometry">
          <rect>
           <x>378</x>
-          <y>94</y>
+          <y>95</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -1110,8 +1278,8 @@ QLineEdit:focus {
        <widget class="QPushButton" name="return_from_ajout_5">
         <property name="geometry">
          <rect>
-          <x>419</x>
-          <y>209</y>
+          <x>429</x>
+          <y>199</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -1126,25 +1294,12 @@ QLineEdit:focus {
          <string>Undo</string>
         </property>
        </widget>
-       <widget class="QSpinBox" name="spinBox_nomfilm_ajout_4">
-        <property name="geometry">
-         <rect>
-          <x>378</x>
-          <y>146</y>
-          <width>35</width>
-          <height>18</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true"/>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_16">
         <property name="geometry">
          <rect>
           <x>260</x>
-          <y>146</y>
-          <width>111</width>
+          <y>147</y>
+          <width>64</width>
           <height>18</height>
          </rect>
         </property>
@@ -1156,8 +1311,8 @@ QLineEdit:focus {
         <property name="geometry">
          <rect>
           <x>260</x>
-          <y>170</y>
-          <width>51</width>
+          <y>173</y>
+          <width>32</width>
           <height>18</height>
          </rect>
         </property>
@@ -1168,8 +1323,8 @@ QLineEdit:focus {
        <widget class="QPushButton" name="pushButton_19">
         <property name="geometry">
          <rect>
-          <x>339</x>
-          <y>209</y>
+          <x>341</x>
+          <y>199</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -1188,7 +1343,7 @@ QLineEdit:focus {
         <property name="geometry">
          <rect>
           <x>260</x>
-          <y>94</y>
+          <y>95</y>
           <width>112</width>
           <height>18</height>
          </rect>
@@ -1197,27 +1352,98 @@ QLineEdit:focus {
          <string>ID Reservation</string>
         </property>
        </widget>
-       <widget class="QDateTimeEdit" name="dateTimeEdit_2">
-        <property name="geometry">
-         <rect>
-          <x>319</x>
-          <y>170</y>
-          <width>110</width>
-          <height>18</height>
-         </rect>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_19">
         <property name="geometry">
          <rect>
           <x>260</x>
-          <y>120</y>
-          <width>121</width>
+          <y>121</y>
+          <width>88</width>
           <height>18</height>
          </rect>
         </property>
         <property name="text">
          <string>Nb Personne</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="nom_film_2">
+        <property name="geometry">
+         <rect>
+          <x>378</x>
+          <y>147</y>
+          <width>126</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QDateEdit" name="date_res_2">
+        <property name="geometry">
+         <rect>
+          <x>400</x>
+          <y>170</y>
+          <width>79</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="mouseTracking">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(192,192,192); 
+selection-background-color: yellow;
+selection-color: black;</string>
+        </property>
+        <property name="maximumDateTime">
+         <datetime>
+          <hour>23</hour>
+          <minute>59</minute>
+          <second>59</second>
+          <year>2020</year>
+          <month>12</month>
+          <day>30</day>
+         </datetime>
+        </property>
+        <property name="minimumDateTime">
+         <datetime>
+          <hour>0</hour>
+          <minute>0</minute>
+          <second>0</second>
+          <year>2020</year>
+          <month>11</month>
+          <day>1</day>
+         </datetime>
+        </property>
+        <property name="maximumDate">
+         <date>
+          <year>2020</year>
+          <month>12</month>
+          <day>30</day>
+         </date>
+        </property>
+        <property name="minimumDate">
+         <date>
+          <year>2020</year>
+          <month>11</month>
+          <day>1</day>
+         </date>
+        </property>
+        <property name="displayFormat">
+         <string>dd-MM-yyyy</string>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+        <property name="timeSpec">
+         <enum>Qt::TimeZone</enum>
+        </property>
+        <property name="date">
+         <date>
+          <year>2020</year>
+          <month>11</month>
+          <day>25</day>
+         </date>
         </property>
        </widget>
       </widget>
@@ -1303,6 +1529,41 @@ QLineEdit:focus {
         </property>
         <property name="styleSheet">
          <string notr="true"/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page">
+       <widget class="QLineEdit" name="rechercher">
+        <property name="geometry">
+         <rect>
+          <x>390</x>
+          <y>150</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QTableView" name="tableView_2">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>40</y>
+          <width>256</width>
+          <height>192</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_22">
+        <property name="geometry">
+         <rect>
+          <x>520</x>
+          <y>150</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>rechercher</string>
         </property>
        </widget>
       </widget>

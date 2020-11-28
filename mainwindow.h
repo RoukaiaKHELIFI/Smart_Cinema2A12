@@ -8,6 +8,9 @@
 #include <QMediaPlayer>
 #include "salle.h"
 #include "reservation.h"
+#include <QSqlTableModel>
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -68,6 +71,27 @@ private slots:
 
 
     void on_pushButton_21_clicked();
+
+
+
+    void on_pushButton_18_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
+
+    void on_pushButton_12_clicked();
+
+
+   // void on_tableView_activated(const QModelIndex &index);
+
+
+
+
+    void on_recherche_salle_cursorPositionChanged();
+
+    void on_recherche_reservation_cursorPositionChanged();
+
 
 private:
     Ui::MainWindow *ui;
