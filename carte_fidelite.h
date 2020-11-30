@@ -1,6 +1,6 @@
 #ifndef CARTE_FIDELITE_H
 #define CARTE_FIDELITE_H
-
+//ici c'est la gestion de l'entité carte fidelite
 
 #include <string>
 #include <QString>
