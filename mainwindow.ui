@@ -39,7 +39,7 @@ QPushButton
 background:blue;}</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="widget_2">
      <attribute name="title">
@@ -552,7 +552,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
       </item>
       <item>
        <property name="text">
-        <string>Chomeur</string>
+        <string>Chomeur(e)</string>
        </property>
       </item>
      </widget>

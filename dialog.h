@@ -20,6 +20,8 @@ private slots:
 
     void on_label_2_linkActivated(const QString &link);
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::Dialog *ui;
 };

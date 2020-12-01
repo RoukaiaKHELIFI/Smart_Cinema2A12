@@ -40,17 +40,57 @@ bool carte_fidelite::supprimer_cartefidelite()
 
 bool carte_fidelite::modifier_cartefidelite()
 {
+
+   // this->setNb_film(200);
+    //this->setNb_point(300);
+
     QSqlQuery  query ;
-    query.prepare("UPDATE carte_fidelite set ID_CLIENT=? , NB_POINT=? ,NB_FILM=? WHERE ID_CARTE=?");
-    query.addBindValue(this->getId_client());
-    query.addBindValue(this->getNb_point());
-    query.addBindValue(this->getNb_film());
-    query.addBindValue(this->getId_carte());
+    query.prepare("UPDATE carte_fidelite set  NB_POINT=5000 WHERE ID_CARTE=34");
+
+   // query.addBindValue(1200);
+   // query.addBindValue(1200);
+    //query.addBindValue(34);
     return query.exec();
+
 }
 
 
 
+int  carte_fidelite::recupere_nbfilm(int id)
+{
+        QSqlQuery  *query  = new QSqlQuery();
+        query->prepare("select NB_FILM from carte_fidelite where ID_CARTE=?" );
+        query->addBindValue(id);
+        query->exec();
+        int nbfilm=0;
+        while(query->next())//tchouf el ligne elli mbaedha
+        {
+
+         nbfilm = query->value(0).toString().toInt();
+        }
+
+
+        return nbfilm;
+
+}
+int  carte_fidelite::recupere_nbpoint(int id)
+{
+        QSqlQuery  *query  = new QSqlQuery();
+        query->prepare("select NB_POINT from carte_fidelite where ID_CARTE=?" );
+        query->addBindValue(id);
+        query->exec();
+
+        int nbfilm=0;
+        while(query->next())//tchouf el ligne elli mbaedha
+        {
+
+         nbfilm = query->value(0).toString().toInt();
+        }
+
+
+        return nbfilm;
+
+}
 
 bool  carte_fidelite::existe_carte()
 {

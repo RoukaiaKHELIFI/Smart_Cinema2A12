@@ -15,8 +15,11 @@ SOURCES += \
     connexion.cpp \
     dialog.cpp \
     employe.cpp \
+    film.cpp \
+    gestion_film.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    ticket.cpp
 
 HEADERS += \
     authentification.h \
@@ -25,11 +28,16 @@ HEADERS += \
     connexion.h \
     dialog.h \
     employe.h \
-    mainwindow.h
+    film.h \
+    gestion_film.h \
+    mainwindow.h \
+    qcustomplot.h \
+    ticket.h
 
 FORMS += \
     authentification.ui \
     dialog.ui \
+    gestion_film.ui \
     mainwindow.ui
 
 # Default rules for deployment.

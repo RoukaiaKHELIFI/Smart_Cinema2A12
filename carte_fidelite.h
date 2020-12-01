@@ -34,6 +34,13 @@ public:
         this->nb_point=nb_point;
         this->nb_film=nb_film;
      }
+    carte_fidelite(int id_client ,int nb_point,int nb_film)
+    {
+        this->id_client=id_client;
+
+        this->nb_point=nb_point;
+        this->nb_film=nb_film;
+     }
 
 
         int getId_carte()
@@ -84,6 +91,8 @@ public:
         bool supprimer_cartefidelite();
         bool modifier_cartefidelite();
         bool existe_carte();
+        int  recupere_nbfilm(int id);
+        int  recupere_nbpoint(int id);
 
 
 
