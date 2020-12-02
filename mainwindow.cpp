@@ -389,9 +389,9 @@ void MainWindow::sendMail()
 {
     Smtp* smtp = new Smtp(ui->user->text(), ui->pwd->text(), ui->server->text(), ui->port->text().toInt());
     connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
-
-
-    smtp->sendMail(ui->user->text(), "roukaia.khelifi@esprit.tn", ui->subject->text(),ui->id_reservation->text());
+//QString idr = QString::number(ui->id_reservation->text().toInt());
+//QString msg = ui->date_res->text()+"   "+ idr;
+    smtp->sendMail(ui->user->text(), "roukaia.khelifi@esprit.tn", ui->subject->text(),ui->date_res->text());
 }
 /*void MainWindow::mailSent(QString status)
 {
