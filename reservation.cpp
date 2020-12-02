@@ -87,25 +87,12 @@ QSqlQueryModel *Reservation::trier_res(){
 
     return model;
 }
-QSqlQueryModel *Reservation::trier_res2(){
 
-
-    QSqlQueryModel *model = new QSqlQueryModel();
-    model->setQuery("select * from reservation order by nb_personne asc");
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID Client"));
-    model->setHeaderData(1,Qt::Horizontal,QObject::tr("ID Reservation"));
-    model->setHeaderData(2,Qt::Horizontal,QObject::tr("NB Personne"));
-
-    model->setHeaderData(3,Qt::Horizontal,QObject::tr("Nom Film"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("Date"));
-
-    return model;
-}
 
 
 QSqlQueryModel *Reservation::rechercher_res(QString f){
    QSqlQueryModel *model = new QSqlQueryModel();
-model->setQuery("select * from reservation where id_client like '%'||'"+f+"'||'%'");
+model->setQuery("select * from reservation where id_client like '%'||'"+f+"'||'%' or id_reservation like '%'||'"+f+"'||'%' or date_res like '%'||'"+f+"'||'%'");
     model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID Client"));
        model->setHeaderData(1,Qt::Horizontal,QObject::tr("ID Reservation"));
        model->setHeaderData(2,Qt::Horizontal,QObject::tr("NB Personne"));

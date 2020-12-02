@@ -102,7 +102,7 @@ QLineEdit:focus {
 </string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Main">
        <widget class="QTableView" name="tableView">
@@ -1176,6 +1176,16 @@ border-color:rgba(0, 0, 0, 0);</string>
 selection-background-color: yellow;
 selection-color: black;</string>
         </property>
+        <property name="dateTime">
+         <datetime>
+          <hour>0</hour>
+          <minute>0</minute>
+          <second>0</second>
+          <year>2020</year>
+          <month>12</month>
+          <day>4</day>
+         </datetime>
+        </property>
         <property name="time">
          <time>
           <hour>0</hour>
@@ -1229,8 +1239,8 @@ selection-color: black;</string>
         <property name="date">
          <date>
           <year>2020</year>
-          <month>11</month>
-          <day>25</day>
+          <month>12</month>
+          <day>4</day>
          </date>
         </property>
        </widget>
@@ -1393,16 +1403,6 @@ color:rgba(0,0,0,0);</string>
         </property>
         <property name="text">
          <string>Confirmation Rendez-Vous Pathé</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="ra">
-        <property name="geometry">
-         <rect>
-          <x>110</x>
-          <y>110</y>
-          <width>113</width>
-          <height>20</height>
-         </rect>
         </property>
        </widget>
       </widget>
@@ -1604,6 +1604,16 @@ color:rgba(0,0,0,0);</string>
 selection-background-color: yellow;
 selection-color: black;</string>
         </property>
+        <property name="dateTime">
+         <datetime>
+          <hour>0</hour>
+          <minute>0</minute>
+          <second>0</second>
+          <year>2020</year>
+          <month>12</month>
+          <day>4</day>
+         </datetime>
+        </property>
         <property name="maximumDateTime">
          <datetime>
           <hour>23</hour>
@@ -1650,8 +1660,8 @@ selection-color: black;</string>
         <property name="date">
          <date>
           <year>2020</year>
-          <month>11</month>
-          <day>25</day>
+          <month>12</month>
+          <day>4</day>
          </date>
         </property>
        </widget>

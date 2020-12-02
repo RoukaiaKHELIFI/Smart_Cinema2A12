@@ -85,7 +85,7 @@ QSqlQueryModel* Salle::rechercher(QString numsalle){
  QSqlQuery query;
  query.bindValue(":numsalle",numsalle);
 
-  model->setQuery("select * from salle where numsalle like '%'||'"+numsalle+"'||'%' or dispo like '%'||'"+numsalle+"'||'%'");
+  model->setQuery("select * from salle where numsalle like '%'||'"+numsalle+"'||'%' or dispo like '%'||'"+numsalle+"'||'%' or nbchaise like '%'||'"+numsalle+"'||'%' ");
 //model->setQuery("select * from salle where numsalle=?");
  model->setHeaderData(0,Qt::Horizontal,QObject::tr("Numero Salle"));
     model->setHeaderData(1,Qt::Horizontal,QObject::tr("NB Chaise"));
