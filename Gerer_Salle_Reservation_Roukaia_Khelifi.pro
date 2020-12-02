@@ -1,4 +1,4 @@
-QT       += core gui multimedia sql
+QT       += core gui multimedia sql network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,13 +13,15 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     reservation.cpp \
-    salle.cpp
+    salle.cpp \
+    smtp.cpp
 
 HEADERS += \
     connexion.h \
     mainwindow.h \
     reservation.h \
-    salle.h
+    salle.h \
+    smtp.h
 
 FORMS += \
     mainwindow.ui

@@ -9,7 +9,9 @@
 #include "salle.h"
 #include "reservation.h"
 #include <QSqlTableModel>
-
+#include "smtp.h"
+#include <QRandomGenerator>
+#include <QRandomGenerator64>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -68,11 +70,7 @@ private slots:
 
     void on_pushButton_16_clicked();
 
-
-
     void on_pushButton_21_clicked();
-
-
 
     void on_pushButton_18_clicked();
 
@@ -83,15 +81,15 @@ private slots:
     void on_pushButton_12_clicked();
 
 
-   // void on_tableView_activated(const QModelIndex &index);
-
-
-
-
     void on_recherche_salle_cursorPositionChanged();
 
     void on_recherche_reservation_cursorPositionChanged();
 
+    void sendMail();
+   // void mailSent(QString);
+    void on_affichage_reservation_activated(const QModelIndex &index);
+
+    void on_tableView_activated(const QModelIndex &index);
 
 private:
     Ui::MainWindow *ui;

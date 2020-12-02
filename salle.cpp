@@ -70,7 +70,7 @@ return query.exec();
 
 QSqlQueryModel * Salle ::trier(){
     QSqlQueryModel *model = new QSqlQueryModel();
-    model->setQuery("select * from salle order by numsalle");
+    model->setQuery("select * from salle order by nbchaise asc,numsalle asc,dispo asc");
     model->setHeaderData(0,Qt::Horizontal,QObject::tr("Numero Salle"));
     model->setHeaderData(1,Qt::Horizontal,QObject::tr("NB Chaise"));
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("NB Baffles"));

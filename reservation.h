@@ -14,6 +14,8 @@ public:
     int get_id_reservation();
     int get_nb_personne();
     QString get_nomfilm();
+
+
 QDate get_date_r();
 
 bool ajouter_res();
@@ -22,6 +24,7 @@ bool supprimer_res(int);
 bool update_res(int);
 QSqlQueryModel * trier_res();
 QSqlQueryModel *rechercher_res(QString);
+QSqlQueryModel * trier_res2();
 private:
 int id_client,id_reservation,nb_personne;
 QString nomfilm;

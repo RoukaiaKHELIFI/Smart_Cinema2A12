@@ -93,11 +93,8 @@ ui->affichage_reservation->setModel(Etmp1.afficher_res());
     ui->recherche_reservation->setValidator(new QIntValidator(0,99999999,this));
     ui->recherche_salle->setValidator(new QIntValidator(0,999,this));
     ui->nb_ecrans_ajout->setValidator(new QIntValidator(0,999,this));
-
-
-
-
-    QPixmap bkgnd("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/background");
+ connect(ui->pushButton_16, SIGNAL(clicked()),this, SLOT(sendMail()));
+     QPixmap bkgnd("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/background");
        bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
        QPalette palette;
        palette.setBrush(QPalette::Background, bkgnd);
@@ -162,6 +159,7 @@ void MainWindow::on_pushButton_3_clicked()
      player->setMedia(QUrl("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/bouttonsound.mp3"));
         player->play();
         player->setVolume(1000);
+
 }
 
 void MainWindow::on_return_from_ajout_clicked()
@@ -299,6 +297,7 @@ void MainWindow::on_pushButton_15_clicked()
        player->setVolume(1000);
 
 
+
 }
 
 void MainWindow::on_pushButton_7_clicked()
@@ -386,32 +385,51 @@ void MainWindow::on_pushButton_8_clicked()
 
 }
 }
+void MainWindow::sendMail()
+{
+    Smtp* smtp = new Smtp(ui->user->text(), ui->pwd->text(), ui->server->text(), ui->port->text().toInt());
+    connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+
+
+    smtp->sendMail(ui->user->text(), "roukaia.khelifi@esprit.tn", ui->subject->text(),ui->id_reservation->text());
+}
+/*void MainWindow::mailSent(QString status)
+{
+    if(status == "Message sent")
+        QMessageBox::warning( 0, tr( "Qt Simple SMTP client" ), tr( "Message sent!\n\n" ) );
+}
+*/
 
 void MainWindow::on_pushButton_16_clicked()
 {
     int id_client = ui->id_client->text().toInt();
-    int id_reservation=ui->id_reservation->text().toInt();
+   // int id_reservation=ui->id_reservation->text().toInt();
     int nb_personne=ui->nb_personne->text().toInt();
-    QString nomfilm=ui->nom_film->text();
+ QString nomfilm=ui->nom_film->text();
 QDate dater= ui->date_res->date();
 
+int id_reservation=ui->id_reservation->text().toInt();
     Reservation r(id_client,id_reservation,nb_personne,nomfilm,dater);
     bool test =r.ajouter_res();
+
     if(test){
         QString m="";
         ui->id_client->setText(m);
         ui->id_reservation->setText(m);
         ui->nb_personne->setText(m);
+        ui->rcpt->setText(m);
         ui->nom_film->setText(m);
         dater.currentDate();
 
         QString s= QString ::number(id_client);
 ui->affichage_reservation->setModel(Etmp1.afficher_res());
 
-        QMessageBox::information(nullptr,QObject::tr("OK"),
+     QMessageBox::information(nullptr,QObject::tr("OK"),
                                  QObject::tr("Ajouter Effectuer A QR Code Has been Sent.\n""Click cancel to exit"),QMessageBox::Cancel);
 
-    }
+
+
+}
     else
     {
         QMessageBox::critical(nullptr,QObject::tr("NOT OK"),
@@ -450,6 +468,7 @@ void MainWindow::on_pushButton_18_clicked()
     int id_reser=ui->id_reservation_2->text().toInt();
     int nb_personne=ui->nb_personne_2->text().toInt();
     QString nomfilm=ui->nom_film_2->text();
+
 QDate dater=ui->date_res_2->date();
 
     Reservation r(id_client,id_reser,nb_personne,nomfilm,dater);
@@ -517,3 +536,41 @@ void MainWindow::on_recherche_reservation_cursorPositionChanged()
     r.afficher_res();
 }
 
+
+void MainWindow::on_affichage_reservation_activated(const QModelIndex &index)
+{
+
+QString ch =ui->affichage_reservation->model()->data(index).toString();
+QSqlQuery query;
+query.prepare("select * from reservation where id_client='"+ch+"' ");
+if(query.exec()){
+
+    while(query.next()){
+        ui->id_client_2->setText(query.value(0).toString());
+        ui->id_reservation_2->setText(query.value(1).toString());
+        ui->nb_personne_2->setText(query.value(2).toString());
+        ui->nom_film_2->setText(query.value(3).toString());
+        ui->date_res_2->setDate(query.value(4).toDate());
+        ui->id_client_3->setText(query.value(0).toString());
+
+    }
+}
+}
+
+void MainWindow::on_tableView_activated(const QModelIndex &index)
+{
+    QString ch=ui->tableView->model()->data(index).toString();
+    QSqlQuery query;
+    query.prepare("select * from salle where numsalle ='"+ch+"'");
+    if(query.exec()){
+        while(query.next()){
+            ui->nm_salle_modif->setText(query.value(0).toString());
+            ui->nb_chaise_modif->setText(query.value(1).toString());
+            ui->nb_baffles_modif->setText(query.value(2).toString());
+            ui->nb_ecrans_modif->setText(query.value(3).toString());
+            ui->dispo_2->setText(query.value(4).toString());
+            ui->nm_salle_supp->setText(query.value(0).toString());
+        }
+
+    }
+}
