@@ -1,0 +1,1458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GestionClient</class>
+ <widget class="QDialog" name="GestionClient">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1290</width>
+    <height>622</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1291</width>
+     <height>621</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Times New Roman&quot;;
+QPushButton
+{
+background:blue;}</string>
+   </property>
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
+   <widget class="QWidget" name="widget_2">
+    <attribute name="title">
+     <string>Client</string>
+    </attribute>
+    <widget class="QTableView" name="AfficherClient">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>60</y>
+       <width>751</width>
+       <height>361</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-color: rgb(119, 0, 0,255);
+</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>61</y>
+       <width>131</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QLabel" name="label_9">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>CIN</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_23">
+        <property name="text">
+         <string>Genre</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_20">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Nom</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_21">
+        <property name="text">
+         <string>Penom</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_10">
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Date de naissance</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_17">
+        <property name="text">
+         <string>Etat civil</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_11">
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Fonction</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_12">
+        <property name="text">
+         <string>Adresse</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_13">
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Numero Telephone</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_25">
+        <property name="text">
+         <string>Mail </string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>148</x>
+       <y>61</y>
+       <width>186</width>
+       <height>304</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <item>
+       <widget class="QLineEdit" name="cin_client_ajouter">
+        <property name="styleSheet">
+         <string notr="true">border-color: rgb(28, 12, 255);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="genre_ajouter">
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Femme</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Homme</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="nom_ajouter"/>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="prenom_ajouter"/>
+      </item>
+      <item>
+       <widget class="QDateEdit" name="dateNaissance_ajouter">
+        <property name="maximumDate">
+         <date>
+          <year>2015</year>
+          <month>1</month>
+          <day>1</day>
+         </date>
+        </property>
+        <property name="minimumDate">
+         <date>
+          <year>1920</year>
+          <month>9</month>
+          <day>14</day>
+         </date>
+        </property>
+        <property name="displayFormat">
+         <string>dd-MM-yyyy</string>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="etatcivil_ajouter">
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Celibataire</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Marie(e)</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="fontion_ajouter">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Eleve</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Etudiant(e)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Employe(e)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Retraite(e)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Chomeur(e)</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="adresse_ajouter"/>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="telephone_ajouter"/>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="mail_ajouter"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QPushButton" name="closeClient">
+     <property name="geometry">
+      <rect>
+       <x>1030</x>
+       <y>460</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/*background-color:#C70039;
+color:white;*/
+QPushButton
+{
+background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgba(119, 0, 0, 255), stop:1 rgba(255, 128, 192, 255));
+border-radius:15px;
+color:white;
+}
+QPushButton:hover
+{
+background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgba(119, 0, 153, 255), stop:1 rgba(98, 234, 255, 255))
+}</string>
+     </property>
+     <property name="text">
+      <string>Close</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../ProjetQT_Image/close2.png</normaloff>../ProjetQT_Image/close2.png</iconset>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="recherchecase_3">
+     <property name="geometry">
+      <rect>
+       <x>970</x>
+       <y>20</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ajouterClient">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>460</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/*background-color:#C70039;
+color:white;*/
+QPushButton
+{
+background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgba(119, 0, 0, 255), stop:1 rgba(255, 128, 192, 255));
+border-radius:15px;
+color:white;
+}
+QPushButton:hover
+{
+background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgba(119, 0, 153, 255), stop:1 rgba(98, 234, 255, 255))
+}</string>
+     </property>
+     <property name="text">
+      <string>Ajouter</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../ProjetQT_Image/add1.png</normaloff>../ProjetQT_Image/add1.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="SupprimerClient">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>520</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/*background-color:#C70039;
+color:white;*/
+QPushButton
+{
+background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgba(119, 0, 0, 255), stop:1 rgba(255, 128, 192, 255));
+border-radius:15px;
+color:white;
+}
+QPushButton:hover
+{
+background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgba(119, 0, 153, 255), stop:1 rgba(98, 234, 255, 255))
+}
+</string>
+     </property>
+     <property name="text">
+      <string> Supprimer</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../ProjetQT_Image/supp.png</normaloff>../ProjetQT_Image/supp.png</iconset>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="genre_filtre">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>500</y>
+       <width>191</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Femme</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Homme</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="fonction_filtre">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>540</y>
+       <width>191</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Eleve</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Etudiant(e)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Employe(e)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Retraite(e)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Chomeur(e)</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="label_26">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>540</y>
+       <width>81</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Fonction</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_27">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>500</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Genre</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_29">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>460</y>
+       <width>81</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Etat Civil</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="Etat_civil_filtre">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>460</y>
+       <width>191</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Celibataire</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Marie(e)</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLineEdit" name="id_client">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>113</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="icon_2">
+     <property name="geometry">
+      <rect>
+       <x>1180</x>
+       <y>440</y>
+       <width>101</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../../Desktop/Desktop/projet 2a/popcornicon.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_30">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>-4</x>
+       <y>-28</y>
+       <width>1291</width>
+       <height>621</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../ProjetQT_Image/back.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="modifierClient">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>520</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/*background-color:#C70039;
+color:white;*/
+QPushButton
+{
+background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgba(119, 0, 0, 255), stop:1 rgba(255, 128, 192, 255));
+border-radius:15px;
+color:white;
+}
+QPushButton:hover
+{
+background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgba(119, 0, 153, 255), stop:1 rgba(98, 234, 255, 255))
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Modifier</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../ProjetQT_Image/mod.png</normaloff>../ProjetQT_Image/mod.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="filtrerClient">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>460</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/*background-color:#C70039;
+color:white;*/
+QPushButton
+{
+background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgba(119, 0, 0, 255), stop:1 rgba(255, 128, 192, 255));
+border-radius:15px;
+color:white;
+}
+QPushButton:hover
+{
+background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgba(119, 0, 153, 255), stop:1 rgba(98, 234, 255, 255))
+}</string>
+     </property>
+     <property name="text">
+      <string> Filtrer</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../ProjetQT_Image/filtrer1.png</normaloff>../ProjetQT_Image/filtrer1.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>21</width>
+       <height>21</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="refresh">
+     <property name="geometry">
+      <rect>
+       <x>1230</x>
+       <y>10</y>
+       <width>31</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/*background-color:#C70039;
+color:white;*/
+QPushButton
+{
+background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgba(119, 0, 0, 255), stop:1 rgba(255, 128, 192, 255));
+border-radius:15px;
+color:white;
+}
+QPushButton:hover
+{
+background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgba(119, 0, 153, 255), stop:1 rgba(98, 234, 255, 255))
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../ProjetQT_Image/an.png</normaloff>../ProjetQT_Image/an.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1291</width>
+       <height>591</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../ProjetQT_Image/back.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>920</x>
+       <y>10</y>
+       <width>51</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../ProjetQT_Image/rechercher.png</pixmap>
+     </property>
+    </widget>
+    <zorder>label</zorder>
+    <zorder>label_30</zorder>
+    <zorder>AfficherClient</zorder>
+    <zorder>layoutWidget_3</zorder>
+    <zorder>layoutWidget_4</zorder>
+    <zorder>closeClient</zorder>
+    <zorder>recherchecase_3</zorder>
+    <zorder>ajouterClient</zorder>
+    <zorder>SupprimerClient</zorder>
+    <zorder>genre_filtre</zorder>
+    <zorder>fonction_filtre</zorder>
+    <zorder>label_26</zorder>
+    <zorder>label_27</zorder>
+    <zorder>label_29</zorder>
+    <zorder>Etat_civil_filtre</zorder>
+    <zorder>id_client</zorder>
+    <zorder>icon_2</zorder>
+    <zorder>modifierClient</zorder>
+    <zorder>filtrerClient</zorder>
+    <zorder>refresh</zorder>
+    <zorder>label_3</zorder>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>Carte Fidelite</string>
+    </attribute>
+    <widget class="QPushButton" name="close_2">
+     <property name="geometry">
+      <rect>
+       <x>1140</x>
+       <y>520</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/*background-color:#C70039;
+color:white;*/
+QPushButton
+{
+background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgba(119, 0, 0, 255), stop:1 rgba(255, 128, 192, 255));
+border-radius:15px;
+color:white;
+}
+QPushButton:hover
+{
+background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgba(119, 0, 153, 255), stop:1 rgba(98, 234, 255, 255))
+}</string>
+     </property>
+     <property name="text">
+      <string>Close</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../ProjetQT_Image/close2.png</normaloff>../ProjetQT_Image/close2.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>18</width>
+       <height>18</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="SupprimerCarte">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>520</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/*background-color:#C70039;
+color:white;*/
+QPushButton
+{
+background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgba(119, 0, 0, 255), stop:1 rgba(255, 128, 192, 255));
+border-radius:15px;
+color:white;
+}
+QPushButton:hover
+{
+background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgba(119, 0, 153, 255), stop:1 rgba(98, 234, 255, 255))
+}</string>
+     </property>
+     <property name="text">
+      <string> Supprimer</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../ProjetQT_Image/supp.png</normaloff>../ProjetQT_Image/supp.png</iconset>
+     </property>
+    </widget>
+    <widget class="QToolBox" name="toolBox_2">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>30</y>
+       <width>881</width>
+       <height>451</height>
+      </rect>
+     </property>
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="page_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>881</width>
+        <height>385</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>CLIENT</string>
+      </attribute>
+      <widget class="QTableView" name="AfficherClient2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>911</width>
+         <height>331</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="recherchecase_4">
+       <property name="geometry">
+        <rect>
+         <x>660</x>
+         <y>10</y>
+         <width>171</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>606</x>
+         <y>0</y>
+         <width>51</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../ProjetQT_Image/rechercher.png</pixmap>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>881</width>
+        <height>385</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>CARTE FIDELITE</string>
+      </attribute>
+      <widget class="QTableView" name="AfficheCarteFidelite_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>881</width>
+         <height>371</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="recherchecase_5">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>10</y>
+         <width>171</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>610</x>
+         <y>0</y>
+         <width>51</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../ProjetQT_Image/rechercher.png</pixmap>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="ajouter_carte">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>460</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/*background-color:#C70039;
+color:white;*/
+QPushButton
+{
+background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgba(119, 0, 0, 255), stop:1 rgba(255, 128, 192, 255));
+border-radius:15px;
+color:white;
+}
+QPushButton:hover
+{
+background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgba(119, 0, 153, 255), stop:1 rgba(98, 234, 255, 255))
+}</string>
+     </property>
+     <property name="text">
+      <string> Ajouter</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../ProjetQT_Image/add1.png</normaloff>../ProjetQT_Image/add1.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="envoyer_mail">
+     <property name="geometry">
+      <rect>
+       <x>980</x>
+       <y>520</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/*background-color:#C70039;
+color:white;*/
+QPushButton
+{
+background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgba(119, 0, 0, 255), stop:1 rgba(255, 128, 192, 255));
+border-radius:15px;
+color:white;
+}
+QPushButton:hover
+{
+background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgba(119, 0, 153, 255), stop:1 rgba(98, 234, 255, 255))
+}</string>
+     </property>
+     <property name="text">
+      <string>Mail</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../ProjetQT_Image/mail6.png</normaloff>../ProjetQT_Image/mail6.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>40</width>
+       <height>40</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_33">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1291</width>
+       <height>621</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../ProjetQT_Image/back.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_9">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>131</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_9">
+      <item>
+       <widget class="QLabel" name="label_31">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>CIN</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_34">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Nom</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_35">
+        <property name="text">
+         <string>Penom</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_39">
+        <property name="text">
+         <string>Adresse</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_40">
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Numero Telephone</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_41">
+        <property name="text">
+         <string>Mail </string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_8">
+     <property name="geometry">
+      <rect>
+       <x>147</x>
+       <y>70</y>
+       <width>186</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_8">
+      <item>
+       <widget class="QLineEdit" name="cin_client_ajouter_2">
+        <property name="styleSheet">
+         <string notr="true">border-color: rgb(28, 12, 255);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="nom_ajouter_2"/>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="prenom_ajouter_2"/>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="adresse_ajouter_2"/>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="telephone_ajouter_2"/>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="mail_ajouter_2"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLineEdit" name="id_client_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>113</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="refrech2">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>10</y>
+       <width>31</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/*background-color:#C70039;
+color:white;*/
+QPushButton
+{
+background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgba(119, 0, 0, 255), stop:1 rgba(255, 128, 192, 255));
+border-radius:15px;
+color:white;
+}
+QPushButton:hover
+{
+background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgba(119, 0, 153, 255), stop:1 rgba(98, 234, 255, 255))
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../ProjetQT_Image/an.png</normaloff>../ProjetQT_Image/an.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="id_carte">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>20</y>
+       <width>113</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>-4</x>
+       <y>-7</y>
+       <width>1301</width>
+       <height>601</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../ProjetQT_Image/back.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="modifier_carte">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>460</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/*background-color:#C70039;
+color:white;*/
+QPushButton
+{
+background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgba(119, 0, 0, 255), stop:1 rgba(255, 128, 192, 255));
+border-radius:15px;
+color:white;
+}
+QPushButton:hover
+{
+background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgba(119, 0, 153, 255), stop:1 rgba(98, 234, 255, 255))
+}</string>
+     </property>
+     <property name="text">
+      <string>Modifier</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../ProjetQT_Image/add1.png</normaloff>../ProjetQT_Image/add1.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <zorder>label_2</zorder>
+    <zorder>label_33</zorder>
+    <zorder>close_2</zorder>
+    <zorder>SupprimerCarte</zorder>
+    <zorder>toolBox_2</zorder>
+    <zorder>ajouter_carte</zorder>
+    <zorder>envoyer_mail</zorder>
+    <zorder>layoutWidget_9</zorder>
+    <zorder>layoutWidget_8</zorder>
+    <zorder>id_client_2</zorder>
+    <zorder>refrech2</zorder>
+    <zorder>id_carte</zorder>
+    <zorder>modifier_carte</zorder>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
