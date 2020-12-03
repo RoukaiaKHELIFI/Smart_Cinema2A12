@@ -1,20 +1,18 @@
 #include "connection.h"
-#include <QtSql/QSqlDatabase>
+#include<QSqlDatabase>
 connection::connection()
 {
 
 }
-
-bool connection::createconnect()
+bool connection::createConnect()
 {
-    bool test=false;
-    QSqlDatabase db=QSqlDatabase::addDatabase("QODBC");
-    db.setDatabaseName("projet");
-    db.setUserName("meriem");
-    db.setPassword("meriem");
+    bool test =false;
+    QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
+        db.setDatabaseName("projet2a");
+        db.setUserName("haroun");
+        db.setPassword("haroun");
 
-    if(db.open())
-    test=true;
+        if(db.open()) test = true;
 
-    return test;
+        return test;
 }
