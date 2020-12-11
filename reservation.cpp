@@ -17,6 +17,7 @@ Reservation::Reservation(int id_client,int id_reservation,int nb_personne,QStrin
     this->nomfilm=nomfilm;
 
     this->date_r=date_r;
+
 }
 int Reservation::get_id_client(){return id_client;}
 int Reservation::get_id_reservation(){return id_reservation;}
@@ -38,6 +39,7 @@ query.bindValue(":nb_personne",nb_personne);
 query.bindValue(":nomfilm",nomfilm);
 query.bindValue(":date_r",date_r);
 
+
 return query.exec();
 }
 QSqlQueryModel * Reservation ::afficher_res(){
@@ -48,6 +50,8 @@ QSqlQueryModel * Reservation ::afficher_res(){
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("NB Personne"));
     model->setHeaderData(3,Qt::Horizontal,QObject::tr("Nom Film"));
     model->setHeaderData(4,Qt::Horizontal,QObject::tr("Date"));
+
+
 
     return model;
 

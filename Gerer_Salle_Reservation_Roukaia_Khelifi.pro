@@ -19,6 +19,7 @@ SOURCES += \
 HEADERS += \
     connexion.h \
     mainwindow.h \
+    random.h \
     reservation.h \
     salle.h \
     smtp.h

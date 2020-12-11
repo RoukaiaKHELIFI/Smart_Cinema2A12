@@ -41,7 +41,7 @@
        <rect>
         <x>10</x>
         <y>20</y>
-        <width>751</width>
+        <width>761</width>
         <height>411</height>
        </rect>
       </property>
@@ -75,7 +75,7 @@ QLineEdit:focus {
 background-color: rgb(255, 170, 255);</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="Main">
        <widget class="QTableView" name="tableView">
@@ -678,8 +678,8 @@ background-color: qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, st
        <rect>
         <x>-3</x>
         <y>20</y>
-        <width>1231</width>
-        <height>411</height>
+        <width>761</width>
+        <height>441</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -897,7 +897,7 @@ border-color:rgba(0, 0, 0, 0);</string>
         <property name="geometry">
          <rect>
           <x>250</x>
-          <y>210</y>
+          <y>290</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -915,8 +915,8 @@ border-color:rgba(0, 0, 0, 0);</string>
        <widget class="QLabel" name="label_10">
         <property name="geometry">
          <rect>
-          <x>253</x>
-          <y>149</y>
+          <x>252</x>
+          <y>236</y>
           <width>64</width>
           <height>18</height>
          </rect>
@@ -929,7 +929,7 @@ border-color:rgba(0, 0, 0, 0);</string>
         <property name="geometry">
          <rect>
           <x>330</x>
-          <y>210</y>
+          <y>290</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -947,8 +947,8 @@ border-color:rgba(0, 0, 0, 0);</string>
        <widget class="QLabel" name="label_11">
         <property name="geometry">
          <rect>
-          <x>250</x>
-          <y>66</y>
+          <x>252</x>
+          <y>158</y>
           <width>112</width>
           <height>18</height>
          </rect>
@@ -960,8 +960,8 @@ border-color:rgba(0, 0, 0, 0);</string>
        <widget class="QLineEdit" name="id_client">
         <property name="geometry">
          <rect>
-          <x>368</x>
-          <y>40</y>
+          <x>370</x>
+          <y>132</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -973,8 +973,8 @@ border-color:rgba(0, 0, 0, 0);</string>
        <widget class="QLabel" name="label_12">
         <property name="geometry">
          <rect>
-          <x>250</x>
-          <y>40</y>
+          <x>252</x>
+          <y>132</y>
           <width>72</width>
           <height>18</height>
          </rect>
@@ -986,8 +986,8 @@ border-color:rgba(0, 0, 0, 0);</string>
        <widget class="QLineEdit" name="id_reservation">
         <property name="geometry">
          <rect>
-          <x>368</x>
-          <y>66</y>
+          <x>370</x>
+          <y>158</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -996,14 +996,14 @@ border-color:rgba(0, 0, 0, 0);</string>
          <string notr="true"/>
         </property>
         <property name="readOnly">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
        </widget>
        <widget class="QLineEdit" name="nb_personne">
         <property name="geometry">
          <rect>
-          <x>368</x>
-          <y>92</y>
+          <x>370</x>
+          <y>184</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -1016,7 +1016,7 @@ border-color:rgba(0, 0, 0, 0);</string>
         <property name="geometry">
          <rect>
           <x>410</x>
-          <y>210</y>
+          <y>290</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -1034,8 +1034,8 @@ border-color:rgba(0, 0, 0, 0);</string>
        <widget class="QLabel" name="label_13">
         <property name="geometry">
          <rect>
-          <x>250</x>
-          <y>92</y>
+          <x>252</x>
+          <y>184</y>
           <width>88</width>
           <height>18</height>
          </rect>
@@ -1047,8 +1047,8 @@ border-color:rgba(0, 0, 0, 0);</string>
        <widget class="QLabel" name="label_14">
         <property name="geometry">
          <rect>
-          <x>253</x>
-          <y>175</y>
+          <x>252</x>
+          <y>262</y>
           <width>32</width>
           <height>18</height>
          </rect>
@@ -1057,24 +1057,11 @@ border-color:rgba(0, 0, 0, 0);</string>
          <string>Date</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="nom_film">
-        <property name="geometry">
-         <rect>
-          <x>371</x>
-          <y>149</y>
-          <width>126</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true"/>
-        </property>
-       </widget>
        <widget class="QDateEdit" name="date_res">
         <property name="geometry">
          <rect>
-          <x>371</x>
-          <y>175</y>
+          <x>370</x>
+          <y>262</y>
           <width>79</width>
           <height>18</height>
          </rect>
@@ -1083,9 +1070,14 @@ border-color:rgba(0, 0, 0, 0);</string>
          <bool>false</bool>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(192,192,192); 
+         <string notr="true">/*background-color: rgb(192,192,192); 
 selection-background-color: yellow;
-selection-color: black;</string>
+selection-color: black;
+*/
+
+background-color:#FFCAD4;
+selection-background-color:#F3ABB6;
+selection-color:#FBEEE6;</string>
         </property>
         <property name="dateTime">
          <datetime>
@@ -1109,7 +1101,7 @@ selection-color: black;</string>
           <hour>23</hour>
           <minute>59</minute>
           <second>59</second>
-          <year>2020</year>
+          <year>2021</year>
           <month>12</month>
           <day>30</day>
          </datetime>
@@ -1126,7 +1118,7 @@ selection-color: black;</string>
         </property>
         <property name="maximumDate">
          <date>
-          <year>2020</year>
+          <year>2021</year>
           <month>12</month>
           <day>30</day>
          </date>
@@ -1145,7 +1137,7 @@ selection-color: black;</string>
          <bool>true</bool>
         </property>
         <property name="timeSpec">
-         <enum>Qt::TimeZone</enum>
+         <enum>Qt::LocalTime</enum>
         </property>
         <property name="date">
          <date>
@@ -1173,7 +1165,7 @@ color:rgba(0,0,0,0);</string>
          <string>roukaia70@gmail.com</string>
         </property>
         <property name="readOnly">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
        </widget>
        <widget class="QLineEdit" name="pwd">
@@ -1194,7 +1186,7 @@ color:rgba(0,0,0,0);</string>
          <string>chbiklabazou.97</string>
         </property>
         <property name="readOnly">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
        </widget>
        <widget class="QLineEdit" name="lineEdit">
@@ -1214,12 +1206,15 @@ color:rgba(0,0,0,0);</string>
         <property name="inputMask">
          <string>smtp.gmail.com</string>
         </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
        </widget>
        <widget class="QLineEdit" name="rcpt">
         <property name="geometry">
          <rect>
-          <x>368</x>
-          <y>120</y>
+          <x>370</x>
+          <y>210</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -1234,9 +1229,9 @@ color:rgba(0,0,0,0);</string>
        <widget class="QLabel" name="label_23">
         <property name="geometry">
          <rect>
-          <x>250</x>
-          <y>120</y>
-          <width>81</width>
+          <x>252</x>
+          <y>210</y>
+          <width>40</width>
           <height>18</height>
          </rect>
         </property>
@@ -1261,6 +1256,9 @@ color:rgba(0,0,0,0);</string>
         <property name="text">
          <string>smtp.gmail.com</string>
         </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
        </widget>
        <widget class="QLineEdit" name="port">
         <property name="geometry">
@@ -1279,6 +1277,9 @@ color:rgba(0,0,0,0);</string>
         <property name="text">
          <string>465</string>
         </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
        </widget>
        <widget class="QLineEdit" name="subject">
         <property name="geometry">
@@ -1295,7 +1296,10 @@ border-color:rgba(0,0,0,0);
 color:rgba(0,0,0,0);</string>
         </property>
         <property name="text">
-         <string>Rendez-Vous</string>
+         <string>Reservation Pathé Confirmé</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
         </property>
        </widget>
        <widget class="QLineEdit" name="msg">
@@ -1315,14 +1319,62 @@ color:rgba(0,0,0,0);</string>
         <property name="text">
          <string>Confirmation Rendez-Vous Pathé</string>
         </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>236</y>
+          <width>104</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>Mort Sur Le Nil</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Black Widow</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Morbius</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Fast &amp; Furious 9</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Soul</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Respect</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Dune</string>
+         </property>
+        </item>
        </widget>
       </widget>
       <widget class="QWidget" name="Modifier_Reservation_2">
        <widget class="QLabel" name="label_15">
         <property name="geometry">
          <rect>
-          <x>260</x>
-          <y>40</y>
+          <x>262</x>
+          <y>142</y>
           <width>72</width>
           <height>18</height>
          </rect>
@@ -1334,8 +1386,8 @@ color:rgba(0,0,0,0);</string>
        <widget class="QLineEdit" name="id_client_2">
         <property name="geometry">
          <rect>
-          <x>378</x>
-          <y>40</y>
+          <x>380</x>
+          <y>142</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -1350,8 +1402,8 @@ color:rgba(0,0,0,0);</string>
        <widget class="QLineEdit" name="nb_personne_2">
         <property name="geometry">
          <rect>
-          <x>378</x>
-          <y>92</y>
+          <x>380</x>
+          <y>194</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -1363,8 +1415,8 @@ color:rgba(0,0,0,0);</string>
        <widget class="QPushButton" name="pushButton_18">
         <property name="geometry">
          <rect>
-          <x>260</x>
-          <y>199</y>
+          <x>261</x>
+          <y>270</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -1382,8 +1434,8 @@ color:rgba(0,0,0,0);</string>
        <widget class="QLineEdit" name="id_reservation_2">
         <property name="geometry">
          <rect>
-          <x>378</x>
-          <y>66</y>
+          <x>380</x>
+          <y>168</y>
           <width>126</width>
           <height>20</height>
          </rect>
@@ -1398,8 +1450,8 @@ color:rgba(0,0,0,0);</string>
        <widget class="QPushButton" name="return_from_ajout_5">
         <property name="geometry">
          <rect>
-          <x>429</x>
-          <y>199</y>
+          <x>430</x>
+          <y>270</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -1414,24 +1466,11 @@ color:rgba(0,0,0,0);</string>
          <string>Undo</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_16">
-        <property name="geometry">
-         <rect>
-          <x>260</x>
-          <y>147</y>
-          <width>64</width>
-          <height>18</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Nom Film</string>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_17">
         <property name="geometry">
          <rect>
-          <x>260</x>
-          <y>173</y>
+          <x>262</x>
+          <y>246</y>
           <width>32</width>
           <height>18</height>
          </rect>
@@ -1443,8 +1482,8 @@ color:rgba(0,0,0,0);</string>
        <widget class="QPushButton" name="pushButton_19">
         <property name="geometry">
          <rect>
-          <x>341</x>
-          <y>199</y>
+          <x>342</x>
+          <y>270</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -1462,8 +1501,8 @@ color:rgba(0,0,0,0);</string>
        <widget class="QLabel" name="label_18">
         <property name="geometry">
          <rect>
-          <x>260</x>
-          <y>66</y>
+          <x>262</x>
+          <y>168</y>
           <width>112</width>
           <height>18</height>
          </rect>
@@ -1475,8 +1514,8 @@ color:rgba(0,0,0,0);</string>
        <widget class="QLabel" name="label_19">
         <property name="geometry">
          <rect>
-          <x>260</x>
-          <y>92</y>
+          <x>262</x>
+          <y>194</y>
           <width>88</width>
           <height>18</height>
          </rect>
@@ -1485,24 +1524,11 @@ color:rgba(0,0,0,0);</string>
          <string>Nb Personne</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="nom_film_2">
-        <property name="geometry">
-         <rect>
-          <x>378</x>
-          <y>147</y>
-          <width>126</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true"/>
-        </property>
-       </widget>
        <widget class="QDateEdit" name="date_res_2">
         <property name="geometry">
          <rect>
-          <x>400</x>
-          <y>170</y>
+          <x>380</x>
+          <y>246</y>
           <width>79</width>
           <height>18</height>
          </rect>
@@ -1511,9 +1537,9 @@ color:rgba(0,0,0,0);</string>
          <bool>false</bool>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(192,192,192); 
-selection-background-color: yellow;
-selection-color: black;</string>
+         <string notr="true">background-color:#FFCAD4;
+selection-background-color:#F3ABB6;
+selection-color:#FBEEE6;</string>
         </property>
         <property name="dateTime">
          <datetime>
@@ -1530,7 +1556,7 @@ selection-color: black;</string>
           <hour>23</hour>
           <minute>59</minute>
           <second>59</second>
-          <year>2020</year>
+          <year>2021</year>
           <month>12</month>
           <day>30</day>
          </datetime>
@@ -1547,7 +1573,7 @@ selection-color: black;</string>
         </property>
         <property name="maximumDate">
          <date>
-          <year>2020</year>
+          <year>2021</year>
           <month>12</month>
           <day>30</day>
          </date>
@@ -1566,7 +1592,7 @@ selection-color: black;</string>
          <bool>true</bool>
         </property>
         <property name="timeSpec">
-         <enum>Qt::TimeZone</enum>
+         <enum>Qt::LocalTime</enum>
         </property>
         <property name="date">
          <date>
@@ -1576,45 +1602,71 @@ selection-color: black;</string>
          </date>
         </property>
        </widget>
-       <widget class="QLineEdit" name="email_2">
+       <widget class="QLabel" name="label_25">
         <property name="geometry">
          <rect>
-          <x>378</x>
-          <y>120</y>
-          <width>126</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true"/>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="readOnly">
-         <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_24">
-        <property name="geometry">
-         <rect>
-          <x>260</x>
-          <y>120</y>
+          <x>262</x>
+          <y>220</y>
           <width>64</width>
           <height>18</height>
          </rect>
         </property>
         <property name="text">
-         <string>Email</string>
+         <string>Nom Film</string>
         </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_2">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>220</y>
+          <width>104</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>Mort Sur le Nill</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Black Widow</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Morbius</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Fast &amp; Furious 9</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Soul</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Respect</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Dune</string>
+         </property>
+        </item>
        </widget>
       </widget>
       <widget class="QWidget" name="Supprimer_Reservation_2">
        <widget class="QPushButton" name="pushButton_20">
         <property name="geometry">
          <rect>
-          <x>342</x>
-          <y>147</y>
+          <x>339</x>
+          <y>210</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -1632,8 +1684,8 @@ selection-color: black;</string>
        <widget class="QPushButton" name="pushButton_21">
         <property name="geometry">
          <rect>
-          <x>261</x>
-          <y>147</y>
+          <x>258</x>
+          <y>210</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -1651,8 +1703,8 @@ selection-color: black;</string>
        <widget class="QLabel" name="label_20">
         <property name="geometry">
          <rect>
-          <x>261</x>
-          <y>121</y>
+          <x>258</x>
+          <y>184</y>
           <width>111</width>
           <height>18</height>
          </rect>
@@ -1664,8 +1716,8 @@ selection-color: black;</string>
        <widget class="QPushButton" name="return_from_ajout_6">
         <property name="geometry">
          <rect>
-          <x>423</x>
-          <y>147</y>
+          <x>420</x>
+          <y>210</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -1683,8 +1735,8 @@ selection-color: black;</string>
        <widget class="QLineEdit" name="id_client_3">
         <property name="geometry">
          <rect>
-          <x>372</x>
-          <y>121</y>
+          <x>369</x>
+          <y>184</y>
           <width>126</width>
           <height>20</height>
          </rect>

@@ -12,7 +12,9 @@
 #include "smtp.h"
 #include <QRandomGenerator>
 #include <QRandomGenerator64>
-
+#include <QFileDialog>
+#include <QRandomGenerator>
+#include "random.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -76,7 +78,7 @@ private slots:
 
     void on_pushButton_4_clicked();
 
-    void on_pushButton_5_clicked();
+
 
     void on_pushButton_12_clicked();
 
@@ -86,7 +88,7 @@ private slots:
     void on_recherche_reservation_cursorPositionChanged();
 
     void sendMail();
-   // void mailSent(QString);
+
     void on_affichage_reservation_activated(const QModelIndex &index);
 
     void on_tableView_activated(const QModelIndex &index);
