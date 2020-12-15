@@ -15,18 +15,18 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->tableView->setModel(Etmp.afficher());
     ui->affichage_reservation->setModel(Etmp1.afficher_res());
-    setWindowIcon(QIcon("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/popcorn"));
+    setWindowIcon(QIcon(":/image/popcorn.png"));
 
-    QPixmap pixel ("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/logo");
+    QPixmap pixel (":/image/logo.png");
     ui->expertCode->setPixmap(pixel.scaled(200,50,Qt::KeepAspectRatio));
 
-    QPixmap pixel1 ("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/popcorn");
+    QPixmap pixel1 (":/image/popcorn.png");
     ui->Pathe->setPixmap(pixel1.scaled(200,100,Qt::KeepAspectRatio));
 
-    QPixmap pixel2 ("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/logo");
+    QPixmap pixel2 (":/image/logo.png");
     ui->expertCode_2->setPixmap(pixel.scaled(200,50,Qt::KeepAspectRatio));
 
-    QPixmap pixel3 ("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/popcorn");
+    QPixmap pixel3 (":/image/popcorn.png");
     ui->Pathe_2->setPixmap(pixel1.scaled(200,100,Qt::KeepAspectRatio));
 
     //animation pour logo pathé
@@ -92,11 +92,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->nb_personne_2->setValidator(new QIntValidator(0,99,this));
     ui->nb_ecrans_ajout->setValidator(new QIntValidator(0,999,this));
     connect(ui->pushButton_16, SIGNAL(clicked()),this, SLOT(sendMail()));
-    QPixmap bkgnd("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/background");
+    QPixmap bkgnd(":/image/background.png");
     bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(QPalette::Background, bkgnd);
     this->setPalette(palette);
+
+
 }
 
 MainWindow::~MainWindow()
@@ -203,7 +205,7 @@ void MainWindow::on_pushButton_13_clicked()
     QRandomGenerator generator;
     for(int i=0;i<1;++i){
         //  generator.seed();
-        int x = Random::get(10000000,20000000);
+        int x = Random::get(1000,9999);
         QString ra = QString::number(x);
         ui->id_reservation->setText(ra);
 
@@ -398,8 +400,9 @@ void MainWindow::sendMail()
     Smtp* smtp = new Smtp(ui->user->text(), ui->pwd->text(), ui->server->text(), ui->port->text().toInt());
 
     connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+QString msg ="Date De Reservation : "+ui->date_res->text();
+   smtp->sendMail(ui->user->text(), "roukaia.khelifi@esprit.tn", ui->subject->text(),msg);
 
-    smtp->sendMail(ui->user->text(), "roukaia.khelifi@esprit.tn", ui->subject->text(),"Date De Reservation : "+ui->date_res->text()+"\n"+"Nom Film : "+ui->comboBox->currentText());
 
 }
 void MainWindow::on_pushButton_16_clicked()
@@ -429,9 +432,7 @@ void MainWindow::on_pushButton_16_clicked()
         QMessageBox::information(nullptr,QObject::tr("OK"),
                                  QObject::tr("Ajouter Effectuer A QR Code Has been Sent.\n""Click cancel to exit"),QMessageBox::Cancel);
 
-
-
-    }
+ }
     else
     {
         QMessageBox::critical(nullptr,QObject::tr("NOT OK"),
@@ -444,9 +445,7 @@ void MainWindow::on_pushButton_21_clicked()
 {
     int id_client = ui->id_client_3->text().toInt();
     bool test= Etmp1.supprimer_res(id_client);
-
-
-    if(test){
+  if(test){
         QString m="";
         ui->id_client_3->setText(m);
 
@@ -565,4 +564,22 @@ void MainWindow::on_tableView_activated(const QModelIndex &index)
         }
 
     }
+}
+
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    int id_client =ui->lineEdit_2->text().toInt();
+    QSqlQuery query;
+    query.prepare("select *from reservation where id_client=:id_client");
+    query.bindValue(":id_client",id_client);
+    query.exec();
+    int row =0;
+    while(query.next()){
+row++;
+    }
+    if(row!=0){
+        QString ch =QString::number(row);
+        ui->lineEdit_3->setText(ch);
+}
 }

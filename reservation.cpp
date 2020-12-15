@@ -5,7 +5,7 @@ Reservation::Reservation()
 id_client=0;
 id_reservation=0;
 nb_personne=0;
-nomfilm="";
+//nomfilm="";
 date_r.currentDate();
 
 }

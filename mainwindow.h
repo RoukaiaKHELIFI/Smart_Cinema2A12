@@ -93,6 +93,11 @@ private slots:
 
     void on_tableView_activated(const QModelIndex &index);
 
+
+
+
+    void on_pushButton_5_clicked();
+
 private:
     Ui::MainWindow *ui;
     QPropertyAnimation *animation;

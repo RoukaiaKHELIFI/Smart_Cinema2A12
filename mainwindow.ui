@@ -30,7 +30,7 @@
      <enum>QTabWidget::Triangular</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Salle">
      <attribute name="title">
@@ -866,29 +866,37 @@ background-color: qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, st
          <string>TextLabel</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="x1_2">
+       <widget class="QLineEdit" name="lineEdit_2">
         <property name="geometry">
          <rect>
-          <x>240</x>
+          <x>180</x>
           <y>10</y>
-          <width>361</width>
-          <height>41</height>
+          <width>113</width>
+          <height>20</height>
          </rect>
         </property>
-        <property name="font">
-         <font>
-          <family>Terminal</family>
-          <pointsize>12</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_3">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>40</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
         </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgba(0, 0, 0, 0);
-border-color:rgba(0, 0, 0, 0);</string>
+       </widget>
+       <widget class="QPushButton" name="pushButton_5">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>10</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
         </property>
-        <property name="readOnly">
-         <bool>true</bool>
+        <property name="text">
+         <string>PushButton</string>
         </property>
        </widget>
       </widget>
@@ -1331,6 +1339,12 @@ color:rgba(0,0,0,0);</string>
           <width>104</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="editable">
+         <bool>false</bool>
+        </property>
+        <property name="currentText">
+         <string>Mort Sur Le Nil</string>
         </property>
         <item>
          <property name="text">
