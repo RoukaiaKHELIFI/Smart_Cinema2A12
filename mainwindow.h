@@ -1,0 +1,150 @@
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+#include"employe.h"
+#include"client.h"
+#include"carte_fidelite.h"
+#include"film.h"
+#include"ticket.h"
+#include <QMessageBox>
+#include <QMediaPlayer>
+#include "QTimer"
+#include <QMainWindow>
+#include<QIcon>
+#include <QPropertyAnimation>
+#include"salle.h"
+#include"reservation.h"
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
+
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
+
+private slots:
+    void on_AjouterClient_2_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_AjouterFilm_clicked();
+
+    void on_ModifierFilm_clicked();
+
+    void on_SupprimerFilm_clicked();
+
+    void on_refresh_clicked();
+
+    void on_recherche_cursorPositionChanged(int arg1, int arg2);
+
+    void on_radioButton_clicked();
+
+    void on_radioButton_2_clicked();
+
+    void on_radioButton_3_clicked();
+
+    void on_radioButton_4_clicked();
+
+    void on_Close_2_clicked();
+
+    void on_returnF_clicked();
+
+    void on_ajouterTicket_clicked();
+
+    void on_ModifierTicket_clicked();
+
+    void on_SupprimerTicket_clicked();
+
+    void on_refreshT_clicked();
+
+    void on_recherchecase_2_cursorPositionChanged(int arg1, int arg2);
+
+    void on_Close_ticket_clicked();
+
+    void on_returnTick_clicked();
+
+    void on_Close_ticket_2_clicked();
+
+    void on_AfficherFilmTable_activated(const QModelIndex &index);
+
+    void on_AfficherTicketTable_activated(const QModelIndex &index);
+
+    void on_ajouterClient_clicked();
+
+    void on_modifierClient_clicked();
+
+    void on_AfficherClient_activated(const QModelIndex &index);
+
+    void on_SupprimerClient_clicked();
+
+    void refraiche();
+
+    void Afficher_Client_Table2();
+    void Afficher_Carte_Table();
+    void Afficher_Client_Table();
+    void on_ajouter_carte_clicked();
+
+    void on_filtrerClient_clicked();
+
+    void on_recherchecase_3_cursorPositionChanged(int arg1, int arg2);
+
+    void on_refresh_2_clicked();
+
+    void on_closeClient_clicked();
+
+    void on_SupprimerCarte_clicked();
+
+    void on_modifier_carte_clicked();
+
+    void on_refrech2_clicked();
+
+    void on_AfficheCarteFidelite_2_activated(const QModelIndex &index);
+
+    void on_AfficherClient2_activated(const QModelIndex &index);
+
+    void on_recherchecase_4_cursorPositionChanged(int arg1, int arg2);
+
+    void on_recherchecase_5_cursorPositionChanged(int arg1, int arg2);
+
+    void on_close_2_clicked();
+
+    void on_return_2_clicked();
+
+    void on_return_ticket_clicked();
+
+    void on_Return2_clicked();
+
+    void on_triperso_2_clicked();
+
+    void on_trier_clicked();
+
+    void on_triperso_clicked();
+
+    void on_trier_client_clicked();
+
+    void on_triperso_3_clicked();
+
+    void on_pushButton_3_clicked();
+
+private:
+    Ui::MainWindow *ui;
+    client tmpc;
+    carte_fidelite tmpf;
+    QPropertyAnimation *animation;
+    Film tmpF;
+    Ticket empc;
+    QPropertyAnimation *animation2;
+    QPropertyAnimation *animation1;
+    QMediaPlayer *musicConect=new QMediaPlayer;
+    Salle Etmp;
+    Reservation Etmp1;
+
+
+};
+#endif // MAINWINDOW_H

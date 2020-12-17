@@ -1,0 +1,1115 @@
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include"employe.h"
+#include"client.h"
+#include"carte_fidelite.h"
+#include"film.h"
+#include"ticket.h"
+#include <QMessageBox>
+#include <QMediaPlayer>
+#include "QTimer"
+#include <QMainWindow>
+#include <QPixmap>
+#include <QIcon>
+#include<QPropertyAnimation>
+#include "salle.h"
+#include "reservation.h"
+#include <QSqlTableModel>
+#include "smtp.h"
+#include <QRandomGenerator>
+#include <QRandomGenerator64>
+#include <QFileDialog>
+#include <QRandomGenerator>
+#include "random.h"
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+{
+    //**********meriem***********
+    ui->setupUi(this);
+    ui->stackedWidget->setCurrentIndex(0);
+    ui->paiment->setVisible(false);
+    ui->label_28->setVisible(false);
+
+        ui->AfficherFilmTable->setModel(tmpF.afficher_film());
+        ui->AfficherTicketTable->setModel(empc.afficher_ticket());
+        //selection d'une ligne
+            ui->AfficherTicketTable->resizeColumnsToContents();
+            ui->AfficherTicketTable->resizeRowsToContents();
+            ui->AfficherTicketTable->setSelectionBehavior(QAbstractItemView::SelectRows);
+            ui->AfficherTicketTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
+            ui->AfficherTicketTable->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+            //selection d'une ligne
+                ui->AfficherFilmTable->resizeColumnsToContents();
+                ui->AfficherFilmTable->resizeRowsToContents();
+                ui->AfficherFilmTable->setSelectionBehavior(QAbstractItemView::SelectRows);
+                ui->AfficherFilmTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
+                ui->AfficherFilmTable->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+
+       //***********sinda*************
+                ui->tabWidget->setTabText(2,"Statistique");
+                ui->AfficherClient->setModel(tmpc.afficher_client());
+                //Afficher_Client_Table();//fn selection
+                ui->AfficherClient2->setModel(tmpc.afficher_client());
+                //Afficher_Client_Table2();//fn selection
+
+                ui->AfficheCarteFidelite_2->setModel(tmpf.afficher_cartefidelite());
+               // Afficher_Carte_Table();
+                ui->id_client_2->setVisible(false);
+                ui->id_carte->setVisible(false);
+                ui->id_client->setVisible(false);
+                ui->cin_client_ajouter->setValidator(new QIntValidator(0,99999999,this));
+                ui->telephone_ajouter->setValidator(new QIntValidator(0,99999999,this));
+
+                setWindowIcon(QIcon("C:/Users/sinda/Documents/ProjetQT_Image/popcornicon"));
+                //annimation
+                QPixmap pixel ("C:/Users/sinda/Documents/ProjetQT_Image/popcornicon");
+                ui->icon_2->setPixmap(pixel.scaled(200,100,Qt::KeepAspectRatio));
+                int w= ui->icon_2->width();
+                int h=ui->icon_2->height();
+
+                animation=new QPropertyAnimation(ui->icon_2,"geometry");
+                animation->setDuration(1999);
+                animation->setStartValue(ui->icon_2->geometry());
+                animation->setEndValue(QRect(1180,20,w,h));
+                animation->setLoopCount(-1);
+                animation->start();
+
+
+               //matkhalikech tekteb fel carte fidelite
+                ui->cin_client_ajouter_2->setEnabled(false);
+                ui->nom_ajouter_2->setEnabled(false);
+                ui->prenom_ajouter_2->setEnabled(false);
+                ui->telephone_ajouter_2->setEnabled(false);
+                ui->adresse_ajouter_2->setEnabled(false);
+                ui->mail_ajouter_2->setEnabled(false);
+
+        // ***********  salle*******************
+                ui->tableView->setModel(Etmp.afficher());
+                ui->affichage_reservation->setModel(Etmp1.afficher_res());
+                setWindowIcon(QIcon("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/popcorn"));
+
+                QPixmap pixel4 ("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/logo");
+                ui->expertCode->setPixmap(pixel4.scaled(200,50,Qt::KeepAspectRatio));
+
+                QPixmap pixel1 ("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/popcorn");
+                ui->Pathe->setPixmap(pixel1.scaled(200,100,Qt::KeepAspectRatio));
+
+                QPixmap pixel2 ("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/logo");
+                ui->expertCode_2->setPixmap(pixel4.scaled(200,50,Qt::KeepAspectRatio));
+
+                QPixmap pixel3 ("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/popcorn");
+                ui->Pathe_2->setPixmap(pixel1.scaled(200,100,Qt::KeepAspectRatio));
+
+                //animation pour logo pathé
+                int w3=ui->Pathe_2->width();
+                int h3=ui->Pathe_2->height();
+
+                animation2 = new QPropertyAnimation(ui->Pathe_2,"geometry");
+                animation2->setDuration(1999);
+                animation2->setStartValue(ui->Pathe_2->geometry());
+
+                animation2->setEndValue(QRect(600,20,w3,h3));
+                animation2->setLoopCount(-1);
+                animation2->start();
+
+                //animation pour expert_code
+                int w1=ui->expertCode_2->width();
+                int h1=ui->expertCode_2->height();
+
+                animation1 = new QPropertyAnimation(ui->expertCode_2,"geometry");
+                animation1->setDuration(1999);
+                animation1->setStartValue(ui->expertCode_2->geometry());
+                animation1->setEndValue(QRect(600,300,w1,h1));
+
+                animation1->setLoopCount(-1);
+                animation1->start();
+                //animation pour logo pathé
+                int w0=ui->Pathe->width();
+                int h0=ui->Pathe->height();
+
+                animation2 = new QPropertyAnimation(ui->Pathe,"geometry");
+                animation2->setDuration(1999);
+                animation2->setStartValue(ui->Pathe->geometry());
+
+                animation2->setEndValue(QRect(600,20,w0,h0));
+                animation2->setLoopCount(-1);
+                animation2->start();
+
+                //animation pour expert_code
+                int w2=ui->expertCode->width();
+                int h2=ui->expertCode->height();
+
+                animation1 = new QPropertyAnimation(ui->expertCode,"geometry");
+                animation1->setDuration(1999);
+                animation1->setStartValue(ui->expertCode->geometry());
+                animation1->setEndValue(QRect(600,300,w2,h2));
+
+                animation1->setLoopCount(-1);
+                animation1->start();
+                //Controle De saisie
+                //ui->nm_salle_ajout->setValidator(new QIntValidator(0,999,this));
+                ui->nm_salle_modif->setValidator(new QIntValidator(0,999,this));
+                ui->nm_salle_supp->setValidator(new QIntValidator(0,999,this));
+                ui->nb_chaise_ajout->setValidator(new QIntValidator(0,999,this));
+                ui->nb_chaise_modif->setValidator(new QIntValidator(0,999,this));
+                ui->nb_baffles_ajout->setValidator(new QIntValidator(0,999,this));
+                ui->nb_baffles_modif->setValidator(new QIntValidator(0,999,this));
+                ui->id_client->setValidator(new QIntValidator(0,99999999,this));
+                ui->id_client_2->setValidator(new QIntValidator(0,99999999,this));
+                ui->id_client_3->setValidator(new QIntValidator(0,99999999,this));
+                ui->id_reservation->setValidator(new QIntValidator(0,99999999,this));
+                ui->id_reservation_2->setValidator(new QIntValidator(0,99999999,this));
+                ui->nb_personne->setValidator(new QIntValidator(0,99,this));
+                ui->nb_personne_2->setValidator(new QIntValidator(0,99,this));
+                ui->nb_ecrans_ajout->setValidator(new QIntValidator(0,999,this));
+                connect(ui->pushButton_16, SIGNAL(clicked()),this, SLOT(sendMail()));
+               // QPixmap bkgnd("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/background");
+              //  bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+              //  QPalette palette;
+               // palette.setBrush(QPalette::Background, bkgnd);
+               // this->setPalette(palette);
+
+
+}
+
+
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+
+
+void MainWindow::on_AjouterClient_2_clicked()
+{
+    //*********************login***************
+    employe c;
+    c.setLogin(ui->lineEdit->text());
+    c.setPassword(ui->lineEdit_2->text());
+client cli;
+    if (cli.existe_emp(c))
+    {
+      ui->stackedWidget->setCurrentIndex(1);
+    }
+    else
+    {
+    QMessageBox::information(this,"erreur","verifier votre adresse ou mod de passe ");
+    }
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+}
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+//*****************fim ticket*****************
+void MainWindow::on_AjouterFilm_clicked()
+{
+    Film f(ui->id_film->text().toInt(),ui->nom_film->text(),ui->realisateur->text(),
+                       ui->nationalite->currentText(),ui->date_sortie->date(),ui->disponibilite->date(),
+                       ui->categorie->currentText());
+               f.ajouter_film();
+
+               ui->AfficherFilmTable->setModel(tmpF.afficher_film());
+
+               QMediaPlayer *player= new QMediaPlayer;
+                   player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
+                      player->play();
+                      player->setVolume(1000);
+                      ui->id_film->setText("");
+                      ui->nom_film->setText("");
+                      ui->realisateur->setText("");
+                      ui->nationalite->setCurrentText("");
+                      ui->categorie->setCurrentText("");
+}
+
+
+void MainWindow::on_ModifierFilm_clicked()
+{
+    QString idf=ui->id_film->text();
+    Film *tmpCl=new Film();
+    tmpCl->setid_film(ui->id_film->text().toInt());
+    tmpCl->setnom_film(ui->nom_film->text());
+    tmpCl->setrealisateur(ui->realisateur->text());
+    tmpCl->setnationalite(ui->nationalite->currentText());
+    tmpCl->setdate_sortie(ui->date_sortie->date());
+    tmpCl->setdisponibilite(ui->disponibilite->date());
+    tmpCl->setcategories(ui->categorie->currentText());
+
+
+
+
+        QString str = " Vous voulez vraiment modifier le film ayant le id :"+ ui->id_film->text();
+             int ret = QMessageBox::question(this, tr("modification"),str,QMessageBox::Ok|QMessageBox::Cancel);
+             switch (ret) {
+               case QMessageBox::Ok:
+
+                   //  tmpCl->setid_film(ui->id_film->text().toInt());
+
+                   if (tmpCl->modifier_film()){
+
+                           ui->AfficherFilmTable->setModel(tmpF.afficher_film());
+                           ui->id_film->setText("");
+                           ui->nom_film->setText("");
+                           ui->realisateur->setText("");
+                           ui->nationalite->setCurrentText("");
+                           ui->categorie->setCurrentText("");
+
+                           //Afficher_Film_Table();
+
+                   }break;
+               case QMessageBox::Cancel:
+
+                   break;
+               default:
+                   // should never be reached
+                   break;
+             }
+             QMediaPlayer *player= new QMediaPlayer;
+                 player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
+                    player->play();
+                    player->setVolume(1000);
+}
+
+void MainWindow::on_SupprimerFilm_clicked()
+{
+    QItemSelectionModel *select=ui->AfficherFilmTable->selectionModel();
+        QString idd=select->selectedRows(0).value(0).data().toString();
+        Film *tmpCl=new Film();
+
+            QString str = " Vous voulez vraiment supprimer \n le film  ayant le id :"+ ui->id_film->text();
+                 int ret = QMessageBox::question(this, tr("suppression"),str,QMessageBox::Ok|QMessageBox::Cancel);
+                 switch (ret) {
+                   case QMessageBox::Ok:
+
+                      tmpCl->setid_film(ui->id_film->text().toInt());
+                       if (tmpCl->supprimer_film()){
+
+                               ui->AfficherFilmTable->setModel(tmpF.afficher_film());
+                       }break;
+                   case QMessageBox::Cancel:
+
+                       break;
+                   default:
+                       // should never be reached
+                       break;
+                 }
+                 QMediaPlayer *player= new QMediaPlayer;
+                     player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
+                        player->play();
+                        player->setVolume(1000);
+                        ui->id_film->setText("");
+                        ui->nom_film->setText("");
+                        ui->realisateur->setText("");
+                        ui->nationalite->setCurrentText("");
+                        ui->categorie->setCurrentText("");
+
+}
+
+void MainWindow::on_refresh_clicked()
+{
+    QMediaPlayer *player= new QMediaPlayer;
+           player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
+              player->play();
+              player->setVolume(1000);
+
+           ui->id_film->setText("");
+           ui->nom_film->setText("");
+           ui->realisateur->setText("");
+           ui->nationalite->setCurrentText("");
+           ui->categorie->setCurrentText("");
+}
+
+void MainWindow::on_recherche_cursorPositionChanged(int arg1, int arg2)
+{
+    Film f;
+        ui->AfficherFilmTable->setModel(f.rechercher_film(ui->recherche->text()));
+        f.afficher_film();
+
+}
+
+void MainWindow::on_radioButton_clicked()
+{
+    ui->AfficherFilmTable->setModel(tmpF.trier_film());
+
+}
+
+void MainWindow::on_radioButton_2_clicked()
+{
+    ui->AfficherFilmTable->setModel(tmpF.trier_film_r());
+}
+
+void MainWindow::on_radioButton_3_clicked()
+{
+     ui->AfficherFilmTable->setModel(tmpF.trier_film_n());
+}
+
+void MainWindow::on_radioButton_4_clicked()
+{
+     ui->AfficherFilmTable->setModel(tmpF.trier_film_c());
+}
+
+void MainWindow::on_Close_2_clicked()
+{
+    close();
+}
+
+void MainWindow::on_returnF_clicked()
+{
+  ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_ajouterTicket_clicked()
+{
+    Ticket t(ui->id_ticket->text().toInt(),ui->Id_film_ticket->text(),ui->prix_ticket->text(),
+                       ui->salles->currentText(),ui->paiment->currentText(),ui->id_carte->text().toInt(),ui->nomfilm->text(),ui->id_client->text().toInt());
+              t.ajouter_ticket();
+              ui->AfficherTicketTable->setModel(empc.afficher_ticket());
+
+              carte_fidelite cf(ui->id_carte->text().toInt(),0,0,0);
+
+              cf.modifier_cartefidelite();//FC MODIFIER
+
+               QMediaPlayer *player= new QMediaPlayer;
+                   player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
+                      player->play();
+                      player->setVolume(1000) ;
+}
+
+void MainWindow::on_ModifierTicket_clicked()
+{
+    QMediaPlayer *player= new QMediaPlayer;
+            player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
+               player->play();
+               player->setVolume(1000);
+
+        QString idt=ui->Id_film_ticket->text();
+        Ticket *tmpTi=new Ticket();
+        tmpTi->setid_ticket(ui->id_ticket->text().toInt());
+        tmpTi->setid_film(ui->Id_film_ticket->text());
+        tmpTi->setprix(ui->prix_ticket->text());
+        tmpTi->setsalle(ui->salles->currentText());
+        tmpTi->settype_paiment(ui->paiment->currentText());
+        tmpTi->setid_carte(ui->id_carte->text().toInt());
+        tmpTi->setnom_film(ui->nomfilm->text());
+        tmpTi->setid_client(ui->id_client->text().toInt());
+
+
+            QString str = " Vous voulez vraiment modifier le ticket ayant le id :"+ ui->id_ticket->text();
+                 int ret = QMessageBox::question(this, tr("modification"),str,QMessageBox::Ok|QMessageBox::Cancel);
+                 switch (ret) {
+                   case QMessageBox::Ok:
+
+                       if (tmpTi->modifier_ticket()){
+
+
+                               ui->AfficherTicketTable->setModel(empc.afficher_ticket());
+
+
+                       }break;
+                 case QMessageBox::Cancel:
+
+                     break;
+                 default:
+                     // should never be reached
+                     break;
+               }
+               ui->id_ticket->setText("");
+               ui->Id_film_ticket->setText("");
+               ui->prix_ticket->setText("");
+               ui->salles->setCurrentText("");
+               ui->paiment->setCurrentText("");
+               ui->id_carte->setText("");
+               ui->nomfilm->setText("");
+               ui->id_client->setText("");
+}
+
+void MainWindow::on_SupprimerTicket_clicked()
+{
+    QItemSelectionModel *select=ui->AfficherTicketTable->selectionModel();
+        QString idd=select->selectedRows(0).value(0).data().toString();
+        Ticket *tmpCl=new Ticket();
+
+            QString str = " Vous voulez vraiment supprimer \n ticket  ayant le id :"+ ui->id_ticket->text();
+                 int ret = QMessageBox::question(this, tr("suppression"),str,QMessageBox::Ok|QMessageBox::Cancel);
+                 switch (ret) {
+                   case QMessageBox::Ok:
+
+                      tmpCl->setid_ticket(ui->id_ticket->text().toInt());
+                       if (tmpCl->supprimer_ticket()){
+
+                               ui->AfficherTicketTable->setModel(empc.afficher_ticket());
+                       }break;
+                   case QMessageBox::Cancel:
+
+                       break;
+                   default:
+                       // should never be reached
+                       break;
+                 }
+                 QMediaPlayer *player= new QMediaPlayer;
+                     player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
+                        player->play();
+                        player->setVolume(1000);
+}
+
+void MainWindow::on_refreshT_clicked()
+{
+    QMediaPlayer *player= new QMediaPlayer;
+            player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
+               player->play();
+               player->setVolume(1000);
+
+        ui->id_ticket->setText("");
+        ui->Id_film_ticket->setText("");
+        ui->prix_ticket->setText("");
+        ui->salles->setCurrentText("");
+        ui->paiment->setCurrentText("");
+        ui->id_carte->setText("");
+        ui->nomfilm->setText("");
+        ui->id_client->setText("");
+}
+
+void MainWindow::on_recherchecase_2_cursorPositionChanged(int arg1, int arg2)
+{
+    Ticket t;
+        ui->AfficherTicketTable->setModel(t.rechercher_ticket(ui->recherche->text()));
+        t.afficher_ticket();
+
+}
+
+void MainWindow::on_Close_ticket_clicked()
+{
+    close();
+}
+
+
+void MainWindow::on_returnTick_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_Close_ticket_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+}
+
+void MainWindow::on_AfficherFilmTable_activated(const QModelIndex &index)
+{
+    QMediaPlayer *player= new QMediaPlayer;
+            player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
+               player->play();
+               player->setVolume(1000);
+
+        QString ch=ui->AfficherFilmTable->model()->data(index).toString();
+            QSqlQuery query;
+            query.prepare("select * from film where id_film ='"+ch+"'");
+            if(query.exec()){
+                while(query.next()){
+
+                    ui->id_film->setText(query.value(0).toString());
+                    ui->nom_film->setText(query.value(1).toString());
+                    ui->realisateur->setText(query.value(2).toString());
+                    ui->nationalite->setCurrentText(query.value(3).toString());
+                    ui->date_sortie->setDate(query.value(4).toDate());
+                    ui->disponibilite->setDate(query.value(5).toDate());
+                    ui->categorie->setCurrentText(query.value(6).toString());
+
+                }
+            }
+}
+
+void MainWindow::on_AfficherTicketTable_activated(const QModelIndex &index)
+{
+    QMediaPlayer *player= new QMediaPlayer;
+            player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
+               player->play();
+               player->setVolume(1000);
+
+        QString ch=ui->AfficherTicketTable->model()->data(index).toString();
+            QSqlQuery query;
+            query.prepare("select * from ticket where id_ticket ='"+ch+"'");
+            if(query.exec()){
+                while(query.next()){
+
+                    ui->id_ticket->setText(query.value(0).toString());
+                    ui->Id_film_ticket->setText(query.value(1).toString());
+                    ui->prix_ticket->setText(query.value(2).toString());
+                    ui->salles->setCurrentText(query.value(3).toString());
+                    ui->paiment->setCurrentText(query.value(4).toString());
+                    ui->id_carte->setText(query.value(5).toString());
+                    ui->nomfilm->setText(query.value(6).toString());
+                    ui->id_client->setText(query.value(7).toString());
+
+                }
+            }
+}
+
+//****************client carte********************
+
+//selection de toute une ligne tab client
+void MainWindow::Afficher_Client_Table(){
+   ui->AfficherClient->resizeColumnsToContents();
+   ui->AfficherClient->resizeRowsToContents();
+   ui->AfficherClient->setSelectionBehavior(QAbstractItemView::SelectRows);
+   ui->AfficherClient->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
+   ui->AfficherClient->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+}
+//selection de toute une ligne tab carte
+void MainWindow::Afficher_Carte_Table(){
+   ui->AfficheCarteFidelite_2->resizeColumnsToContents();
+   ui->AfficheCarteFidelite_2->resizeRowsToContents();
+   ui->AfficheCarteFidelite_2->setSelectionBehavior(QAbstractItemView::SelectRows);
+   ui->AfficheCarteFidelite_2->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
+   ui->AfficheCarteFidelite_2->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+}
+//selection de toute une ligne tab client 2
+void MainWindow::Afficher_Client_Table2(){
+   ui->AfficherClient2->resizeColumnsToContents();
+   ui->AfficherClient2->resizeRowsToContents();
+   ui->AfficherClient2->setSelectionBehavior(QAbstractItemView::SelectRows);
+   ui->AfficherClient2->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
+   ui->AfficherClient2->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+}
+
+void MainWindow::refraiche()
+{
+    ui->id_client->setText("");
+    ui->cin_client_ajouter->setText("");
+    ui->genre_ajouter->setCurrentIndex(0);
+    ui->nom_ajouter->setText("");
+    ui->prenom_ajouter->setText("");
+    ui->etatcivil_ajouter->setCurrentIndex(0);
+    ui->telephone_ajouter->setText("");
+    ui->mail_ajouter->setText("");
+    ui->fontion_ajouter->setCurrentIndex(0);
+    ui->adresse_ajouter->setText("");
+    ui->id_client_2->setText("");
+    ui->cin_client_ajouter_2->setText("");
+    ui->nom_ajouter_2->setText("");
+    ui->prenom_ajouter_2->setText("");
+    ui->telephone_ajouter_2->setText("");
+    ui->adresse_ajouter_2->setText("");
+    ui->mail_ajouter_2->setText("");
+    ui->AfficherClient->setModel(tmpc.afficher_client());
+    ui->AfficheCarteFidelite_2->setModel(tmpf.afficher_cartefidelite());
+    ui->AfficherClient2->setModel(tmpc.afficher_client());
+    Afficher_Client_Table();
+    Afficher_Client_Table2();
+    Afficher_Carte_Table();
+    ui->id_client->setText("");
+    ui->id_carte->setText("");
+    ui->id_client_2->setText("");
+}
+void MainWindow::on_ajouterClient_clicked()
+{
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
+       player->play();
+       player->setVolume(1000);
+
+    client c(ui->cin_client_ajouter->text().toInt(),ui->nom_ajouter->text(),ui->prenom_ajouter->text(),ui->dateNaissance_ajouter->date(),
+             ui->telephone_ajouter->text().toInt(),ui->fontion_ajouter->currentText(),ui->adresse_ajouter->text()
+             ,QDate::currentDate(),ui->mail_ajouter->text(),ui->genre_ajouter->currentText(),ui->etatcivil_ajouter->currentText());
+
+    if (c.controle_saisie() == "")
+    {
+
+   QString str = " Vous voulez vraiment ajouter ce client:" ;
+            int ret = QMessageBox::question(this, tr("ajout"),str,QMessageBox::Ok|QMessageBox::Cancel);
+
+            switch (ret) {
+              case QMessageBox::Ok:
+            { if(c.getCin()==0 )//SI ELEVE
+                {
+                   if(! c.existe_client_tel() )
+                       {     c.ajouter_client();
+                          ui->AfficherClient->setModel(tmpc.afficher_client());
+                          refraiche();
+                       }
+                   else
+                       {
+                          QMessageBox::critical(this,tr("erreure")," num tel existe !!");
+                       }
+
+                }
+              else//mehouch eleve
+                {
+                    if (! c.existe_client_cin() && ! c.existe_client_tel() )
+                    {
+                        c.ajouter_client();
+                        ui->AfficherClient->setModel(tmpc.afficher_client());
+                        refraiche();
+                    }
+                    else
+                    {
+                        QMessageBox::critical(this,"/n erreure","/n cin exite ou num tel existe !!");
+                    }
+                }
+            }
+                     break;
+              case QMessageBox::Cancel:
+
+                  break;
+              default:
+                  // should never be reached
+                  break;
+
+            }}
+    else {
+        QMessageBox::critical(this,"erreure",c.controle_saisie());
+    }
+
+}
+
+void MainWindow::on_modifierClient_clicked()
+{
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
+       player->play();
+       player->setVolume(1000);
+    QString idd=ui->id_client->text();
+    client *tmpCl=new client();
+    tmpCl->setId(ui->id_client->text().toInt());
+    tmpCl->setCin(ui->cin_client_ajouter->text().toInt());
+    tmpCl->setNom(ui->nom_ajouter->text());
+    tmpCl->setPrenom(ui->prenom_ajouter->text());
+    tmpCl->setDate_naissance(ui->dateNaissance_ajouter->date());
+    tmpCl->setNumTel(ui->telephone_ajouter->text().toInt());
+    tmpCl->setFonction(ui->fontion_ajouter->currentText());
+    tmpCl->setAdresse(ui->adresse_ajouter->text());
+    tmpCl->setMail_client(ui->mail_ajouter->text());
+    tmpCl->setGenre(ui->genre_ajouter->currentText());
+    tmpCl->setEtat_civil(ui->etatcivil_ajouter->currentText());
+    if (idd=="")
+    { QMessageBox::information(this,"non existe"," id not selected");}
+    else
+       {if (tmpCl->controle_saisie() == "")//pas de message
+        {
+        QString str = " Vous voulez vraiment modifier le client ayant le id :"+ ui->id_client->text();
+             int ret = QMessageBox::question(this, tr("modification"),str,QMessageBox::Ok|QMessageBox::Cancel);
+             switch (ret) {
+               case QMessageBox::Ok:
+
+                   if (tmpCl->modifier_client()){
+
+                           ui->AfficherClient->setModel(tmpc.afficher_client());
+                           Afficher_Client_Table();
+                           refraiche();
+                   }break;
+               case QMessageBox::Cancel:
+
+                   break;
+               default:
+                   // should never be reached
+                   break;
+             }
+       }
+        else
+        {
+            QMessageBox::information(this,"erreure",tmpCl->controle_saisie());
+        }
+
+    }
+}
+//tab to input
+void MainWindow::on_AfficherClient_activated(const QModelIndex &index)
+{
+    QString l=ui->AfficherClient->selectionModel()->selectedIndexes().at(0).data().toString();
+    ui->id_client->setText(l);
+
+    l=ui->AfficherClient->selectionModel()->selectedIndexes().at(1).data().toString();
+    ui->cin_client_ajouter->setText(l);
+
+    l=ui->AfficherClient->selectionModel()->selectedIndexes().at(2).data().toString();
+    ui->nom_ajouter->setText(l);
+
+    l=ui->AfficherClient->selectionModel()->selectedIndexes().at(3).data().toString();
+    ui->prenom_ajouter->setText(l);
+
+    l=ui->AfficherClient->selectionModel()->selectedIndexes().at(4).data().toString();
+  //ui->dateNaissance->setDate(l);//->setDate("dd-mm-yyyy");
+
+    l=ui->AfficherClient->selectionModel()->selectedIndexes().at(5).data().toString();
+    ui->telephone_ajouter->setText(l);
+
+    l=ui->AfficherClient->selectionModel()->selectedIndexes().at(6).data().toString();
+    if(l=="Eleve")
+    {ui->fontion_ajouter->setCurrentIndex(1);}
+    else
+    {  if(l=="Etudiant(e)")
+     ui->fontion_ajouter->setCurrentIndex(2);
+        else
+        {  if(l=="Employe(e)")
+         ui->fontion_ajouter->setCurrentIndex(3);
+            else
+            {  if(l=="Retraite(e)")
+             ui->fontion_ajouter->setCurrentIndex(4);
+                else
+                {  if(l=="Chomeur(e)")
+                 ui->fontion_ajouter->setCurrentIndex(5);
+        }}}}
+
+    l=ui->AfficherClient->selectionModel()->selectedIndexes().at(7).data().toString();
+    ui->adresse_ajouter->setText(l);
+
+    //l=ui->AfficherClientTable->selectionModel()->selectedIndexes().at(8).data().toString();
+    //ui->datecreation->setText(l);
+
+    l=ui->AfficherClient->selectionModel()->selectedIndexes().at(9).data().toString();
+    ui->mail_ajouter->setText(l);
+
+    l=ui->AfficherClient->selectionModel()->selectedIndexes().at(10).data().toString();
+    if(l=="Femme")
+    {ui->genre_ajouter->setCurrentIndex(1);}
+    else
+    {  if(l=="Homme")
+     ui->genre_ajouter->setCurrentIndex(2); }
+
+
+    l=ui->AfficherClient->selectionModel()->selectedIndexes().at(11).data().toString();
+    if(l=="Marie(e)")
+    {ui->etatcivil_ajouter->setCurrentIndex(2);}
+    else
+    {  if(l=="Celibataire")
+     ui->etatcivil_ajouter->setCurrentIndex(1); }
+}
+
+void MainWindow::on_SupprimerClient_clicked()
+{
+    //sound
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
+       player->play();
+       player->setVolume(1000);
+
+    QString idd=ui->id_client->text();
+    client *tmpCl=new client();
+    if (idd=="")
+    { QMessageBox::information(this,"non existe","id n'existe pas");}
+    else
+       {
+        QString str = " Vous voulez vraiment supprimer \n l client ayant le id :"+ ui->id_client->text();
+             int ret = QMessageBox::question(this, tr("suppression"),str,QMessageBox::Ok|QMessageBox::Cancel);
+             switch (ret) {
+               case QMessageBox::Ok:
+
+                  tmpCl->setId(ui->id_client->text().toInt());
+                   if (tmpCl->supprimer_client()){
+
+                           ui->AfficherClient->setModel(tmpc.afficher_client());
+                           Afficher_Client_Table();
+                           refraiche();
+                   }break;
+               case QMessageBox::Cancel:
+
+                   break;
+               default:
+                   // should never be reached
+                   break;
+             }
+       }
+}
+
+void MainWindow::on_ajouter_carte_clicked()
+{
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
+       player->play();
+       player->setVolume(1000);
+    QString idd=ui->id_client_2->text();
+
+    if (idd=="")
+    { QMessageBox::information(this,"non existe","selectionner un client");}
+    else{
+    carte_fidelite c(ui->id_client_2->text().toInt(),QDate::currentDate(),100,0);
+
+   QString str = " Vous voulez vraiment ajouter cette carte fidelite:" ;
+            int ret = QMessageBox::question(this, tr("Ajout"),str,QMessageBox::Ok|QMessageBox::Cancel);
+
+            switch (ret) {
+              case QMessageBox::Ok:
+            {
+               if(! c.existe_carte() )
+                   {    c.ajouter_cartefidelite();
+                   ui->AfficheCarteFidelite_2->setModel(tmpf.afficher_cartefidelite());
+                   refraiche();
+                   }
+               else
+                   {
+                      QMessageBox::critical(this,tr("erreur")," carte fidelite existe !!");
+                   }
+
+            }
+                     break;
+              case QMessageBox::Cancel:
+
+                  break;
+              default:
+                  // should never be reached
+                  break;
+
+            }
+}
+}
+
+void MainWindow::on_filtrerClient_clicked()
+{
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
+       player->play();
+       player->setVolume(1000);
+
+    if (ui->genre_filtre->currentText() == "" & ui->fonction_filtre->currentText() == "" & ui->Etat_civil_filtre->currentText() == "")
+    {
+        QMessageBox::information(this,"erreur"," aucun champs a filtrer");
+
+    }
+    else
+    {
+     client v;
+     ui->AfficherClient->setModel(v.filtre(ui->genre_filtre->currentText(),ui->fonction_filtre->currentText(),ui->Etat_civil_filtre->currentText()));
+     Afficher_Client_Table();
+    }
+}
+
+void MainWindow::on_recherchecase_3_cursorPositionChanged(int arg1, int arg2)
+{
+    client v;
+    ui->AfficherClient->setModel(v.rechercher_existe(ui->recherchecase_3->text()));
+    Afficher_Client_Table();
+}
+
+void MainWindow::on_refresh_2_clicked()
+{
+    refraiche();
+}
+
+void MainWindow::on_closeClient_clicked()
+{
+    close();
+}
+
+void MainWindow::on_SupprimerCarte_clicked()
+{
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
+       player->play();
+       player->setVolume(1000);
+
+    QString idd=ui->id_carte->text();
+    carte_fidelite *tmpcf=new carte_fidelite();
+    if (idd=="")
+    { QMessageBox::information(this,"non existe","id n'existe pas");}
+    else
+       {
+        QString str = " Vous voulez vraiment supprimer \n l carte ayant le id :"+ ui->id_carte->text();
+             int ret = QMessageBox::question(this, tr("suppression"),str,QMessageBox::Ok|QMessageBox::Cancel);
+             switch (ret) {
+               case QMessageBox::Ok:
+
+                  tmpcf->setId_client(ui->id_client_2->text().toInt());
+                  if (tmpcf->supprimer_cartefidelite_id_client())
+                   {
+                           ui->AfficheCarteFidelite_2->setModel(tmpf.afficher_cartefidelite());
+                           Afficher_Carte_Table();
+                           refraiche();
+                   }break;
+               case QMessageBox::Cancel:
+
+                   break;
+               default:
+                   // should never be reached
+                   break;
+             }
+       }
+}
+
+void MainWindow::on_modifier_carte_clicked()
+{
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
+       player->play();
+       player->setVolume(1000);
+
+    QString idd=ui->id_client_2->text();
+
+    if (idd=="")
+    { QMessageBox::information(this,"non existe","selectionner le client");}
+    else{
+        carte_fidelite cf(ui->id_carte->text().toInt(),ui->id_client_2->text().toInt(),0,0);
+
+   QString str = " Vous voulez vraiment ajouter des points " ;
+            int ret = QMessageBox::question(this, tr("enregistrement"),str,QMessageBox::Ok|QMessageBox::Cancel);
+
+            switch (ret) {
+              case QMessageBox::Ok:
+            {
+                cf.modifier_cartefidelite();
+                ui->AfficheCarteFidelite_2->setModel(tmpf.afficher_cartefidelite());
+                refraiche();
+            }
+                     break;
+              case QMessageBox::Cancel:
+
+                  break;
+              default:
+                  // should never be reached
+                  break;
+
+            }
+    }
+
+}
+
+void MainWindow::on_refrech2_clicked()
+{
+    refraiche();
+}
+
+void MainWindow::on_AfficheCarteFidelite_2_activated(const QModelIndex &index)
+{
+    QString l=ui->AfficheCarteFidelite_2->selectionModel()->selectedIndexes().at(0).data().toString();
+    ui->id_carte->setText(l);
+    l=ui->AfficheCarteFidelite_2->selectionModel()->selectedIndexes().at(1).data().toString();
+    ui->id_client_2->setText(l);
+
+}
+
+void MainWindow::on_AfficherClient2_activated(const QModelIndex &index)
+{
+    QString l=ui->AfficherClient2->selectionModel()->selectedIndexes().at(0).data().toString();
+    ui->id_client_2->setText(l);
+
+    l=ui->AfficherClient2->selectionModel()->selectedIndexes().at(1).data().toString();
+    ui->cin_client_ajouter_2->setText(l);
+
+    l=ui->AfficherClient2->selectionModel()->selectedIndexes().at(2).data().toString();
+    ui->nom_ajouter_2->setText(l);
+
+    l=ui->AfficherClient2->selectionModel()->selectedIndexes().at(3).data().toString();
+    ui->prenom_ajouter_2->setText(l);
+
+    l=ui->AfficherClient2->selectionModel()->selectedIndexes().at(5).data().toString();
+    ui->telephone_ajouter_2->setText(l);
+
+
+
+    l=ui->AfficherClient2->selectionModel()->selectedIndexes().at(7).data().toString();
+    ui->adresse_ajouter_2->setText(l);
+
+   l=ui->AfficherClient2->selectionModel()->selectedIndexes().at(9).data().toString();
+    ui->mail_ajouter_2->setText(l);
+
+}
+
+void MainWindow::on_recherchecase_4_cursorPositionChanged(int arg1, int arg2)
+{
+    client v;
+    ui->AfficherClient2->setModel(v.rechercher_existe(ui->recherchecase_4->text()));
+    Afficher_Client_Table2();
+}
+
+void MainWindow::on_recherchecase_5_cursorPositionChanged(int arg1, int arg2)
+{
+    carte_fidelite v;
+    ui->AfficheCarteFidelite_2->setModel(v.rechercher_existe(ui->recherchecase_5->text()));
+    Afficher_Carte_Table();
+}
+
+void MainWindow::on_close_2_clicked()
+{
+    close();
+}
+
+void MainWindow::on_return_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_return_ticket_clicked()
+{
+  ui->stackedWidget->setCurrentIndex(2);
+}
+
+void MainWindow::on_Return2_clicked()
+{
+ ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_triperso_2_clicked()
+{
+    ui->AfficherClient->setModel(tmpc.trier_personaliser_client(ui->colonnetrie_2->currentText()));
+    Afficher_Client_Table();//fn selection
+
+}
+
+void MainWindow::on_trier_clicked()
+{
+    carte_fidelite v;
+    ui->AfficheCarteFidelite_2->setModel(v.trier_cartefidelite());
+    Afficher_Carte_Table();
+}
+
+void MainWindow::on_triperso_clicked()
+{
+
+    carte_fidelite v;
+    ui->AfficheCarteFidelite_2->setModel(v.trier_personaliser_cartefidelite(ui->colonnetrie->currentText()));
+    Afficher_Carte_Table();
+}
+
+void MainWindow::on_trier_client_clicked()
+{
+    ui->AfficherClient->setModel(tmpc.trier_client());
+    Afficher_Client_Table();//fn selection
+}
+
+void MainWindow::on_triperso_3_clicked()
+{
+
+    int tri=0;
+
+    //****** 1 + 2
+    if( ui->checkBox->isChecked() && ui->checkBox_2->isChecked())
+        tri=3;
+    //****** 1 + 3
+    if( ui->checkBox->isChecked() && ui->checkBox_3->isChecked())
+        tri=5;
+    //****** 2 + 3
+    if(ui->checkBox_2->isChecked() && ui->checkBox_3->isChecked())
+        tri=6;
+    //****** 1 + 2 + 3
+    if( ui->checkBox->isChecked() && ui->checkBox_3->isChecked() && ui->checkBox_2->isChecked())
+        tri=7;
+    if( ui->checkBox->isChecked())
+        tri=1;
+    if(ui->checkBox_2->isChecked())
+        tri=2;
+    if(ui->checkBox_3->isChecked())
+        tri=4;
+
+
+    carte_fidelite v;
+    ui->AfficheCarteFidelite_2->setModel(v.trier_personaliser_cartefidelite_multiple(tri,"all"));
+    Afficher_Carte_Table();
+
+
+}
+
+//************************roukaya****************************
+
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(4);
+}
+
