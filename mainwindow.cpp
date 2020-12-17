@@ -26,9 +26,11 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-    //**********meriem***********
+
+    //*****************************************************************meriem***********************************************************
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
+    //**********meriem***********
     ui->paiment->setVisible(false);
     ui->label_28->setVisible(false);
 
@@ -47,15 +49,15 @@ MainWindow::MainWindow(QWidget *parent)
                 ui->AfficherFilmTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
                 ui->AfficherFilmTable->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
 
-       //***********sinda*************
+       //*******************************************************************sinda************************************************************
                 ui->tabWidget->setTabText(2,"Statistique");
                 ui->AfficherClient->setModel(tmpc.afficher_client());
-                //Afficher_Client_Table();//fn selection
+                Afficher_Client_Table();//fn selection
                 ui->AfficherClient2->setModel(tmpc.afficher_client());
-                //Afficher_Client_Table2();//fn selection
+                Afficher_Client_Table2();//fn selection
 
                 ui->AfficheCarteFidelite_2->setModel(tmpf.afficher_cartefidelite());
-               // Afficher_Carte_Table();
+                Afficher_Carte_Table();
                 ui->id_client_2->setVisible(false);
                 ui->id_carte->setVisible(false);
                 ui->id_client->setVisible(false);
@@ -85,7 +87,7 @@ MainWindow::MainWindow(QWidget *parent)
                 ui->adresse_ajouter_2->setEnabled(false);
                 ui->mail_ajouter_2->setEnabled(false);
 
-        // ***********  salle*******************
+        // ************************************************************ROUKAYA***************************************************
                 ui->tableView->setModel(Etmp.afficher());
                 ui->affichage_reservation->setModel(Etmp1.afficher_res());
                 setWindowIcon(QIcon("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/popcorn"));
@@ -185,7 +187,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_AjouterClient_2_clicked()
 {
-    //*********************login***************
+    //******************************************************************login**************************************************************
     employe c;
     c.setLogin(ui->lineEdit->text());
     c.setPassword(ui->lineEdit_2->text());
@@ -210,7 +212,7 @@ void MainWindow::on_pushButton_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
 }
-//*****************fim ticket*****************
+//*********************************************************************fim ticket**********************************************************
 void MainWindow::on_AjouterFilm_clicked()
 {
     Film f(ui->id_film->text().toInt(),ui->nom_film->text(),ui->realisateur->text(),
@@ -553,7 +555,7 @@ void MainWindow::on_AfficherTicketTable_activated(const QModelIndex &index)
             }
 }
 
-//****************client carte********************
+//**********************************************************************client carte****************************************************************
 
 //selection de toute une ligne tab client
 void MainWindow::Afficher_Client_Table(){
@@ -1105,7 +1107,7 @@ void MainWindow::on_triperso_3_clicked()
 
 }
 
-//************************roukaya****************************
+//***********************************************************************salle reservation****************************************************************************
 
 
 void MainWindow::on_pushButton_3_clicked()
