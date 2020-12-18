@@ -192,6 +192,12 @@ private slots:
 
     void on_affichage_reservation_activated(const QModelIndex &index);
    void sendMail();
+   void on_pushButton_23_clicked();
+
+   void on_pushButton_32_clicked();
+
+   void on_pushButton_31_clicked();
+
 private:
     Ui::MainWindow *ui;
     client tmpc;

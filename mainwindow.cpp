@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
 
     ui->setupUi(this);
-   // ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget->setCurrentIndex(0);
     //*************************************************************************meriem******************************************************
        ui->paiment->setVisible(false);
        ui->label_28->setVisible(false);
@@ -57,9 +57,9 @@ MainWindow::MainWindow(QWidget *parent)
 
                 ui->AfficheCarteFidelite_2->setModel(tmpf.afficher_cartefidelite());
                 Afficher_Carte_Table();
+                ui->id_client_3->setVisible(false);
+                ui->id_carte_2->setVisible(false);
                 ui->id_client_2->setVisible(false);
-                ui->id_carte->setVisible(false);
-                ui->id_client->setVisible(false);
                 ui->cin_client_ajouter->setValidator(new QIntValidator(0,99999999,this));
                 ui->telephone_ajouter->setValidator(new QIntValidator(0,99999999,this));
 
@@ -157,9 +157,9 @@ MainWindow::MainWindow(QWidget *parent)
                 ui->nb_chaise_modif->setValidator(new QIntValidator(0,999,this));
                 ui->nb_baffles_ajout->setValidator(new QIntValidator(0,999,this));
                 ui->nb_baffles_modif->setValidator(new QIntValidator(0,999,this));
-                ui->id_client->setValidator(new QIntValidator(0,99999999,this));
-                ui->id_client_2->setValidator(new QIntValidator(0,99999999,this));
-                ui->id_client_3->setValidator(new QIntValidator(0,99999999,this));
+                ui->id_client_4->setValidator(new QIntValidator(0,99999999,this));
+                ui->id_client_5->setValidator(new QIntValidator(0,99999999,this));
+                ui->id_client_6->setValidator(new QIntValidator(0,99999999,this));
                 ui->id_reservation->setValidator(new QIntValidator(0,99999999,this));
                 ui->id_reservation_2->setValidator(new QIntValidator(0,99999999,this));
                 ui->nb_personne->setValidator(new QIntValidator(0,99,this));
@@ -584,7 +584,7 @@ void MainWindow::Afficher_Client_Table2(){
 
 void MainWindow::refraiche()
 {
-    ui->id_client->setText("");
+    ui->id_client_2->setText("");
     ui->cin_client_ajouter->setText("");
     ui->genre_ajouter->setCurrentIndex(0);
     ui->nom_ajouter->setText("");
@@ -594,7 +594,7 @@ void MainWindow::refraiche()
     ui->mail_ajouter->setText("");
     ui->fontion_ajouter->setCurrentIndex(0);
     ui->adresse_ajouter->setText("");
-    ui->id_client_2->setText("");
+    ui->id_client_3->setText("");
     ui->cin_client_ajouter_2->setText("");
     ui->nom_ajouter_2->setText("");
     ui->prenom_ajouter_2->setText("");
@@ -607,9 +607,9 @@ void MainWindow::refraiche()
     Afficher_Client_Table();
     Afficher_Client_Table2();
     Afficher_Carte_Table();
-    ui->id_client->setText("");
-    ui->id_carte->setText("");
     ui->id_client_2->setText("");
+    ui->id_carte_2->setText("");
+    ui->id_client_3->setText("");
 }
 void MainWindow::on_ajouterClient_clicked()
 {
@@ -678,9 +678,9 @@ void MainWindow::on_modifierClient_clicked()
     player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
        player->play();
        player->setVolume(1000);
-    QString idd=ui->id_client->text();
+    QString idd=ui->id_client_2->text();
     client *tmpCl=new client();
-    tmpCl->setId(ui->id_client->text().toInt());
+    tmpCl->setId(ui->id_client_2->text().toInt());
     tmpCl->setCin(ui->cin_client_ajouter->text().toInt());
     tmpCl->setNom(ui->nom_ajouter->text());
     tmpCl->setPrenom(ui->prenom_ajouter->text());
@@ -726,7 +726,7 @@ void MainWindow::on_modifierClient_clicked()
 void MainWindow::on_AfficherClient_activated()
 {
     QString l=ui->AfficherClient->selectionModel()->selectedIndexes().at(0).data().toString();
-    ui->id_client->setText(l);
+    ui->id_client_2->setText(l);
 
     l=ui->AfficherClient->selectionModel()->selectedIndexes().at(1).data().toString();
     ui->cin_client_ajouter->setText(l);
@@ -793,13 +793,13 @@ void MainWindow::on_SupprimerClient_clicked()
        player->play();
        player->setVolume(1000);
 
-    QString idd=ui->id_client->text();
+    QString idd=ui->id_client_2->text();
     client *tmpCl=new client();
     if (idd=="")
     { QMessageBox::information(this,"non existe","id n'existe pas");}
     else
        {
-        QString str = " Vous voulez vraiment supprimer \n l client ayant le id :"+ ui->id_client->text();
+        QString str = " Vous voulez vraiment supprimer \n l client ayant le id :"+ ui->id_client_2->text();
              int ret = QMessageBox::question(this, tr("suppression"),str,QMessageBox::Ok|QMessageBox::Cancel);
              switch (ret) {
                case QMessageBox::Ok:
@@ -827,12 +827,12 @@ void MainWindow::on_ajouter_carte_clicked()
     player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
        player->play();
        player->setVolume(1000);
-    QString idd=ui->id_client_2->text();
+    QString idd=ui->id_client_3->text();
 
     if (idd=="")
     { QMessageBox::information(this,"non existe","selectionner un client");}
     else{
-    carte_fidelite c(ui->id_client_2->text().toInt(),QDate::currentDate(),100,0);
+    carte_fidelite c(ui->id_client_3->text().toInt(),QDate::currentDate(),100,0);
 
    QString str = " Vous voulez vraiment ajouter cette carte fidelite:" ;
             int ret = QMessageBox::question(this, tr("Ajout"),str,QMessageBox::Ok|QMessageBox::Cancel);
@@ -907,7 +907,7 @@ void MainWindow::on_SupprimerCarte_clicked()
        player->play();
        player->setVolume(1000);
 
-    QString idd=ui->id_carte->text();
+    QString idd=ui->id_carte_2->text();
     carte_fidelite *tmpcf=new carte_fidelite();
     if (idd=="")
     { QMessageBox::information(this,"non existe","id n'existe pas");}
@@ -918,7 +918,7 @@ void MainWindow::on_SupprimerCarte_clicked()
              switch (ret) {
                case QMessageBox::Ok:
 
-                  tmpcf->setId_client(ui->id_client_2->text().toInt());
+                  tmpcf->setId_client(ui->id_client_3->text().toInt());
                   if (tmpcf->supprimer_cartefidelite_id_client())
                    {
                            ui->AfficheCarteFidelite_2->setModel(tmpf.afficher_cartefidelite());
@@ -942,12 +942,12 @@ void MainWindow::on_modifier_carte_clicked()
        player->play();
        player->setVolume(1000);
 
-    QString idd=ui->id_client_2->text();
+    QString idd=ui->id_client_3->text();
 
     if (idd=="")
     { QMessageBox::information(this,"non existe","selectionner le client");}
     else{
-        carte_fidelite cf(ui->id_carte->text().toInt(),ui->id_client_2->text().toInt(),0,0);
+        carte_fidelite cf(ui->id_carte_2->text().toInt(),ui->id_client_3->text().toInt(),0,0);
 
    QString str = " Vous voulez vraiment ajouter des points " ;
             int ret = QMessageBox::question(this, tr("enregistrement"),str,QMessageBox::Ok|QMessageBox::Cancel);
@@ -980,16 +980,16 @@ void MainWindow::on_refrech2_clicked()
 void MainWindow::on_AfficheCarteFidelite_2_activated()
 {
     QString l=ui->AfficheCarteFidelite_2->selectionModel()->selectedIndexes().at(0).data().toString();
-    ui->id_carte->setText(l);
+    ui->id_carte_2->setText(l);
     l=ui->AfficheCarteFidelite_2->selectionModel()->selectedIndexes().at(1).data().toString();
-    ui->id_client_2->setText(l);
+    ui->id_client_3->setText(l);
 
 }
 
 void MainWindow::on_AfficherClient2_activated()
 {
     QString l=ui->AfficherClient2->selectionModel()->selectedIndexes().at(0).data().toString();
-    ui->id_client_2->setText(l);
+    ui->id_client_3->setText(l);
 
     l=ui->AfficherClient2->selectionModel()->selectedIndexes().at(1).data().toString();
     ui->cin_client_ajouter_2->setText(l);
@@ -1323,7 +1323,7 @@ smtp->sendMail(ui->user->text(), "roukaia.khelifi@esprit.tn", ui->subject->text(
 }
 void MainWindow::on_pushButton_24_clicked()
 {
-    int id_client = ui->id_client->text().toInt();
+    int id_client = ui->id_client_4->text().toInt();
     int nb_personne=ui->nb_personne->text().toInt();
     QDate dater= ui->date_res->date();
     QString nomfilm=ui->comboBox->currentText();
@@ -1335,7 +1335,7 @@ QString id_reservation =id_Reser;
     if(test){
 
         QString m="";
-        ui->id_client->setText(m);
+        ui->id_client_4->setText(m);
         //ui->id_reservation->setText(m);
         ui->nb_personne->setText(m);
         ui->rcpt->setText(m);
@@ -1364,7 +1364,7 @@ ui->stackedWidget_3->setCurrentIndex(0);
 void MainWindow::on_return_from_ajout_4_clicked()
 {
     QString empty="";
-    ui->id_client->setText(empty);
+    ui->id_client_4->setText(empty);
     //ui->id_reservation->setText(empty);
     ui->nb_personne->setText(empty);
 
@@ -1373,7 +1373,7 @@ void MainWindow::on_return_from_ajout_4_clicked()
 void MainWindow::on_pushButton_26_clicked()
 {
 
-    int id_client=ui->id_client_2->text().toInt();
+    int id_client=ui->id_client_5->text().toInt();
     QString id_reser=ui->id_reservation_2->text();
     int nb_personne=ui->nb_personne_2->text().toInt();
     QString nomfilm=ui->comboBox_2->currentText();
@@ -1386,7 +1386,7 @@ void MainWindow::on_pushButton_26_clicked()
 
         ui->affichage_reservation->setModel(Etmp1.afficher_res());
         QString m="";
-        ui->id_client_2->setText(m);
+        ui->id_client_5->setText(m);
         ui->id_reservation_2->setText(m);
         ui->nb_personne_2->setText(m);
         ui->comboBox_2->setCurrentIndex(0);
@@ -1413,7 +1413,7 @@ void MainWindow::on_pushButton_27_clicked()
 void MainWindow::on_return_from_ajout_5_clicked()
 {
     QString empty="";
-    ui->id_client_2->setText(empty);
+    ui->id_client_5->setText(empty);
     ui->id_reservation_2->setText(empty);
     ui->nb_personne_2->setText(empty);
 }
@@ -1421,11 +1421,11 @@ void MainWindow::on_return_from_ajout_5_clicked()
 void MainWindow::on_pushButton_29_clicked()
 {
 
-    int id_client = ui->id_client_3->text().toInt();
+    int id_client = ui->id_client_6->text().toInt();
     bool test= Etmp1.supprimer_res(id_client);
   if(test){
         QString m="";
-        ui->id_client_3->setText(m);
+        ui->id_client_6->setText(m);
 
         ui->affichage_reservation->setModel(Etmp1.afficher_res());
         QMessageBox::information(nullptr,QObject::tr("OK"),
@@ -1459,15 +1459,30 @@ void MainWindow::on_affichage_reservation_activated(const QModelIndex &index)
     if(query.exec()){
 
         while(query.next()){
-            ui->id_client_2->setText(query.value(0).toString());
+            ui->id_client_5->setText(query.value(0).toString());
             ui->id_reservation_2->setText(query.value(1).toString());
             ui->nb_personne_2->setText(query.value(2).toString());
             ui->comboBox->currentText();
             ui->date_res_2->setDate(query.value(4).toDate());
-            ui->id_client_3->setText(query.value(0).toString());
+            ui->id_client_6->setText(query.value(0).toString());
 
         }
     }
 }
 
 
+
+void MainWindow::on_pushButton_23_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_pushButton_32_clicked()
+{
+    close();
+}
+
+void MainWindow::on_pushButton_31_clicked()
+{
+   ui->stackedWidget->setCurrentIndex(1);
+}
