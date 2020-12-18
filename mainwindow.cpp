@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
 
     ui->setupUi(this);
-    ui->stackedWidget->setCurrentIndex(0);
+   // ui->stackedWidget->setCurrentIndex(0);
     //*************************************************************************meriem******************************************************
        ui->paiment->setVisible(false);
        ui->label_28->setVisible(false);
@@ -165,7 +165,8 @@ MainWindow::MainWindow(QWidget *parent)
                 ui->nb_personne->setValidator(new QIntValidator(0,99,this));
                 ui->nb_personne_2->setValidator(new QIntValidator(0,99,this));
                 ui->nb_ecrans_ajout->setValidator(new QIntValidator(0,999,this));
-                connect(ui->pushButton_16, SIGNAL(clicked()),this, SLOT(sendMail()));
+                /****************************************Connexion Mailing******************************************/
+                connect(ui->pushButton_24, SIGNAL(clicked()),this, SLOT(sendMail()));
                // QPixmap bkgnd("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/background");
               //  bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
               //  QPalette palette;
@@ -329,7 +330,7 @@ void MainWindow::on_refresh_clicked()
            ui->categorie->setCurrentText("");
 }
 
-void MainWindow::on_recherche_cursorPositionChanged(int arg1, int arg2)
+void MainWindow::on_recherche_cursorPositionChanged()
 {
     Film f;
         ui->AfficherFilmTable->setModel(f.rechercher_film(ui->recherche->text()));
@@ -479,7 +480,7 @@ void MainWindow::on_refreshT_clicked()
         ui->id_client->setText("");
 }
 
-void MainWindow::on_recherchecase_2_cursorPositionChanged(int arg1, int arg2)
+void MainWindow::on_recherchecase_2_cursorPositionChanged()
 {
     Ticket t;
         ui->AfficherTicketTable->setModel(t.rechercher_ticket(ui->recherche->text()));
@@ -569,7 +570,7 @@ void MainWindow::Afficher_Carte_Table(){
    ui->AfficheCarteFidelite_2->resizeColumnsToContents();
    ui->AfficheCarteFidelite_2->resizeRowsToContents();
    ui->AfficheCarteFidelite_2->setSelectionBehavior(QAbstractItemView::SelectRows);
-   ui->AfficheCarteFidelite_2->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
+   //ui->AfficheCarteFidelite_2->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
    ui->AfficheCarteFidelite_2->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
 }
 //selection de toute une ligne tab client 2
@@ -722,7 +723,7 @@ void MainWindow::on_modifierClient_clicked()
     }
 }
 //tab to input
-void MainWindow::on_AfficherClient_activated(const QModelIndex &index)
+void MainWindow::on_AfficherClient_activated()
 {
     QString l=ui->AfficherClient->selectionModel()->selectedIndexes().at(0).data().toString();
     ui->id_client->setText(l);
@@ -869,7 +870,7 @@ void MainWindow::on_filtrerClient_clicked()
        player->play();
        player->setVolume(1000);
 
-    if (ui->genre_filtre->currentText() == "" & ui->fonction_filtre->currentText() == "" & ui->Etat_civil_filtre->currentText() == "")
+    if ((ui->genre_filtre->currentText() == "") && (ui->fonction_filtre->currentText() == "") && (ui->Etat_civil_filtre->currentText() == ""))
     {
         QMessageBox::information(this,"erreur"," aucun champs a filtrer");
 
@@ -882,7 +883,7 @@ void MainWindow::on_filtrerClient_clicked()
     }
 }
 
-void MainWindow::on_recherchecase_3_cursorPositionChanged(int arg1, int arg2)
+void MainWindow::on_recherchecase_3_cursorPositionChanged()
 {
     client v;
     ui->AfficherClient->setModel(v.rechercher_existe(ui->recherchecase_3->text()));
@@ -976,7 +977,7 @@ void MainWindow::on_refrech2_clicked()
     refraiche();
 }
 
-void MainWindow::on_AfficheCarteFidelite_2_activated(const QModelIndex &index)
+void MainWindow::on_AfficheCarteFidelite_2_activated()
 {
     QString l=ui->AfficheCarteFidelite_2->selectionModel()->selectedIndexes().at(0).data().toString();
     ui->id_carte->setText(l);
@@ -985,7 +986,7 @@ void MainWindow::on_AfficheCarteFidelite_2_activated(const QModelIndex &index)
 
 }
 
-void MainWindow::on_AfficherClient2_activated(const QModelIndex &index)
+void MainWindow::on_AfficherClient2_activated()
 {
     QString l=ui->AfficherClient2->selectionModel()->selectedIndexes().at(0).data().toString();
     ui->id_client_2->setText(l);
@@ -1012,14 +1013,14 @@ void MainWindow::on_AfficherClient2_activated(const QModelIndex &index)
 
 }
 
-void MainWindow::on_recherchecase_4_cursorPositionChanged(int arg1, int arg2)
+void MainWindow::on_recherchecase_4_cursorPositionChanged()
 {
     client v;
     ui->AfficherClient2->setModel(v.rechercher_existe(ui->recherchecase_4->text()));
     Afficher_Client_Table2();
 }
 
-void MainWindow::on_recherchecase_5_cursorPositionChanged(int arg1, int arg2)
+void MainWindow::on_recherchecase_5_cursorPositionChanged()
 {
     carte_fidelite v;
     ui->AfficheCarteFidelite_2->setModel(v.rechercher_existe(ui->recherchecase_5->text()));
@@ -1113,4 +1114,360 @@ void MainWindow::on_pushButton_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
 }
+
+
+void MainWindow::on_pushButton_8_clicked()
+{
+    ui->stackedWidget_2->setCurrentIndex(1);
+}
+
+void MainWindow::on_pushButton_9_clicked()
+{
+     ui->stackedWidget_2->setCurrentIndex(2);
+}
+
+void MainWindow::on_pushButton_10_clicked()
+{
+     ui->stackedWidget_2->setCurrentIndex(3);
+}
+
+void MainWindow::on_pushButton_14_clicked()
+{
+    int num_salle = ui->nm_salle_ajout->text().toInt();
+    int nb_baffles =ui->nb_baffles_ajout->text().toInt();
+    int nb_chaise=ui->nb_chaise_ajout->text().toInt();
+    int nb_ecrans=ui->nb_ecrans_ajout->text().toInt();
+QString dispo ="";
+
+    Salle s(num_salle,nb_baffles,nb_chaise,nb_ecrans,dispo);
+    bool test =s.ajouter();
+    if(test){
+
+
+        ui->tableView->setModel(Etmp.afficher());
+
+        QString  mt="";
+        ui->nm_salle_ajout->setText(mt);
+        ui->nb_baffles_ajout->setText(mt);
+        ui->nb_chaise_ajout->setText(mt);
+        ui->nb_ecrans_ajout->setText(mt);
+
+        QMessageBox::information(nullptr,QObject::tr("OK"),
+                                 QObject::tr("Ajouter Effectuer.\n""Click cancel to exit"),QMessageBox::Cancel);
+
+    }
+    else
+    {
+        QMessageBox::critical(nullptr,QObject::tr("NOT OK"),
+                              QObject::tr("Ajouter non effectuer.\n""Click cancel to exit"),QMessageBox::Cancel);
+
+    }
+}
+
+void MainWindow::on_pushButton_13_clicked()
+{
+       ui->stackedWidget_2->setCurrentIndex(0);
+}
+
+void MainWindow::on_return_from_ajout_clicked()
+{
+
+    QString vide="";
+    ui->nm_salle_ajout->setText(vide);
+    ui->nb_chaise_ajout->setText(vide);
+    ui->nb_baffles_ajout->setText(vide);
+}
+
+void MainWindow::on_pushButton_15_clicked()
+{
+    int num_salle = ui->nm_salle_modif->text().toInt();
+    int nb_baffles =ui->nb_baffles_modif->text().toInt();
+    int nb_chaise=ui->nb_chaise_modif->text().toInt();
+    int nb_ecrans=ui->nb_ecrans_modif->text().toInt();
+    QString dispo=ui->dispo_2->text();
+    Salle s(num_salle,nb_baffles,nb_chaise,nb_ecrans,dispo);
+    bool test =s.Update(num_salle);
+    if(test){
+        ui->tableView->setModel(Etmp.afficher());
+        QString  mt="";
+        ui->nm_salle_modif->setText(mt);
+        ui->nb_baffles_modif->setText(mt);
+        ui->nb_chaise_modif->setText(mt);
+        ui->nb_ecrans_modif->setText(mt);
+        ui->dispo_2->setText(mt);
+        QMessageBox::information(nullptr,QObject::tr("OK"),
+                                 QObject::tr("Modification Effectuer.\n""Click cancel to exit"),QMessageBox::Cancel);
+
+    }
+    else
+    {
+        QMessageBox::critical(nullptr,QObject::tr("NOT OK"),
+                              QObject::tr("Modification non effectuer.\n""Click cancel to exit"),QMessageBox::Cancel);
+
+    }
+}
+
+void MainWindow::on_pushButton_16_clicked()
+{
+     ui->stackedWidget_2->setCurrentIndex(0);
+}
+
+void MainWindow::on_return_from_ajout_2_clicked()
+{
+    QString vide="";
+    ui->nm_salle_modif->setText(vide);
+    ui->nb_chaise_modif->setText(vide);
+    ui->nb_baffles_modif->setText(vide);
+}
+
+void MainWindow::on_pushButton_17_clicked()
+{
+    int nums = ui->nm_salle_supp->text().toInt();
+    bool test= Etmp.supprimer(nums);
+    if(test){
+        ui->tableView->setModel(Etmp.afficher());
+        QString  mt="";
+        ui->nm_salle_supp->setText(mt);
+
+
+        QMessageBox::information(nullptr,QObject::tr("OK"),
+                                 QObject::tr("Supprission Effectuer.\n""Click cancel to exit"),QMessageBox::Cancel);
+
+    }
+    else
+    {
+        QMessageBox::critical(nullptr,QObject::tr("NOT OK"),
+                              QObject::tr("Supprission non effectuer.\n""Click cancel to exit"),QMessageBox::Cancel);
+
+    }
+}
+
+void MainWindow::on_pushButton_18_clicked()
+{
+     ui->stackedWidget_2->setCurrentIndex(0);
+}
+
+void MainWindow::on_return_from_ajout_3_clicked()
+{
+    QString vide="";
+    ui->nm_salle_supp->setText(vide);
+
+}
+
+void MainWindow::on_pushButton_12_clicked()
+{
+      ui->tableView->setModel(Etmp.trier());
+}
+
+void MainWindow::on_tableView_activated(const QModelIndex &index)
+{
+    QString ch=ui->tableView->model()->data(index).toString();
+    QSqlQuery query;
+    query.prepare("select * from salle where numsalle ='"+ch+"'");
+    if(query.exec()){
+        while(query.next()){
+            ui->nm_salle_modif->setText(query.value(0).toString());
+            ui->nb_chaise_modif->setText(query.value(1).toString());
+            ui->nb_baffles_modif->setText(query.value(2).toString());
+            ui->nb_ecrans_modif->setText(query.value(3).toString());
+            ui->dispo_2->setText(query.value(4).toString());
+            ui->nm_salle_supp->setText(query.value(0).toString());
+        }
+
+    }
+}
+
+void MainWindow::on_recherche_salle_cursorPositionChanged()
+{
+    Salle s;
+
+    ui->tableView->setModel(s.rechercher(ui->recherche_salle->text()));
+    s.afficher();
+}
+
+void MainWindow::on_recherche_reservation_cursorPositionChanged()
+{
+    Reservation r;
+    ui->affichage_reservation->setModel(r.rechercher_res(ui->recherche_reservation->text()));
+    r.afficher_res();
+}
+
+void MainWindow::on_pushButton_20_clicked()
+{
+    ui->stackedWidget_3->setCurrentIndex(1);
+}
+
+void MainWindow::on_pushButton_21_clicked()
+{
+    ui->stackedWidget_3->setCurrentIndex(2);
+}
+
+void MainWindow::on_pushButton_22_clicked()
+{
+     ui->stackedWidget_3->setCurrentIndex(3);
+}
+
+void MainWindow::on_pushButton_19_clicked()
+{
+     ui->affichage_reservation->setModel(Etmp1.trier_res());
+}
+void MainWindow::sendMail()
+{
+    Smtp* smtp = new Smtp(ui->user->text(), ui->pwd->text(), ui->server->text(), ui->port->text().toInt());
+    connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+QString msg ="Date De Reservation : "+ui->date_res->text()+"\n"+"ID Reservation : "+id_Reser;
+
+smtp->sendMail(ui->user->text(), "roukaia.khelifi@esprit.tn", ui->subject->text(),msg);
+
+
+}
+void MainWindow::on_pushButton_24_clicked()
+{
+    int id_client = ui->id_client->text().toInt();
+    int nb_personne=ui->nb_personne->text().toInt();
+    QDate dater= ui->date_res->date();
+    QString nomfilm=ui->comboBox->currentText();
+
+QString id_reservation =id_Reser;
+    Reservation r(id_client,id_reservation,nb_personne,nomfilm,dater);
+    bool test =r.ajouter_res();
+
+    if(test){
+
+        QString m="";
+        ui->id_client->setText(m);
+        //ui->id_reservation->setText(m);
+        ui->nb_personne->setText(m);
+        ui->rcpt->setText(m);
+        ui->comboBox->setCurrentIndex(0);
+        dater.currentDate();
+
+        ui->affichage_reservation->setModel(Etmp1.afficher_res());
+
+        QMessageBox::information(nullptr,QObject::tr("OK"),
+                                 QObject::tr("Ajouter Effectuer A QR Code Has been Sent.\n""Click cancel to exit"),QMessageBox::Cancel);
+
+ }
+    else
+    {
+        QMessageBox::critical(nullptr,QObject::tr("NOT OK"),
+                              QObject::tr("Ajouter non effectuer Vous pouvez Verifier l'IDs (Unique).\n""Click cancel to exit"),QMessageBox::Cancel);
+
+    }
+}
+
+void MainWindow::on_pushButton_25_clicked()
+{
+ui->stackedWidget_3->setCurrentIndex(0);
+}
+
+void MainWindow::on_return_from_ajout_4_clicked()
+{
+    QString empty="";
+    ui->id_client->setText(empty);
+    //ui->id_reservation->setText(empty);
+    ui->nb_personne->setText(empty);
+
+}
+
+void MainWindow::on_pushButton_26_clicked()
+{
+
+    int id_client=ui->id_client_2->text().toInt();
+    QString id_reser=ui->id_reservation_2->text();
+    int nb_personne=ui->nb_personne_2->text().toInt();
+    QString nomfilm=ui->comboBox_2->currentText();
+
+    QDate dater=ui->date_res_2->date();
+
+    Reservation r(id_client,id_reser,nb_personne,nomfilm,dater);
+    bool test = r.update_res(id_client);
+    if(test){
+
+        ui->affichage_reservation->setModel(Etmp1.afficher_res());
+        QString m="";
+        ui->id_client_2->setText(m);
+        ui->id_reservation_2->setText(m);
+        ui->nb_personne_2->setText(m);
+        ui->comboBox_2->setCurrentIndex(0);
+
+        dater.currentDate();
+        dater.currentDate();
+        QMessageBox::information(nullptr,QObject::tr("OK"),
+                                 QObject::tr("Modification Effectuer.\n""Click cancel to exit"),QMessageBox::Cancel);
+
+    }
+    else
+    {
+        QMessageBox::critical(nullptr,QObject::tr("NOT OK"),
+                              QObject::tr("Modification non effectuer.\n""Click cancel to exit"),QMessageBox::Cancel);
+
+    }
+}
+
+void MainWindow::on_pushButton_27_clicked()
+{
+    ui->stackedWidget_3->setCurrentIndex(0);
+}
+
+void MainWindow::on_return_from_ajout_5_clicked()
+{
+    QString empty="";
+    ui->id_client_2->setText(empty);
+    ui->id_reservation_2->setText(empty);
+    ui->nb_personne_2->setText(empty);
+}
+
+void MainWindow::on_pushButton_29_clicked()
+{
+
+    int id_client = ui->id_client_3->text().toInt();
+    bool test= Etmp1.supprimer_res(id_client);
+  if(test){
+        QString m="";
+        ui->id_client_3->setText(m);
+
+        ui->affichage_reservation->setModel(Etmp1.afficher_res());
+        QMessageBox::information(nullptr,QObject::tr("OK"),
+                                 QObject::tr("Supprission Effectuer.\n""Click cancel to exit"),QMessageBox::Cancel);
+
+    }
+    else
+    {
+        QMessageBox::critical(nullptr,QObject::tr("NOT OK"),
+                              QObject::tr("Supprission non effectuer.\n""Click cancel to exit"),QMessageBox::Cancel);
+
+    }
+}
+
+void MainWindow::on_return_from_ajout_6_clicked()
+{
+    QString empty="";
+    ui->id_client_3->setText(empty);
+}
+
+void MainWindow::on_pushButton_28_clicked()
+{
+    ui->stackedWidget_3->setCurrentIndex(0);
+}
+
+void MainWindow::on_affichage_reservation_activated(const QModelIndex &index)
+{
+    QString ch =ui->affichage_reservation->model()->data(index).toString();
+    QSqlQuery query;
+    query.prepare("select * from reservation where id_client='"+ch+"' ");
+    if(query.exec()){
+
+        while(query.next()){
+            ui->id_client_2->setText(query.value(0).toString());
+            ui->id_reservation_2->setText(query.value(1).toString());
+            ui->nb_personne_2->setText(query.value(2).toString());
+            ui->comboBox->currentText();
+            ui->date_res_2->setDate(query.value(4).toDate());
+            ui->id_client_3->setText(query.value(0).toString());
+
+        }
+    }
+}
+
 

@@ -9,9 +9,9 @@ class Reservation
 public:
     Reservation();
 
-    Reservation(int,int,int,QString,QDate);
+    Reservation(int,QString,int,QString,QDate);
     int get_id_client();
-    int get_id_reservation();
+    QString get_id_reservation();
     int get_nb_personne();
     QString get_nomfilm();
 
@@ -26,11 +26,10 @@ QSqlQueryModel * trier_res();
 QSqlQueryModel *rechercher_res(QString);
 QSqlQueryModel * trier_res2();
 private:
-int id_client,id_reservation,nb_personne;
-QString nomfilm;
+int id_client,nb_personne;
+QString nomfilm,id_reservation;
 QDate date_r;
 
 };
 
 #endif // RESERVATION_H
-

@@ -25,7 +25,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+QString id_Reser="150447";
 private slots:
     void on_AjouterClient_2_clicked();
 
@@ -41,7 +41,7 @@ private slots:
 
     void on_refresh_clicked();
 
-    void on_recherche_cursorPositionChanged(int arg1, int arg2);
+    void on_recherche_cursorPositionChanged();
 
     void on_radioButton_clicked();
 
@@ -63,7 +63,7 @@ private slots:
 
     void on_refreshT_clicked();
 
-    void on_recherchecase_2_cursorPositionChanged(int arg1, int arg2);
+    void on_recherchecase_2_cursorPositionChanged();
 
     void on_Close_ticket_clicked();
 
@@ -79,7 +79,7 @@ private slots:
 
     void on_modifierClient_clicked();
 
-    void on_AfficherClient_activated(const QModelIndex &index);
+    void on_AfficherClient_activated();
 
     void on_SupprimerClient_clicked();
 
@@ -92,7 +92,7 @@ private slots:
 
     void on_filtrerClient_clicked();
 
-    void on_recherchecase_3_cursorPositionChanged(int arg1, int arg2);
+    void on_recherchecase_3_cursorPositionChanged();
 
     void on_refresh_2_clicked();
 
@@ -104,13 +104,13 @@ private slots:
 
     void on_refrech2_clicked();
 
-    void on_AfficheCarteFidelite_2_activated(const QModelIndex &index);
+    void on_AfficheCarteFidelite_2_activated();
 
-    void on_AfficherClient2_activated(const QModelIndex &index);
+    void on_AfficherClient2_activated();
 
-    void on_recherchecase_4_cursorPositionChanged(int arg1, int arg2);
+    void on_recherchecase_4_cursorPositionChanged();
 
-    void on_recherchecase_5_cursorPositionChanged(int arg1, int arg2);
+    void on_recherchecase_5_cursorPositionChanged();
 
     void on_close_2_clicked();
 
@@ -132,6 +132,66 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_pushButton_8_clicked();
+
+    void on_pushButton_9_clicked();
+
+    void on_pushButton_10_clicked();
+
+    void on_pushButton_14_clicked();
+
+    void on_pushButton_13_clicked();
+
+    void on_return_from_ajout_clicked();
+
+    void on_pushButton_15_clicked();
+
+    void on_pushButton_16_clicked();
+
+    void on_return_from_ajout_2_clicked();
+
+    void on_pushButton_17_clicked();
+
+    void on_pushButton_18_clicked();
+
+    void on_return_from_ajout_3_clicked();
+
+    void on_pushButton_12_clicked();
+
+    void on_tableView_activated(const QModelIndex &index);
+
+    void on_recherche_salle_cursorPositionChanged();
+
+    void on_recherche_reservation_cursorPositionChanged();
+
+    void on_pushButton_20_clicked();
+
+    void on_pushButton_21_clicked();
+
+    void on_pushButton_22_clicked();
+
+    void on_pushButton_19_clicked();
+
+    void on_pushButton_24_clicked();
+
+    void on_pushButton_25_clicked();
+
+    void on_return_from_ajout_4_clicked();
+
+    void on_pushButton_26_clicked();
+
+    void on_pushButton_27_clicked();
+
+    void on_return_from_ajout_5_clicked();
+
+    void on_pushButton_29_clicked();
+
+    void on_return_from_ajout_6_clicked();
+
+    void on_pushButton_28_clicked();
+
+    void on_affichage_reservation_activated(const QModelIndex &index);
+   void sendMail();
 private:
     Ui::MainWindow *ui;
     client tmpc;

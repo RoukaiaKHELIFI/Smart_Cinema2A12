@@ -3,14 +3,14 @@
 Reservation::Reservation()
 {
 id_client=0;
-id_reservation=0;
+id_reservation="";
 nb_personne=0;
 //nomfilm="";
 date_r.currentDate();
 
 }
 
-Reservation::Reservation(int id_client,int id_reservation,int nb_personne,QString nomfilm,QDate date_r){
+Reservation::Reservation(int id_client,QString id_reservation,int nb_personne,QString nomfilm,QDate date_r){
    this->id_client = id_client;
     this->id_reservation = id_reservation;
     this->nb_personne = nb_personne;
@@ -20,7 +20,7 @@ Reservation::Reservation(int id_client,int id_reservation,int nb_personne,QStrin
 
 }
 int Reservation::get_id_client(){return id_client;}
-int Reservation::get_id_reservation(){return id_reservation;}
+QString Reservation::get_id_reservation(){return id_reservation;}
 int Reservation::get_nb_personne(){return nb_personne;}
 QString Reservation::get_nomfilm(){return nomfilm;}
 
@@ -107,4 +107,3 @@ model->setQuery("select * from reservation where id_client like '%'||'"+f+"'||'%
 
 
 }
-
