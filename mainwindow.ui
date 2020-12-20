@@ -36,7 +36,7 @@ QLineEdit:focus {
 </string>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLineEdit" name="lineEdit">
@@ -190,22 +190,6 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
       </property>
       <property name="pixmap">
        <pixmap resource="source.qrc">:/photos/MaketingSponsorisation.png</pixmap>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_5">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>-20</y>
-        <width>1301</width>
-        <height>691</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../../Documents/ProjetQT_Image/back.png</pixmap>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_4">
@@ -416,17 +400,6 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         <normaloff>../../integration/ProjetQT_Image/salle1.png</normaloff>../../integration/ProjetQT_Image/salle1.png</iconset>
       </property>
      </widget>
-     <zorder>label_5</zorder>
-     <zorder>pushButton_5</zorder>
-     <zorder>label_4</zorder>
-     <zorder>label_6</zorder>
-     <zorder>pushButton_4</zorder>
-     <zorder>pushButton</zorder>
-     <zorder>label_7</zorder>
-     <zorder>label_8</zorder>
-     <zorder>pushButton_3</zorder>
-     <zorder>label_10</zorder>
-     <zorder>pushButton_2</zorder>
     </widget>
     <widget class="QWidget" name="page_3">
      <widget class="QTabWidget" name="tabWidget">
@@ -1006,8 +979,18 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color:#1FCBEB;
-color:white;</string>
+         <string notr="true">/*background-color:#C70039;
+color:white;*/
+QPushButton
+{
+background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgba(209, 46, 40, 255), stop:1 rgba(241, 181, 172, 255));
+border-radius:15px;
+color:white;
+}
+QPushButton:hover
+{
+background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgba(241, 181, 172, 255), stop:1 rgba(209, 46, 40, 255))
+}</string>
         </property>
         <property name="text">
          <string>Statistique</string>
@@ -1114,22 +1097,6 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>CATEGORIES</string>
         </property>
        </widget>
-       <widget class="QLabel" name="back">
-        <property name="geometry">
-         <rect>
-          <x>-4</x>
-          <y>-8</y>
-          <width>1321</width>
-          <height>601</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../../../Documents/ProjetQT_Image/back.png</pixmap>
-        </property>
-       </widget>
        <widget class="QPushButton" name="returnF">
         <property name="geometry">
          <rect>
@@ -1169,7 +1136,6 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
        <zorder>label_15</zorder>
        <zorder>pushButton_6</zorder>
        <zorder>label_17</zorder>
-       <zorder>back</zorder>
        <zorder>layoutWidget_2</zorder>
        <zorder>layoutWidget</zorder>
        <zorder>AfficherFilmTable</zorder>
@@ -1740,22 +1706,6 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Refresh</string>
         </property>
        </widget>
-       <widget class="QLabel" name="back2">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>1351</width>
-          <height>601</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../../../Documents/ProjetQT_Image/back.png</pixmap>
-        </property>
-       </widget>
        <widget class="QPushButton" name="returnTick">
         <property name="geometry">
          <rect>
@@ -1792,7 +1742,6 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Return </string>
         </property>
        </widget>
-       <zorder>back2</zorder>
        <zorder>pushButton_7</zorder>
        <zorder>label_32</zorder>
        <zorder>layoutWidget_5</zorder>
@@ -1841,7 +1790,7 @@ background:blue;}</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="widget_2">
        <attribute name="title">
@@ -2498,25 +2447,6 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <pixmap>../../integration/Desktop/projet 2a/popcornicon.png</pixmap>
         </property>
        </widget>
-       <widget class="QLabel" name="label_47">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="geometry">
-         <rect>
-          <x>-30</x>
-          <y>-40</y>
-          <width>1311</width>
-          <height>621</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../../Documents/ProjetQT_Image/back.png</pixmap>
-        </property>
-       </widget>
        <widget class="QPushButton" name="modifierClient">
         <property name="geometry">
          <rect>
@@ -2638,22 +2568,6 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
           <width>20</width>
           <height>20</height>
          </size>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_48">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>1251</width>
-          <height>601</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../../integration/ProjetQT_Image/back.png</pixmap>
         </property>
        </widget>
        <widget class="QLabel" name="label_49">
@@ -2908,12 +2822,10 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          </property>
         </item>
        </widget>
-       <zorder>label_48</zorder>
        <zorder>label_44</zorder>
        <zorder>label_45</zorder>
        <zorder>label_46</zorder>
        <zorder>id_client_2</zorder>
-       <zorder>label_47</zorder>
        <zorder>refresh_2</zorder>
        <zorder>label_49</zorder>
        <zorder>label_50</zorder>
@@ -3035,7 +2947,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="page_5">
          <property name="geometry">
@@ -4167,7 +4079,7 @@ color:black;
            <string>Ajouter</string>
           </property>
          </widget>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>480</x>
@@ -4297,7 +4209,7 @@ color:black;
            <string>Undo</string>
           </property>
          </widget>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>540</x>
@@ -4441,7 +4353,7 @@ color:black;
            <string>Undo</string>
           </property>
          </widget>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>520</x>
@@ -4921,7 +4833,7 @@ color:rgba(0,0,0,0);</string>
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>430</x>
@@ -5197,7 +5109,7 @@ selection-color:#FBEEE6;</string>
            <string>Quitter</string>
           </property>
          </widget>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>440</x>
@@ -5441,7 +5353,7 @@ selection-color:#FBEEE6;</string>
            <string>Undo</string>
           </property>
          </widget>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>550</x>
