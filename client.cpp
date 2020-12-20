@@ -28,18 +28,18 @@ QSqlQueryModel * client::afficher_client()
 
 
     model->setQuery("select ID_CLIENT,TO_CHAR(CIN),NOM,PRENOM,DATE_NAISSANCE,TO_CHAR(NUM_TEL),FONCTION,ADRESSE,DATE_CREATION,MAIL_CLIENT,GENRE,ETAT_CIVILE from client order by DATE_CREATION desc ");
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_CLIENT"));
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID CLIENT"));
     model->setHeaderData(1,Qt::Horizontal,QObject::tr("CIN"));
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("NOM"));
     model->setHeaderData(3,Qt::Horizontal,QObject::tr("PRENOM"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE_NAISSANCE"));
-    model->setHeaderData(5,Qt::Horizontal,QObject::tr("NUM_TEL"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE NAISSANCE"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("NUM TEL"));
     model->setHeaderData(6,Qt::Horizontal,QObject::tr("FONCTION"));
     model->setHeaderData(7,Qt::Horizontal,QObject::tr("ADRESSE"));
-    model->setHeaderData(8,Qt::Horizontal,QObject::tr("DATE_CREATION"));
-    model->setHeaderData(9,Qt::Horizontal,QObject::tr("MAIL_CLIENT"));
+    model->setHeaderData(8,Qt::Horizontal,QObject::tr("DATE CREATION"));
+    model->setHeaderData(9,Qt::Horizontal,QObject::tr("MAIL CLIENT"));
     model->setHeaderData(10,Qt::Horizontal,QObject::tr("GENRE"));
-    model->setHeaderData(11,Qt::Horizontal,QObject::tr("ETAT_CIVILE"));
+    model->setHeaderData(11,Qt::Horizontal,QObject::tr("ETAT CIVILE"));
     return model;
 }
 
@@ -183,18 +183,18 @@ QSqlQueryModel * client::rechercher_existe(QString num){
        QSqlQueryModel *model=new QSqlQueryModel();
 
        model->setQuery(" select ID_CLIENT,TO_CHAR(CIN),NOM,PRENOM,DATE_NAISSANCE,TO_CHAR(NUM_TEL),FONCTION,ADRESSE,DATE_CREATION,MAIL_CLIENT,GENRE,ETAT_CIVILE  from client c where CIN like '%'||'"+num+"'||'%' or ID_CLIENT like '%'||'"+num+"'||'%' or ADRESSE like '%'||'"+num+"'||'%' or MAIL_CLIENT like '%'||'"+num+"'||'%'  or NOM like '%'||'"+num+"'||'%' or PRENOM like '%'||'"+num+"'||'%' or NUM_TEL like '%'||'"+num+"'||'%' or GENRE like '%'||'"+num+"'||'%' or FONCTION like '%'||'"+num+"'||'%' or ETAT_CIVILE like '%'||'"+num+"'||'%' order by DATE_CREATION desc");
-       model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_CLIENT"));
+       model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID CLIENT"));
        model->setHeaderData(1,Qt::Horizontal,QObject::tr("CIN"));
        model->setHeaderData(2,Qt::Horizontal,QObject::tr("NOM"));
        model->setHeaderData(3,Qt::Horizontal,QObject::tr("PRENOM"));
-       model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE_NAISSANCE"));
-       model->setHeaderData(5,Qt::Horizontal,QObject::tr("NUM_TEL"));
+       model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE NAISSANCE"));
+       model->setHeaderData(5,Qt::Horizontal,QObject::tr("NUM TEL"));
        model->setHeaderData(6,Qt::Horizontal,QObject::tr("FONCTION"));
        model->setHeaderData(7,Qt::Horizontal,QObject::tr("ADRESSE"));
-       model->setHeaderData(8,Qt::Horizontal,QObject::tr("DATE_CREATION"));
-       model->setHeaderData(9,Qt::Horizontal,QObject::tr("MAIL_CLIENT"));
+       model->setHeaderData(8,Qt::Horizontal,QObject::tr("DATE CREATION"));
+       model->setHeaderData(9,Qt::Horizontal,QObject::tr("MAIL CLIENT"));
        model->setHeaderData(10,Qt::Horizontal,QObject::tr("GENRE"));
-       model->setHeaderData(11,Qt::Horizontal,QObject::tr("ETAT_CIVILE"));
+       model->setHeaderData(11,Qt::Horizontal,QObject::tr("ETAT CIVILE"));
        return model;
 
 }
@@ -255,18 +255,18 @@ QSqlQueryModel * client::filtre(QString genre,QString fonction ,QString etat){
     }
 
 
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_CLIENT"));
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID CLIENT"));
     model->setHeaderData(1,Qt::Horizontal,QObject::tr("CIN"));
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("NOM"));
     model->setHeaderData(3,Qt::Horizontal,QObject::tr("PRENOM"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE_NAISSANCE"));
-    model->setHeaderData(5,Qt::Horizontal,QObject::tr("NUM_TEL"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE NAISSANCE"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("NUM TEL"));
     model->setHeaderData(6,Qt::Horizontal,QObject::tr("FONCTION"));
     model->setHeaderData(7,Qt::Horizontal,QObject::tr("ADRESSE"));
-    model->setHeaderData(8,Qt::Horizontal,QObject::tr("DATE_CREATION"));
-    model->setHeaderData(9,Qt::Horizontal,QObject::tr("MAIL_CLIENT"));
+    model->setHeaderData(8,Qt::Horizontal,QObject::tr("DATE CREATION"));
+    model->setHeaderData(9,Qt::Horizontal,QObject::tr("MAIL CLIENT"));
     model->setHeaderData(10,Qt::Horizontal,QObject::tr("GENRE"));
-    model->setHeaderData(11,Qt::Horizontal,QObject::tr("ETAT_CIVILE"));
+    model->setHeaderData(11,Qt::Horizontal,QObject::tr("ETAT CIVILE"));
         return model;
 }
 
@@ -298,18 +298,18 @@ QSqlQueryModel * client::trier_client()
 
 
     model->setQuery("select ID_CLIENT,TO_CHAR(CIN),NOM,PRENOM,DATE_NAISSANCE,TO_CHAR(NUM_TEL),FONCTION,ADRESSE,DATE_CREATION,MAIL_CLIENT,GENRE,ETAT_CIVILE from client order by nom ,prenom ,DATE_CREATION desc ");
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_CLIENT"));
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID CLIENT"));
     model->setHeaderData(1,Qt::Horizontal,QObject::tr("CIN"));
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("NOM"));
     model->setHeaderData(3,Qt::Horizontal,QObject::tr("PRENOM"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE_NAISSANCE"));
-    model->setHeaderData(5,Qt::Horizontal,QObject::tr("NUM_TEL"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE NAISSANCE"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("NUM TEL"));
     model->setHeaderData(6,Qt::Horizontal,QObject::tr("FONCTION"));
     model->setHeaderData(7,Qt::Horizontal,QObject::tr("ADRESSE"));
-    model->setHeaderData(8,Qt::Horizontal,QObject::tr("DATE_CREATION"));
-    model->setHeaderData(9,Qt::Horizontal,QObject::tr("MAIL_CLIENT"));
+    model->setHeaderData(8,Qt::Horizontal,QObject::tr("DATE CREATION"));
+    model->setHeaderData(9,Qt::Horizontal,QObject::tr("MAIL CLIENT"));
     model->setHeaderData(10,Qt::Horizontal,QObject::tr("GENRE"));
-    model->setHeaderData(11,Qt::Horizontal,QObject::tr("ETAT_CIVILE"));
+    model->setHeaderData(11,Qt::Horizontal,QObject::tr("ETAT CIVILE"));
     return model;
 }
 
@@ -357,18 +357,18 @@ QSqlQueryModel * client::trier_personaliser_client(QString c)
     if (c=="GENRE")
     {model->setQuery("select ID_CLIENT,TO_CHAR(CIN),NOM,PRENOM,DATE_NAISSANCE,TO_CHAR(NUM_TEL),FONCTION,ADRESSE,DATE_CREATION,MAIL_CLIENT,GENRE,ETAT_CIVILE from client order by GENRE  ");}
 
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_CLIENT"));
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID CLIENT"));
     model->setHeaderData(1,Qt::Horizontal,QObject::tr("CIN"));
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("NOM"));
     model->setHeaderData(3,Qt::Horizontal,QObject::tr("PRENOM"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE_NAISSANCE"));
-    model->setHeaderData(5,Qt::Horizontal,QObject::tr("NUM_TEL"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE NAISSANCE"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("NUM TEL"));
     model->setHeaderData(6,Qt::Horizontal,QObject::tr("FONCTION"));
     model->setHeaderData(7,Qt::Horizontal,QObject::tr("ADRESSE"));
-    model->setHeaderData(8,Qt::Horizontal,QObject::tr("DATE_CREATION"));
-    model->setHeaderData(9,Qt::Horizontal,QObject::tr("MAIL_CLIENT"));
+    model->setHeaderData(8,Qt::Horizontal,QObject::tr("DATE CREATION"));
+    model->setHeaderData(9,Qt::Horizontal,QObject::tr("MAIL CLIENT"));
     model->setHeaderData(10,Qt::Horizontal,QObject::tr("GENRE"));
-    model->setHeaderData(11,Qt::Horizontal,QObject::tr("ETAT_CIVILE"));
+    model->setHeaderData(11,Qt::Horizontal,QObject::tr("ETAT CIVILE"));
     return model;
 }
 

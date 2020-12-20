@@ -19,14 +19,14 @@ QSqlQueryModel * carte_fidelite::afficher_cartefidelite()
     QSqlQueryModel *model=new QSqlQueryModel();
 
     model->setQuery("select cf.ID_CARTE,cf.ID_CLIENT,cf.DATE_CREATION_CARTE,cf.NB_POINT,cf.NB_FILM,c.NOM,c.prenom ,c.MAIL_CLIENT FROM carte_fidelite cf INNER JOIN client c on cf.id_client = c.id_client order by cf.DATE_CREATION_CARTE desc");
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_CARTE"));
-    model->setHeaderData(1,Qt::Horizontal,QObject::tr("ID_CLIENT"));
-    model->setHeaderData(2,Qt::Horizontal,QObject::tr("DATE_CREATION_CARTE"));
-    model->setHeaderData(3,Qt::Horizontal,QObject::tr("NB_POINT"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("NB_FILM"));
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID CARTE"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("ID CLIENT"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("DATE CREATION_CARTE"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("NB POINT"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("NB FILM"));
     model->setHeaderData(5,Qt::Horizontal,QObject::tr("NOM"));
     model->setHeaderData(6,Qt::Horizontal,QObject::tr("PRENOM"));
-    model->setHeaderData(7,Qt::Horizontal,QObject::tr("MAIL_CLIENT"));
+    model->setHeaderData(7,Qt::Horizontal,QObject::tr("MAIL CLIENT"));
     return model;
 }
 
@@ -135,13 +135,13 @@ QSqlQueryModel * carte_fidelite::rechercher_existe(QString num){
        QSqlQueryModel *model=new QSqlQueryModel();
 
        model->setQuery(" select cf.ID_CARTE,cf.ID_CLIENT,cf.DATE_CREATION_CARTE,cf.NB_POINT,cf.NB_FILM,c.NOM,c.prenom,c.MAIL_CLIENT from carte_fidelite cf INNER JOIN client c on cf.id_client = c.id_client where cf.ID_CARTE like '%'||'"+num+"'||'%' or cf.ID_CLIENT like '%'||'"+num+"'||'%' or cf.DATE_CREATION_CARTE like '%'||'"+num+"'||'%' or cf.NB_POINT like '%'||'"+num+"'||'%'  or cf.NB_FILM like '%'||'"+num+"'||'%' or c.nom like '%'||'"+num+"'||'%' or c.prenom like '%'||'"+num+"'||'%' order by cf.DATE_CREATION_CARTE desc");
-       model->setHeaderData(1,Qt::Horizontal,QObject::tr("ID_CLIENT"));
-       model->setHeaderData(2,Qt::Horizontal,QObject::tr("DATE_CREATION_CARTE"));
-       model->setHeaderData(3,Qt::Horizontal,QObject::tr("NB_POINT"));
-       model->setHeaderData(4,Qt::Horizontal,QObject::tr("NB_FILM"));
+       model->setHeaderData(1,Qt::Horizontal,QObject::tr("ID CLIENT"));
+       model->setHeaderData(2,Qt::Horizontal,QObject::tr("DATE CREATION_CARTE"));
+       model->setHeaderData(3,Qt::Horizontal,QObject::tr("NB POINT"));
+       model->setHeaderData(4,Qt::Horizontal,QObject::tr("NB FILM"));
        model->setHeaderData(5,Qt::Horizontal,QObject::tr("NOM"));
        model->setHeaderData(6,Qt::Horizontal,QObject::tr("PRENOM"));
-       model->setHeaderData(7,Qt::Horizontal,QObject::tr("MAIL_CLIENT"));
+       model->setHeaderData(7,Qt::Horizontal,QObject::tr("MAIL CLIENT"));
 
        return model;
 
@@ -153,14 +153,14 @@ QSqlQueryModel * carte_fidelite::trier_cartefidelite()
     QSqlQueryModel *model=new QSqlQueryModel();
     QString cv="c.prenom";
     model->setQuery("select cf.ID_CARTE,cf.ID_CLIENT,cf.DATE_CREATION_CARTE,cf.NB_POINT,cf.NB_FILM,c.NOM,c.prenom ,c.MAIL_CLIENT FROM carte_fidelite cf INNER JOIN client c on cf.id_client = c.id_client order by cf.NB_POINT desc,cf.NB_FILM desc,c.nom desc ,c.prenom  desc");
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_CARTE"));
-    model->setHeaderData(1,Qt::Horizontal,QObject::tr("ID_CLIENT"));
-    model->setHeaderData(2,Qt::Horizontal,QObject::tr("DATE_CREATION_CARTE"));
-    model->setHeaderData(3,Qt::Horizontal,QObject::tr("NB_POINT"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("NB_FILM"));
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID CARTE"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("ID CLIENT"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("DATE CREATION_CARTE"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("NB POINT"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("NB FILM"));
     model->setHeaderData(5,Qt::Horizontal,QObject::tr("NOM"));
     model->setHeaderData(6,Qt::Horizontal,QObject::tr("PRENOM"));
-    model->setHeaderData(7,Qt::Horizontal,QObject::tr("MAIL_CLIENT"));
+    model->setHeaderData(7,Qt::Horizontal,QObject::tr("MAIL CLIENT"));
     return model;
 }
 
@@ -196,14 +196,14 @@ QSqlQueryModel * carte_fidelite::trier_personaliser_cartefidelite(QString c)
     {model->setQuery("select cf.ID_CARTE,cf.ID_CLIENT,cf.DATE_CREATION_CARTE,cf.NB_POINT,cf.NB_FILM,c.NOM,c.prenom ,c.MAIL_CLIENT FROM carte_fidelite cf INNER JOIN client c on cf.id_client = c.id_client order by c.MAIL_CLIENT  ");}
 
 
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_CARTE"));
-    model->setHeaderData(1,Qt::Horizontal,QObject::tr("ID_CLIENT"));
-    model->setHeaderData(2,Qt::Horizontal,QObject::tr("DATE_CREATION_CARTE"));
-    model->setHeaderData(3,Qt::Horizontal,QObject::tr("NB_POINT"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("NB_FILM"));
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID CARTE"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("ID CLIENT"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("DATE CREATION_CARTE"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("NB POINT"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("NB FILM"));
     model->setHeaderData(5,Qt::Horizontal,QObject::tr("NOM"));
     model->setHeaderData(6,Qt::Horizontal,QObject::tr("PRENOM"));
-    model->setHeaderData(7,Qt::Horizontal,QObject::tr("MAIL_CLIENT"));
+    model->setHeaderData(7,Qt::Horizontal,QObject::tr("MAIL CLIENT"));
     return model;
 }
 
@@ -270,14 +270,14 @@ QSqlQueryModel * carte_fidelite::trier_personaliser_cartefidelite_multiple(int t
     }
 
 
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_CARTE"));
-    model->setHeaderData(1,Qt::Horizontal,QObject::tr("ID_CLIENT"));
-    model->setHeaderData(2,Qt::Horizontal,QObject::tr("DATE_CREATION_CARTE"));
-    model->setHeaderData(3,Qt::Horizontal,QObject::tr("NB_POINT"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("NB_FILM"));
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID CARTE"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("ID CLIENT"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("DATE CREATION_CARTE"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("NB POINT"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("NB FILM"));
     model->setHeaderData(5,Qt::Horizontal,QObject::tr("NOM"));
     model->setHeaderData(6,Qt::Horizontal,QObject::tr("PRENOM"));
-    model->setHeaderData(7,Qt::Horizontal,QObject::tr("MAIL_CLIENT"));
+    model->setHeaderData(7,Qt::Horizontal,QObject::tr("MAIL CLIENT"));
     return model;
 
 }

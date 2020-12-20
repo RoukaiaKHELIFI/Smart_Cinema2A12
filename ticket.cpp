@@ -25,14 +25,14 @@ QSqlQueryModel * Ticket:: afficher_ticket()
 
 
     model->setQuery(" select * from ticket ");
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_TICKET"));
-    model->setHeaderData(1,Qt::Horizontal,QObject::tr("ID_FILM"));
-    model->setHeaderData(2,Qt::Horizontal,QObject::tr("PRIX_TICKET"));
-    model->setHeaderData(3,Qt::Horizontal,QObject::tr("NUM_SALLE"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("TYPE_PAIMENT"));
-    model->setHeaderData(5,Qt::Horizontal,QObject::tr("ID_CARTE"));
-    model->setHeaderData(6,Qt::Horizontal,QObject::tr("NOM_FILM"));
-    model->setHeaderData(7,Qt::Horizontal,QObject::tr("ID_CLIENT"));
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID TICKET"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("ID FILM"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("PRIX TICKET"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("NUM SALLE"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("TYPE PAIMENT"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("ID CARTE"));
+    model->setHeaderData(6,Qt::Horizontal,QObject::tr("NOM FILM"));
+    model->setHeaderData(7,Qt::Horizontal,QObject::tr("ID CLIENT"));
 
     return model;
 }
@@ -75,14 +75,14 @@ QSqlQueryModel * Ticket::rechercher_ticket(QString num)
 
        model->setQuery(" select * from ticket  where ID_TICKET like '%'||'"+num+"'||'%' or ID_FILM like '%'||'"+num+"'||'%' or PRIX_TICKET like '%'||'"+num+"'||'%' or NUM_SALLE like '%'||'"+num+"'||'%' or TYPE_PAIMENT like '%'||'"+num+"'||'%'  or ID_CARTE like '%'||'"+num+"'||'%'  or NOM_FILM like '%'||'"+num+"'||'%'  or ID_CLIENT like '%'||'"+num+"'||'%' ");
 
-       model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_TICKET"));
-       model->setHeaderData(1,Qt::Horizontal,QObject::tr("ID_FILM"));
-       model->setHeaderData(2,Qt::Horizontal,QObject::tr("PRIX_TICKET"));
-       model->setHeaderData(3,Qt::Horizontal,QObject::tr("NUM_SALLE"));
-       model->setHeaderData(4,Qt::Horizontal,QObject::tr("TYPE_PAIMENT"));
-       model->setHeaderData(5,Qt::Horizontal,QObject::tr("ID_CARTE"));
-       model->setHeaderData(6,Qt::Horizontal,QObject::tr("NOM_FILM"));
-       model->setHeaderData(7,Qt::Horizontal,QObject::tr("ID_CLIENT"));
+       model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID TICKET"));
+       model->setHeaderData(1,Qt::Horizontal,QObject::tr("ID FILM"));
+       model->setHeaderData(2,Qt::Horizontal,QObject::tr("PRIX TICKET"));
+       model->setHeaderData(3,Qt::Horizontal,QObject::tr("NUM SALLE"));
+       model->setHeaderData(4,Qt::Horizontal,QObject::tr("TYPE PAIMENT"));
+       model->setHeaderData(5,Qt::Horizontal,QObject::tr("ID CARTE"));
+       model->setHeaderData(6,Qt::Horizontal,QObject::tr("NOM FILM"));
+       model->setHeaderData(7,Qt::Horizontal,QObject::tr("ID CLIENT"));
 
        return model;
 

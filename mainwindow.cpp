@@ -1,34 +1,11 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include"employe.h"
-#include"client.h"
-#include"carte_fidelite.h"
-#include"film.h"
-#include"ticket.h"
-#include <QMessageBox>
-#include <QMediaPlayer>
-#include "QTimer"
-#include <QMainWindow>
-#include <QPixmap>
-#include <QIcon>
-#include<QPropertyAnimation>
-#include "salle.h"
-#include "reservation.h"
-#include <QSqlTableModel>
-#include "smtp.h"
-#include <QRandomGenerator>
-#include <QRandomGenerator64>
-#include <QFileDialog>
-#include <QRandomGenerator>
-#include "random.h"
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
 
     ui->setupUi(this);
-    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget->setCurrentIndex(1);
     //*************************************************************************meriem******************************************************
        ui->paiment->setVisible(false);
        ui->label_28->setVisible(false);
@@ -86,8 +63,10 @@ MainWindow::MainWindow(QWidget *parent)
                 ui->adresse_ajouter_2->setEnabled(false);
                 ui->mail_ajouter_2->setEnabled(false);
 
-        // ************************************************************ROUKAYA***************************************************
+        // ************************************************************ROUKAIA***************************************************
                 ui->tableView->setModel(Etmp.afficher());
+ui->stackedWidget_3->setCurrentIndex(0);
+ui->stackedWidget_2->setCurrentIndex(0);
                 ui->affichage_reservation->setModel(Etmp1.afficher_res());
                 setWindowIcon(QIcon("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/popcorn"));
 
@@ -122,7 +101,7 @@ MainWindow::MainWindow(QWidget *parent)
                 animation1 = new QPropertyAnimation(ui->expertCode_2,"geometry");
                 animation1->setDuration(1999);
                 animation1->setStartValue(ui->expertCode_2->geometry());
-                animation1->setEndValue(QRect(600,300,w1,h1));
+                animation1->setEndValue(QRect(980,600,w1,h1));
 
                 animation1->setLoopCount(-1);
                 animation1->start();
@@ -167,11 +146,12 @@ MainWindow::MainWindow(QWidget *parent)
                 ui->nb_ecrans_ajout->setValidator(new QIntValidator(0,999,this));
                 /****************************************Connexion Mailing******************************************/
                 connect(ui->pushButton_24, SIGNAL(clicked()),this, SLOT(sendMail()));
-               // QPixmap bkgnd("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/background");
-              //  bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
-              //  QPalette palette;
-               // palette.setBrush(QPalette::Background, bkgnd);
-               // this->setPalette(palette);
+
+                QPixmap bkgnd(":/photos/backback.jpg");
+               bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+              QPalette palette;
+              palette.setBrush(QPalette::Background, bkgnd);
+              this->setPalette(palette);
 
 
 }
@@ -1295,6 +1275,7 @@ void MainWindow::on_recherche_reservation_cursorPositionChanged()
 void MainWindow::on_pushButton_20_clicked()
 {
     ui->stackedWidget_3->setCurrentIndex(1);
+    ui->id_reservation->setText(id_Reser);
 }
 
 void MainWindow::on_pushButton_21_clicked()
@@ -1479,10 +1460,20 @@ void MainWindow::on_pushButton_23_clicked()
 
 void MainWindow::on_pushButton_32_clicked()
 {
-    close();
+   ui->stackedWidget->setCurrentIndex(0);
 }
 
 void MainWindow::on_pushButton_31_clicked()
 {
    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_pushButton_33_clicked()
+{
+ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_pushButton_34_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
 }

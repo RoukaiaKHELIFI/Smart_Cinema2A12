@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/photos">
+        <file>background.png</file>
+        <file>client.png</file>
+        <file>filmticket.png</file>
+        <file>logoexcode.png</file>
+        <file>MaketingSponsorisation.png</file>
+        <file>popcorn.png</file>
+        <file>reclamation.png</file>
+        <file>reservationsale.png</file>
+        <file>Backk.png</file>
+        <file>backback.jpg</file>
+    </qresource>
+</RCC>

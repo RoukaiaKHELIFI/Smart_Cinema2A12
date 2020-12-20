@@ -26,11 +26,11 @@ QSqlQueryModel * Film::afficher_film()
 
 
     model->setQuery(" select * from film ");
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_FILM"));
-    model->setHeaderData(1,Qt::Horizontal,QObject::tr("NOM_FILM"));
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID FILM"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("NOM FILM"));
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("REALISATEUR"));
     model->setHeaderData(3,Qt::Horizontal,QObject::tr("NATIONALITE"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE_SORTIE"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE SORTIE"));
     model->setHeaderData(5,Qt::Horizontal,QObject::tr("DISPONIBILITE"));
     model->setHeaderData(6,Qt::Horizontal,QObject::tr("CATEGORIES"));
     return model;
@@ -69,11 +69,11 @@ QSqlQueryModel *Film::trier_film(){
 
     model->setQuery("select * from film order by nom_film ");
 
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_FILM"));
-    model->setHeaderData(1,Qt::Horizontal,QObject::tr("NOM_FILM"));
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID FILM"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("NOM FILM"));
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("REALISATEUR"));
     model->setHeaderData(3,Qt::Horizontal,QObject::tr("NATIONALITE"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE_SORTIE"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE SORTIE"));
     model->setHeaderData(5,Qt::Horizontal,QObject::tr("DISPONIBILITE"));
     model->setHeaderData(6,Qt::Horizontal,QObject::tr("CATEGORIES"));
 
@@ -87,11 +87,11 @@ QSqlQueryModel * Film::rechercher_film(QString num){
 
        model->setQuery(" select * from film  where ID_FILM like '%'||'"+num+"'||'%' or NOM_FILM like '%'||'"+num+"'||'%' or REALISATEUR like '%'||'"+num+"'||'%' or NATIONALITE like '%'||'"+num+"'||'%' or CATEGORIES like '%'||'"+num+"'||'%'");
 
-       model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_FILM"));
-       model->setHeaderData(1,Qt::Horizontal,QObject::tr("NOM_FILM"));
+       model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID FILM"));
+       model->setHeaderData(1,Qt::Horizontal,QObject::tr("NOM FILM"));
        model->setHeaderData(2,Qt::Horizontal,QObject::tr("REALISATEUR"));
        model->setHeaderData(3,Qt::Horizontal,QObject::tr("NATIONALITE"));
-       model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE_SORTIE"));
+       model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE SORTIE"));
        model->setHeaderData(5,Qt::Horizontal,QObject::tr("DISPONIBILITE"));
        model->setHeaderData(6,Qt::Horizontal,QObject::tr("CATEGORIES"));
 
@@ -107,11 +107,11 @@ QSqlQueryModel *Film::trier_film_r(){
 
     model->setQuery("select * from film order by realisateur ");
 
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_FILM"));
-    model->setHeaderData(1,Qt::Horizontal,QObject::tr("NOM_FILM"));
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID FILM"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("NOM FILM"));
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("REALISATEUR"));
     model->setHeaderData(3,Qt::Horizontal,QObject::tr("NATIONALITE"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE_SORTIE"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE SORTIE"));
     model->setHeaderData(5,Qt::Horizontal,QObject::tr("DISPONIBILITE"));
     model->setHeaderData(6,Qt::Horizontal,QObject::tr("CATEGORIES"));
 
@@ -125,11 +125,11 @@ QSqlQueryModel *Film::trier_film_n(){
 
     model->setQuery("select * from film order by nationalite ");
 
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_FILM"));
-    model->setHeaderData(1,Qt::Horizontal,QObject::tr("NOM_FILM"));
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID FILM"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("NOM FILM"));
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("REALISATEUR"));
     model->setHeaderData(3,Qt::Horizontal,QObject::tr("NATIONALITE"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE_SORTIE"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE SORTIE"));
     model->setHeaderData(5,Qt::Horizontal,QObject::tr("DISPONIBILITE"));
     model->setHeaderData(6,Qt::Horizontal,QObject::tr("CATEGORIES"));
 
@@ -142,11 +142,11 @@ QSqlQueryModel *Film::trier_film_c(){
 
     model->setQuery("select * from film order by categories ");
 
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_FILM"));
-    model->setHeaderData(1,Qt::Horizontal,QObject::tr("NOM_FILM"));
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID FILM"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("NOM FILM"));
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("REALISATEUR"));
     model->setHeaderData(3,Qt::Horizontal,QObject::tr("NATIONALITE"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE_SORTIE"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE SORTIE"));
     model->setHeaderData(5,Qt::Horizontal,QObject::tr("DISPONIBILITE"));
     model->setHeaderData(6,Qt::Horizontal,QObject::tr("CATEGORIES"));
 

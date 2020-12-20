@@ -14,6 +14,21 @@
 #include"salle.h"
 #include"reservation.h"
 
+
+#include "ui_mainwindow.h"
+
+#include <QMainWindow>
+#include <QPixmap>
+#include <QIcon>
+#include<QPropertyAnimation>
+
+#include <QSqlTableModel>
+#include "smtp.h"
+#include <QRandomGenerator>
+#include <QRandomGenerator64>
+#include <QFileDialog>
+#include <QRandomGenerator>
+#include "random.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -197,6 +212,10 @@ private slots:
    void on_pushButton_32_clicked();
 
    void on_pushButton_31_clicked();
+
+   void on_pushButton_33_clicked();
+
+   void on_pushButton_34_clicked();
 
 private:
     Ui::MainWindow *ui;
