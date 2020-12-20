@@ -5,7 +5,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
 
     ui->setupUi(this);
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(0);
     //*************************************************************************meriem******************************************************
        ui->paiment->setVisible(false);
        ui->label_28->setVisible(false);
