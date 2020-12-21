@@ -1303,7 +1303,7 @@ void MainWindow::sendMail()
     connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
 QString msg ="Date De Reservation : "+ui->date_res->text()+"\n"+"ID Reservation : "+id_Reser;
 
-smtp->sendMail(ui->user->text(), ui->test->text(), ui->subject->text(),msg);
+smtp->sendMail(ui->user->text(), "sinda.chamekh@esprit.tn", ui->subject->text(),msg);
 
 
 }
@@ -1404,7 +1404,9 @@ void MainWindow::on_return_from_ajout_5_clicked()
     ui->id_client_5->setText(empty);
     ui->id_reservation_2->setText(empty);
     ui->nb_personne_2->setText(empty);
+    ui->test->setText(empty);
 }
+
 
 void MainWindow::on_pushButton_29_clicked()
 {
