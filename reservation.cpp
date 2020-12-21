@@ -5,18 +5,20 @@ Reservation::Reservation()
 id_client=0;
 id_reservation="";
 nb_personne=0;
-//nomfilm="";
+nomfilm="";
 date_r.currentDate();
+mail_reservation="";
 
 }
 
-Reservation::Reservation(int id_client,QString id_reservation,int nb_personne,QString nomfilm,QDate date_r){
+Reservation::Reservation(int id_client,QString id_reservation,int nb_personne,QString nomfilm,QDate date_r,QString mail_reservation){
    this->id_client = id_client;
     this->id_reservation = id_reservation;
     this->nb_personne = nb_personne;
     this->nomfilm=nomfilm;
 
     this->date_r=date_r;
+    this->mail_reservation=mail_reservation;
 
 }
 int Reservation::get_id_client(){return id_client;}
@@ -25,12 +27,13 @@ int Reservation::get_nb_personne(){return nb_personne;}
 QString Reservation::get_nomfilm(){return nomfilm;}
 
 QDate Reservation::get_date_r(){return date_r;}
+QString Reservation::get_mail_reservation(){return mail_reservation;}
 
 bool Reservation::ajouter_res(){
     QSqlQuery query;
     QString res=QString::number(id_client);
-    query.prepare("INSERT INTO reservation(id_client,id_reservation,nb_personne,nom_film,date_res)"
-                  "Values (:id_client,:id_reservation,:nb_personne,:nomfilm,:date_r)");
+    query.prepare("INSERT INTO reservation(id_client,id_reservation,nb_personne,nom_film,date_res,mail_reservation)"
+                  "Values (:id_client,:id_reservation,:nb_personne,:nomfilm,:date_r,:mail_reservation)");
 
 query.bindValue(":id_client",id_client);
 query.bindValue(":id_reservation",id_reservation);
@@ -38,6 +41,7 @@ query.bindValue(":nb_personne",nb_personne);
 
 query.bindValue(":nomfilm",nomfilm);
 query.bindValue(":date_r",date_r);
+query.bindValue(":mail_reservation",mail_reservation);
 
 
 return query.exec();
@@ -50,6 +54,8 @@ QSqlQueryModel * Reservation ::afficher_res(){
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("NB Personne"));
     model->setHeaderData(3,Qt::Horizontal,QObject::tr("Nom Film"));
     model->setHeaderData(4,Qt::Horizontal,QObject::tr("Date"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("Mail Reservation"));
+
 
 
 
@@ -81,14 +87,14 @@ QSqlQueryModel *Reservation::trier_res(){
 
 
     QSqlQueryModel *model = new QSqlQueryModel();
-    model->setQuery("select * from reservation order by date_res asc,nb_personne asc,nom_film asc");
+    model->setQuery("select * from reservation order by date_res asc,nb_personne asc,nom_film asc,mail_reservation asc");
     model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID Client"));
     model->setHeaderData(1,Qt::Horizontal,QObject::tr("ID Reservation"));
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("NB Personne"));
 
     model->setHeaderData(3,Qt::Horizontal,QObject::tr("Nom Film"));
     model->setHeaderData(4,Qt::Horizontal,QObject::tr("Date"));
-
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("Mail Reservation"));
     return model;
 }
 
@@ -102,7 +108,7 @@ model->setQuery("select * from reservation where id_client like '%'||'"+f+"'||'%
        model->setHeaderData(2,Qt::Horizontal,QObject::tr("NB Personne"));
        model->setHeaderData(3,Qt::Horizontal,QObject::tr("Nom Film"));
          model->setHeaderData(4,Qt::Horizontal,QObject::tr("Date Reservation"));
-
+            model->setHeaderData(5,Qt::Horizontal,QObject::tr("Mail Reservation"));
    return model;
 
 

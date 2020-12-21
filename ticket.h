@@ -12,10 +12,9 @@ class Ticket
 private:
     int id_ticket;
     QString id_film;
-    QString prix;
+   int prix;
     QString salle;
     QString Type_paiment;
-    int id_carte;
     QString nom_film;
     int id_client;
 
@@ -26,22 +25,20 @@ public:
     Ticket(){
              this->id_ticket=0;
              this->id_film="";
-             this->prix="";
+             this->prix=0;
              this->salle="";
              this->Type_paiment="";
-             this->id_carte=0;
              this->nom_film="";
              this->id_client=0;
 
         }
-    Ticket(int id_ticket,QString id_film,QString prix,QString salle,QString Type_paiment , int id_carte , QString nom_film ,  int id_client)
+    Ticket(int id_ticket,QString id_film,int prix,QString salle,QString Type_paiment , QString nom_film ,  int id_client)
     {
              this->id_ticket=id_ticket;
              this->id_film=id_film;
              this->prix=prix;
              this->salle=salle;
              this->Type_paiment=Type_paiment;
-             this->id_carte=id_carte;
              this->nom_film=nom_film;
              this->id_client=id_client;
 
@@ -67,11 +64,11 @@ public:
         this->id_film=id_film;
     }
 
-    QString getprix()
+    int getprix()
     {
         return prix;
     }
-    void setprix(QString prix)
+    void setprix(int prix)
     {
         this->prix=prix;
     }
@@ -94,14 +91,6 @@ public:
         this->Type_paiment=Type_paiment;
     }
 
-    int getid_carte()
-    {
-        return id_carte;
-    }
-    void setid_carte(int id_carte)
-    {
-        this->id_carte=id_carte;
-    }
     QString getnom_film()
     {
         return nom_film;

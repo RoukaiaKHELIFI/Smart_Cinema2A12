@@ -352,14 +352,14 @@ void MainWindow::on_returnF_clicked()
 
 void MainWindow::on_ajouterTicket_clicked()
 {
-    Ticket t(ui->id_ticket->text().toInt(),ui->Id_film_ticket->text(),ui->prix_ticket->text(),
-                       ui->salles->currentText(),ui->paiment->currentText(),ui->id_carte->text().toInt(),ui->nomfilm->text(),ui->id_client->text().toInt());
+    Ticket t(ui->id_ticket->text().toInt(),ui->Id_film_ticket->text(),ui->prix_ticket->text().toInt(),
+                       ui->salles->currentText(),ui->paiment->currentText(),ui->nomfilm->text(),ui->id_client->text().toInt());
               t.ajouter_ticket();
               ui->AfficherTicketTable->setModel(empc.afficher_ticket());
 
-              carte_fidelite cf(ui->id_carte->text().toInt(),0,0,0);
+              //carte_fidelite cf(ui->id_carte->text().toInt(),0,0,0);
 
-              cf.modifier_cartefidelite();//FC MODIFIER
+              //cf.modifier_cartefidelite();//FC MODIFIER
 
                QMediaPlayer *player= new QMediaPlayer;
                    player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
@@ -378,10 +378,10 @@ void MainWindow::on_ModifierTicket_clicked()
         Ticket *tmpTi=new Ticket();
         tmpTi->setid_ticket(ui->id_ticket->text().toInt());
         tmpTi->setid_film(ui->Id_film_ticket->text());
-        tmpTi->setprix(ui->prix_ticket->text());
+        tmpTi->setprix(ui->prix_ticket->text().toInt());
         tmpTi->setsalle(ui->salles->currentText());
         tmpTi->settype_paiment(ui->paiment->currentText());
-        tmpTi->setid_carte(ui->id_carte->text().toInt());
+
         tmpTi->setnom_film(ui->nomfilm->text());
         tmpTi->setid_client(ui->id_client->text().toInt());
 
@@ -410,7 +410,6 @@ void MainWindow::on_ModifierTicket_clicked()
                ui->prix_ticket->setText("");
                ui->salles->setCurrentText("");
                ui->paiment->setCurrentText("");
-               ui->id_carte->setText("");
                ui->nomfilm->setText("");
                ui->id_client->setText("");
 }
@@ -456,7 +455,6 @@ void MainWindow::on_refreshT_clicked()
         ui->prix_ticket->setText("");
         ui->salles->setCurrentText("");
         ui->paiment->setCurrentText("");
-        ui->id_carte->setText("");
         ui->nomfilm->setText("");
         ui->id_client->setText("");
 }
@@ -528,7 +526,6 @@ void MainWindow::on_AfficherTicketTable_activated(const QModelIndex &index)
                     ui->prix_ticket->setText(query.value(2).toString());
                     ui->salles->setCurrentText(query.value(3).toString());
                     ui->paiment->setCurrentText(query.value(4).toString());
-                    ui->id_carte->setText(query.value(5).toString());
                     ui->nomfilm->setText(query.value(6).toString());
                     ui->id_client->setText(query.value(7).toString());
 
@@ -810,11 +807,10 @@ void MainWindow::on_ajouter_carte_clicked()
        player->setVolume(1000);
 
 
-       Smtp* smtp = new Smtp(ui->user->text(), ui->pwd->text(), ui->server->text(), ui->port->text().toInt());
+       Smtp* smtp = new Smtp("sindachamakh27@gmail.com", "27Novembre", ui->server->text(), ui->port->text().toInt());
        connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
-   //QString msg ="Creation Carte  : "+ui->date_res->text()+"\n"+"ID Reservation : "+id_Reser;
 
-   smtp->sendMail(ui->user->text(), "sinda.chemakh@esprit.tn", "Smart_Cinema","Carte Fidilite Cree Pour L'utilisateur Identifier Par : "+ui->cin_client_ajouter_2->text());
+   smtp->sendMail("sindachamakh27@gmail.com",ui->mail_ajouter_2->text(), "Smart_Cinema","Carte Fidilite Cree Pour L'utilisateur Identifier Par : "+ui->cin_client_ajouter_2->text());
 
     QString idd=ui->id_client_3->text();
 
@@ -902,7 +898,7 @@ void MainWindow::on_SupprimerCarte_clicked()
     { QMessageBox::information(this,"non existe","id n'existe pas");}
     else
        {
-        QString str = " Vous voulez vraiment supprimer \n l carte ayant le id :"+ ui->id_carte->text();
+        QString str = " Vous voulez vraiment supprimer \n l carte ayant le id :"+ ui->id_carte_2->text();
              int ret = QMessageBox::question(this, tr("suppression"),str,QMessageBox::Ok|QMessageBox::Cancel);
              switch (ret) {
                case QMessageBox::Ok:
@@ -1307,7 +1303,7 @@ void MainWindow::sendMail()
     connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
 QString msg ="Date De Reservation : "+ui->date_res->text()+"\n"+"ID Reservation : "+id_Reser;
 
-smtp->sendMail(ui->user->text(), "roukaia.khelifi@esprit.tn", ui->subject->text(),msg);
+smtp->sendMail(ui->user->text(), ui->test->text(), ui->subject->text(),msg);
 
 
 }
@@ -1317,9 +1313,10 @@ void MainWindow::on_pushButton_24_clicked()
     int nb_personne=ui->nb_personne->text().toInt();
     QDate dater= ui->date_res->date();
     QString nomfilm=ui->comboBox->currentText();
+    QString mail=ui->test->text();
 
 QString id_reservation =id_Reser;
-    Reservation r(id_client,id_reservation,nb_personne,nomfilm,dater);
+    Reservation r(id_client,id_reservation,nb_personne,nomfilm,dater,mail);
     bool test =r.ajouter_res();
 
     if(test){
@@ -1328,7 +1325,7 @@ QString id_reservation =id_Reser;
         ui->id_client_4->setText(m);
         //ui->id_reservation->setText(m);
         ui->nb_personne->setText(m);
-        ui->rcpt->setText(m);
+        ui->test->setText(m);
         ui->comboBox->setCurrentIndex(0);
         dater.currentDate();
 
@@ -1363,14 +1360,14 @@ void MainWindow::on_return_from_ajout_4_clicked()
 void MainWindow::on_pushButton_26_clicked()
 {
 
-    int id_client=ui->id_client_5->text().toInt();
-    QString id_reser=ui->id_reservation_2->text();
-    int nb_personne=ui->nb_personne_2->text().toInt();
-    QString nomfilm=ui->comboBox_2->currentText();
+    int id_client = ui->id_client_5->text().toInt();
+    int nb_personne=ui->nb_personne->text().toInt();
+    QDate dater= ui->date_res->date();
+    QString nomfilm=ui->comboBox->currentText();
+    QString mail=ui->test->text();
 
-    QDate dater=ui->date_res_2->date();
-
-    Reservation r(id_client,id_reser,nb_personne,nomfilm,dater);
+QString id_reservation =id_Reser;
+    Reservation r(id_client,id_reservation,nb_personne,nomfilm,dater,mail);
     bool test = r.update_res(id_client);
     if(test){
 
@@ -1380,6 +1377,7 @@ void MainWindow::on_pushButton_26_clicked()
         ui->id_reservation_2->setText(m);
         ui->nb_personne_2->setText(m);
         ui->comboBox_2->setCurrentIndex(0);
+
 
         dater.currentDate();
         dater.currentDate();
