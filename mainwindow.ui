@@ -99,7 +99,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../../Documents/ProjetQT_Image/25245.png</normaloff>../../Documents/ProjetQT_Image/25245.png</iconset>
+        <normaloff>../ProjetQT_Image/25245.png</normaloff>../ProjetQT_Image/25245.png</iconset>
       </property>
      </widget>
      <widget class="QLabel" name="labelExCode">
@@ -1790,7 +1790,7 @@ background:blue;}</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="widget_2">
        <attribute name="title">
@@ -2130,7 +2130,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../Documents/ProjetQT_Image/close2.png</normaloff>../../Documents/ProjetQT_Image/close2.png</iconset>
+          <normaloff>../ProjetQT_Image/close2.png</normaloff>../ProjetQT_Image/close2.png</iconset>
         </property>
        </widget>
        <widget class="QLineEdit" name="recherchecase_3">
@@ -2183,7 +2183,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../Documents/ProjetQT_Image/add1.png</normaloff>../../Documents/ProjetQT_Image/add1.png</iconset>
+          <normaloff>../ProjetQT_Image/add1.png</normaloff>../ProjetQT_Image/add1.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -2229,7 +2229,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../Documents/ProjetQT_Image/supp.png</normaloff>../../Documents/ProjetQT_Image/supp.png</iconset>
+          <normaloff>../ProjetQT_Image/supp.png</normaloff>../ProjetQT_Image/supp.png</iconset>
         </property>
        </widget>
        <widget class="QComboBox" name="genre_filtre">
@@ -2484,7 +2484,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../Documents/ProjetQT_Image/mod.png</normaloff>../../Documents/ProjetQT_Image/mod.png</iconset>
+          <normaloff>../ProjetQT_Image/mod.png</normaloff>../ProjetQT_Image/mod.png</iconset>
         </property>
        </widget>
        <widget class="QPushButton" name="filtrerClient">
@@ -2524,7 +2524,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../Documents/ProjetQT_Image/filtrer1.png</normaloff>../../Documents/ProjetQT_Image/filtrer1.png</iconset>
+          <normaloff>../ProjetQT_Image/filtrer1.png</normaloff>../ProjetQT_Image/filtrer1.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -2561,7 +2561,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../Documents/ProjetQT_Image/an.png</normaloff>../../Documents/ProjetQT_Image/an.png</iconset>
+          <normaloff>../ProjetQT_Image/an.png</normaloff>../ProjetQT_Image/an.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -2583,7 +2583,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../../Documents/ProjetQT_Image/rechercher.png</pixmap>
+         <pixmap>../ProjetQT_Image/rechercher.png</pixmap>
         </property>
        </widget>
        <widget class="QPushButton" name="Return2">
@@ -2623,7 +2623,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../Documents/ProjetQT_Image/return1.png</normaloff>../../Documents/ProjetQT_Image/return1.png</iconset>
+          <normaloff>../ProjetQT_Image/return1.png</normaloff>../ProjetQT_Image/return1.png</iconset>
         </property>
        </widget>
        <widget class="QPushButton" name="trier_client">
@@ -2663,7 +2663,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../Documents/ProjetQT_Image/rechercher.png</normaloff>../../Documents/ProjetQT_Image/rechercher.png</iconset>
+          <normaloff>../ProjetQT_Image/rechercher.png</normaloff>../ProjetQT_Image/rechercher.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -2709,7 +2709,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../Documents/ProjetQT_Image/rechercher.png</normaloff>../../Documents/ProjetQT_Image/rechercher.png</iconset>
+          <normaloff>../ProjetQT_Image/rechercher.png</normaloff>../ProjetQT_Image/rechercher.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -2888,7 +2888,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../Documents/ProjetQT_Image/close2.png</normaloff>../../Documents/ProjetQT_Image/close2.png</iconset>
+          <normaloff>../ProjetQT_Image/close2.png</normaloff>../ProjetQT_Image/close2.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -2934,7 +2934,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../Documents/ProjetQT_Image/supp.png</normaloff>../../Documents/ProjetQT_Image/supp.png</iconset>
+          <normaloff>../ProjetQT_Image/supp.png</normaloff>../ProjetQT_Image/supp.png</iconset>
         </property>
        </widget>
        <widget class="QToolBox" name="toolBox_2">
@@ -3006,7 +3006,7 @@ color:black;
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>../../Documents/ProjetQT_Image/rechercher.png</pixmap>
+           <pixmap>../ProjetQT_Image/rechercher.png</pixmap>
           </property>
          </widget>
         </widget>
@@ -3015,8 +3015,8 @@ color:black;
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>881</width>
-           <height>385</height>
+           <width>100</width>
+           <height>30</height>
           </rect>
          </property>
          <attribute name="label">
@@ -3065,7 +3065,7 @@ color:black;
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>../../Documents/ProjetQT_Image/rechercher.png</pixmap>
+           <pixmap>../ProjetQT_Image/rechercher.png</pixmap>
           </property>
          </widget>
          <widget class="QPushButton" name="trier">
@@ -3105,7 +3105,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../../Documents/ProjetQT_Image/rechercher.png</normaloff>../../Documents/ProjetQT_Image/rechercher.png</iconset>
+            <normaloff>../ProjetQT_Image/rechercher.png</normaloff>../ProjetQT_Image/rechercher.png</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -3153,7 +3153,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../Documents/ProjetQT_Image/add1.png</normaloff>../../Documents/ProjetQT_Image/add1.png</iconset>
+          <normaloff>../ProjetQT_Image/add1.png</normaloff>../ProjetQT_Image/add1.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -3199,7 +3199,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../Documents/ProjetQT_Image/mail6.png</normaloff>../../Documents/ProjetQT_Image/mail6.png</iconset>
+          <normaloff>../ProjetQT_Image/mail6.png</normaloff>../ProjetQT_Image/mail6.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -3370,7 +3370,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../Documents/ProjetQT_Image/an.png</normaloff>../../Documents/ProjetQT_Image/an.png</iconset>
+          <normaloff>../ProjetQT_Image/an.png</normaloff>../ProjetQT_Image/an.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -3426,7 +3426,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../Documents/ProjetQT_Image/mod.png</normaloff>../../Documents/ProjetQT_Image/mod.png</iconset>
+          <normaloff>../ProjetQT_Image/mod.png</normaloff>../ProjetQT_Image/mod.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -3472,7 +3472,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../Documents/ProjetQT_Image/return1.png</normaloff>../../Documents/ProjetQT_Image/return1.png</iconset>
+          <normaloff>../ProjetQT_Image/return1.png</normaloff>../ProjetQT_Image/return1.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -3518,7 +3518,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../Documents/ProjetQT_Image/rechercher.png</normaloff>../../Documents/ProjetQT_Image/rechercher.png</iconset>
+          <normaloff>../ProjetQT_Image/rechercher.png</normaloff>../ProjetQT_Image/rechercher.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -3626,7 +3626,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../Documents/ProjetQT_Image/rechercher.png</normaloff>../../Documents/ProjetQT_Image/rechercher.png</iconset>
+          <normaloff>../ProjetQT_Image/rechercher.png</normaloff>../ProjetQT_Image/rechercher.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -3711,7 +3711,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../Documents/ProjetQT_Image/return1.png</normaloff>../../Documents/ProjetQT_Image/return1.png</iconset>
+          <normaloff>../ProjetQT_Image/return1.png</normaloff>../ProjetQT_Image/return1.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -3795,7 +3795,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../../Documents/ProjetQT_Image/back.png</pixmap>
+         <pixmap>../ProjetQT_Image/back.png</pixmap>
         </property>
        </widget>
        <zorder>label_63</zorder>

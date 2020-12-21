@@ -146,6 +146,7 @@ ui->stackedWidget_2->setCurrentIndex(0);
                 ui->nb_ecrans_ajout->setValidator(new QIntValidator(0,999,this));
                 /****************************************Connexion Mailing******************************************/
                 connect(ui->pushButton_24, SIGNAL(clicked()),this, SLOT(sendMail()));
+                connect(ui->ajouter_carte, SIGNAL(clicked()),this, SLOT(sendMail()));
 
                 QPixmap bkgnd(":/photos/backback.jpg");
                bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
@@ -807,6 +808,14 @@ void MainWindow::on_ajouter_carte_clicked()
     player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
        player->play();
        player->setVolume(1000);
+
+
+       Smtp* smtp = new Smtp(ui->user->text(), ui->pwd->text(), ui->server->text(), ui->port->text().toInt());
+       connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+   //QString msg ="Creation Carte  : "+ui->date_res->text()+"\n"+"ID Reservation : "+id_Reser;
+
+   smtp->sendMail(ui->user->text(), "sinda.chemakh@esprit.tn", "Smart_Cinema","Carte Fidilite Cree Pour L'utilisateur Identifier Par : "+ui->cin_client_ajouter_2->text());
+
     QString idd=ui->id_client_3->text();
 
     if (idd=="")
