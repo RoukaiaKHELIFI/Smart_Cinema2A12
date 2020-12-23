@@ -64,7 +64,7 @@ MainWindow::MainWindow(QWidget *parent)
                 ui->mail_ajouter_2->setEnabled(false);
 
         // ************************************************************ROUKAIA***************************************************
-                ui->tableView->setModel(Etmp.afficher());
+                ui->affichage_salle->setModel(Etmp.afficher());
 ui->stackedWidget_3->setCurrentIndex(0);
 ui->stackedWidget_2->setCurrentIndex(0);
                 ui->affichage_reservation->setModel(Etmp1.afficher_res());
@@ -145,7 +145,7 @@ ui->stackedWidget_2->setCurrentIndex(0);
                 ui->nb_personne_2->setValidator(new QIntValidator(0,99,this));
                 ui->nb_ecrans_ajout->setValidator(new QIntValidator(0,999,this));
                 /****************************************Connexion Mailing******************************************/
-                connect(ui->pushButton_24, SIGNAL(clicked()),this, SLOT(sendMail()));
+                connect(ui->ajouter_res, SIGNAL(clicked()),this, SLOT(sendMail()));
                 connect(ui->ajouter_carte, SIGNAL(clicked()),this, SLOT(sendMail()));
 
                 QPixmap bkgnd(":/photos/backback.jpg");
@@ -153,6 +153,18 @@ ui->stackedWidget_2->setCurrentIndex(0);
               QPalette palette;
               palette.setBrush(QPalette::Background, bkgnd);
               this->setPalette(palette);
+              //selection d'une ligne reservation
+                  ui->affichage_reservation->resizeColumnsToContents();
+                  ui->affichage_reservation->resizeRowsToContents();
+                  ui->affichage_reservation->setSelectionBehavior(QAbstractItemView::SelectRows);
+                  ui->affichage_reservation->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
+                  ui->affichage_reservation->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+                  //selection d'une ligne
+                      ui->affichage_salle->resizeColumnsToContents();
+                      ui->affichage_salle->resizeRowsToContents();
+                      ui->affichage_salle->setSelectionBehavior(QAbstractItemView::SelectRows);
+                      ui->affichage_salle->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
+                      ui->affichage_salle->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
 
 
 }
@@ -1113,7 +1125,27 @@ void MainWindow::on_pushButton_9_clicked()
 
 void MainWindow::on_pushButton_10_clicked()
 {
-     ui->stackedWidget_2->setCurrentIndex(3);
+    // ui->stackedWidget_2->setCurrentIndex(3);
+    QString idd=ui->nm_salle_supp->text();
+      Salle *Etmp=new Salle();
+        if (idd=="")
+        { QMessageBox::information(this,"Erreur","Numero de Salle n'est pas Selectioné");}
+        else
+           {
+            QString str = " Vous voulez vraiment supprimer Salle \n ayant le Numero:"+ ui->nm_salle_supp->text();
+                 int ret = QMessageBox::question(this, tr("Suppression"),str,QMessageBox::Yes|QMessageBox::Cancel);
+                 switch (ret) {
+                   case QMessageBox::Yes:
+    int x = ui->nm_salle_supp->text().toInt();
+                      if (Etmp->supprimer(x))
+                       {
+                               ui->affichage_salle->setModel(Etmp->afficher());
+                     }
+                     break;
+
+
+    }
+    }
 }
 
 void MainWindow::on_pushButton_14_clicked()
@@ -1129,14 +1161,14 @@ QString dispo ="";
     if(test){
 
 
-        ui->tableView->setModel(Etmp.afficher());
+        ui->affichage_salle->setModel(Etmp.afficher());
 
         QString  mt="";
         ui->nm_salle_ajout->setText(mt);
         ui->nb_baffles_ajout->setText(mt);
         ui->nb_chaise_ajout->setText(mt);
         ui->nb_ecrans_ajout->setText(mt);
-
+ui->stackedWidget_2->setCurrentIndex(0);
         QMessageBox::information(nullptr,QObject::tr("OK"),
                                  QObject::tr("Ajouter Effectuer.\n""Click cancel to exit"),QMessageBox::Cancel);
 
@@ -1173,13 +1205,14 @@ void MainWindow::on_pushButton_15_clicked()
     Salle s(num_salle,nb_baffles,nb_chaise,nb_ecrans,dispo);
     bool test =s.Update(num_salle);
     if(test){
-        ui->tableView->setModel(Etmp.afficher());
+        ui->affichage_salle->setModel(Etmp.afficher());
         QString  mt="";
         ui->nm_salle_modif->setText(mt);
         ui->nb_baffles_modif->setText(mt);
         ui->nb_chaise_modif->setText(mt);
         ui->nb_ecrans_modif->setText(mt);
         ui->dispo_2->setText(mt);
+        ui->stackedWidget_2->setCurrentIndex(0);
         QMessageBox::information(nullptr,QObject::tr("OK"),
                                  QObject::tr("Modification Effectuer.\n""Click cancel to exit"),QMessageBox::Cancel);
 
@@ -1210,7 +1243,7 @@ void MainWindow::on_pushButton_17_clicked()
     int nums = ui->nm_salle_supp->text().toInt();
     bool test= Etmp.supprimer(nums);
     if(test){
-        ui->tableView->setModel(Etmp.afficher());
+        ui->affichage_salle->setModel(Etmp.afficher());
         QString  mt="";
         ui->nm_salle_supp->setText(mt);
 
@@ -1241,12 +1274,12 @@ void MainWindow::on_return_from_ajout_3_clicked()
 
 void MainWindow::on_pushButton_12_clicked()
 {
-      ui->tableView->setModel(Etmp.trier());
+      ui->affichage_salle->setModel(Etmp.trier());
 }
 
-void MainWindow::on_tableView_activated(const QModelIndex &index)
+void MainWindow::on_affichage_salle_activated(const QModelIndex &index)
 {
-    QString ch=ui->tableView->model()->data(index).toString();
+    QString ch=ui->affichage_salle->model()->data(index).toString();
     QSqlQuery query;
     query.prepare("select * from salle where numsalle ='"+ch+"'");
     if(query.exec()){
@@ -1266,7 +1299,7 @@ void MainWindow::on_recherche_salle_cursorPositionChanged()
 {
     Salle s;
 
-    ui->tableView->setModel(s.rechercher(ui->recherche_salle->text()));
+    ui->affichage_salle->setModel(s.rechercher(ui->recherche_salle->text()));
     s.afficher();
 }
 
@@ -1290,58 +1323,32 @@ void MainWindow::on_pushButton_21_clicked()
 
 void MainWindow::on_pushButton_22_clicked()
 {
-     ui->stackedWidget_3->setCurrentIndex(3);
-}
+QString idd=ui->id_client_6->text();
+    Reservation *Etmp1=new Reservation();
+    if (idd=="")
+    { QMessageBox::information(this,"non existe","id n'existe pas");}
+    else
+       {
+        QString str = " Vous voulez vraiment supprimer Reservation \n ayant le id de client :"+ ui->id_client_6->text();
+             int ret = QMessageBox::question(this, tr("Suppression"),str,QMessageBox::Yes|QMessageBox::Cancel);
+             switch (ret) {
+               case QMessageBox::Yes:
+int x = ui->id_client_6->text().toInt();
+                  if (Etmp1->supprimer_res(x))
+                   {
+                           ui->affichage_reservation->setModel(Etmp1->afficher_res());
+                 }
+                 break;
 
+
+}
+}
+}
 void MainWindow::on_pushButton_19_clicked()
 {
      ui->affichage_reservation->setModel(Etmp1.trier_res());
 }
-void MainWindow::sendMail()
-{
-    Smtp* smtp = new Smtp(ui->user->text(), ui->pwd->text(), ui->server->text(), ui->port->text().toInt());
-    connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
-QString msg ="Date De Reservation : "+ui->date_res->text()+"\n"+"ID Reservation : "+id_Reser;
 
-smtp->sendMail(ui->user->text(), "sinda.chamekh@esprit.tn", ui->subject->text(),msg);
-
-
-}
-void MainWindow::on_pushButton_24_clicked()
-{
-    int id_client = ui->id_client_4->text().toInt();
-    int nb_personne=ui->nb_personne->text().toInt();
-    QDate dater= ui->date_res->date();
-    QString nomfilm=ui->comboBox->currentText();
-    QString mail=ui->test->text();
-
-QString id_reservation =id_Reser;
-    Reservation r(id_client,id_reservation,nb_personne,nomfilm,dater,mail);
-    bool test =r.ajouter_res();
-
-    if(test){
-
-        QString m="";
-        ui->id_client_4->setText(m);
-        //ui->id_reservation->setText(m);
-        ui->nb_personne->setText(m);
-        ui->test->setText(m);
-        ui->comboBox->setCurrentIndex(0);
-        dater.currentDate();
-
-        ui->affichage_reservation->setModel(Etmp1.afficher_res());
-
-        QMessageBox::information(nullptr,QObject::tr("OK"),
-                                 QObject::tr("Ajouter Effectuer A QR Code Has been Sent.\n""Click cancel to exit"),QMessageBox::Cancel);
-
- }
-    else
-    {
-        QMessageBox::critical(nullptr,QObject::tr("NOT OK"),
-                              QObject::tr("Ajouter non effectuer Vous pouvez Verifier l'IDs (Unique).\n""Click cancel to exit"),QMessageBox::Cancel);
-
-    }
-}
 
 void MainWindow::on_pushButton_25_clicked()
 {
@@ -1364,10 +1371,10 @@ void MainWindow::on_pushButton_26_clicked()
     int nb_personne=ui->nb_personne->text().toInt();
     QDate dater= ui->date_res->date();
     QString nomfilm=ui->comboBox->currentText();
-    QString mail=ui->test->text();
+    //QString mail=ui->test->text();
 
 QString id_reservation =id_Reser;
-    Reservation r(id_client,id_reservation,nb_personne,nomfilm,dater,mail);
+    Reservation r(id_client,id_reservation,nb_personne,nomfilm,dater,ui->mail_reservation->text());
     bool test = r.update_res(id_client);
     if(test){
 
@@ -1380,7 +1387,7 @@ QString id_reservation =id_Reser;
 
 
         dater.currentDate();
-        dater.currentDate();
+    ui->stackedWidget_3->setCurrentIndex(0);
         QMessageBox::information(nullptr,QObject::tr("OK"),
                                  QObject::tr("Modification Effectuer.\n""Click cancel to exit"),QMessageBox::Cancel);
 
@@ -1404,7 +1411,7 @@ void MainWindow::on_return_from_ajout_5_clicked()
     ui->id_client_5->setText(empty);
     ui->id_reservation_2->setText(empty);
     ui->nb_personne_2->setText(empty);
-    ui->test->setText(empty);
+  //  ui->test->setText(empty);
 }
 
 
@@ -1486,3 +1493,49 @@ void MainWindow::on_pushButton_34_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
+
+void MainWindow::on_ajouter_res_clicked()
+{
+    Smtp* smtp = new Smtp("roukaia70@gmail.com","sousourourou9899@", ui->server->text(), ui->port->text().toInt());
+    connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+QString msg ="Date De Reservation : "+ui->date_res->text()+"\n"+"ID Reservation : "+id_Reser;
+
+smtp->sendMail("roukaia70@gmail.com", ui->mail_reservation->text(), "TEEEEST",msg);
+
+int id_client = ui->id_client_4->text().toInt();
+int nb_personne=ui->nb_personne->text().toInt();
+QDate dater= ui->date_res->date();
+QString nomfilm=ui->comboBox->currentText();
+
+QString id_reservation =id_Reser;
+
+    Reservation r(id_client,id_reservation,nb_personne,nomfilm,dater,ui->mail_reservation->text());
+
+    bool test =r.ajouter_res();
+    if(test){
+
+        QString m="";
+        ui->id_client_4->setText(m);
+        ui->id_reservation->setText(m);
+        ui->nb_personne->setText(m);
+ ui->mail_reservation->setText(m);
+        ui->comboBox->setCurrentIndex(0);
+        dater.currentDate();
+ui->stackedWidget_3->setCurrentIndex(0);
+        ui->affichage_reservation->setModel(Etmp1.afficher_res());
+
+        QMessageBox::information(nullptr,QObject::tr("OK"),
+                                 QObject::tr("Ajouter Effectuer The ID Reservation Has been Sent.\n""Click cancel to exit"),QMessageBox::Cancel);
+
+ }
+    else
+    {
+        QMessageBox::critical(nullptr,QObject::tr("NOT OK"),
+                              QObject::tr("Ajouter non effectuer Vous pouvez Verifier l'IDs (Unique).\n""Click cancel to exit"),QMessageBox::Cancel);
+
+    }
+}
+
+
+
+

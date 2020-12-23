@@ -95,7 +95,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
 }</string>
       </property>
       <property name="text">
-       <string>se connecter</string>
+       <string>Se Connecter</string>
       </property>
       <property name="icon">
        <iconset>
@@ -118,14 +118,46 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
        <pixmap resource="source.qrc">:/photos/logoexcode.png</pixmap>
       </property>
      </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>476</x>
+        <y>162</y>
+        <width>51</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="source.qrc">:/photos/empl.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>230</y>
+        <width>51</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="source.qrc">:/photos/pass3.png</pixmap>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_2">
      <widget class="QPushButton" name="pushButton_5">
       <property name="geometry">
        <rect>
-        <x>800</x>
+        <x>790</x>
         <y>560</y>
-        <width>161</width>
+        <width>181</width>
         <height>41</height>
        </rect>
       </property>
@@ -153,7 +185,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
 }</string>
       </property>
       <property name="text">
-       <string>Gestion marketing</string>
+       <string>Gestion Marketing Et Spons</string>
       </property>
       <property name="icon">
        <iconset>
@@ -197,7 +229,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
        <rect>
         <x>350</x>
         <y>560</y>
-        <width>161</width>
+        <width>181</width>
         <height>41</height>
        </rect>
       </property>
@@ -225,7 +257,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
 }</string>
       </property>
       <property name="text">
-       <string>Gestion réclamation</string>
+       <string>Gestion Réclamation Et Avis</string>
       </property>
       <property name="icon">
        <iconset>
@@ -235,9 +267,9 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
        <rect>
-        <x>120</x>
+        <x>110</x>
         <y>280</y>
-        <width>161</width>
+        <width>181</width>
         <height>41</height>
        </rect>
       </property>
@@ -265,7 +297,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
 }</string>
       </property>
       <property name="text">
-       <string>Gestion de client</string>
+       <string>Gestion Client Et Carte Fid</string>
       </property>
       <property name="icon">
        <iconset>
@@ -307,9 +339,9 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
      <widget class="QPushButton" name="pushButton_3">
       <property name="geometry">
        <rect>
-        <x>1020</x>
+        <x>1000</x>
         <y>280</y>
-        <width>161</width>
+        <width>191</width>
         <height>41</height>
        </rect>
       </property>
@@ -337,7 +369,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
 }</string>
       </property>
       <property name="text">
-       <string>Gestion salle</string>
+       <string>Gestion Salle Et Reservation</string>
       </property>
       <property name="icon">
        <iconset>
@@ -393,7 +425,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
 }</string>
       </property>
       <property name="text">
-       <string>Gestion film</string>
+       <string>Gestion Film Et Ticket</string>
       </property>
       <property name="icon">
        <iconset>
@@ -786,6 +818,10 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         <property name="text">
          <string>Close</string>
         </property>
+        <property name="icon">
+         <iconset resource="source.qrc">
+          <normaloff>:/photos/close2.png</normaloff>:/photos/close2.png</iconset>
+        </property>
        </widget>
        <widget class="QLineEdit" name="recherche">
         <property name="geometry">
@@ -834,6 +870,10 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="text">
          <string> Ajouter</string>
+        </property>
+        <property name="icon">
+         <iconset resource="source.qrc">
+          <normaloff>:/photos/add1.png</normaloff>:/photos/add1.png</iconset>
         </property>
        </widget>
        <widget class="QLabel" name="label_14">
@@ -932,6 +972,10 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="text">
          <string> Supprimer</string>
+        </property>
+        <property name="icon">
+         <iconset resource="source.qrc">
+          <normaloff>:/photos/supp.png</normaloff>:/photos/supp.png</iconset>
         </property>
        </widget>
        <widget class="QLabel" name="label_21">
@@ -1131,6 +1175,10 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="text">
          <string>Return</string>
+        </property>
+        <property name="icon">
+         <iconset resource="source.qrc">
+          <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
         </property>
        </widget>
        <zorder>label_15</zorder>
@@ -1442,6 +1490,10 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         <property name="text">
          <string>Ajouter</string>
         </property>
+        <property name="icon">
+         <iconset resource="source.qrc">
+          <normaloff>:/photos/add1.png</normaloff>:/photos/add1.png</iconset>
+        </property>
        </widget>
        <widget class="QPushButton" name="Close_ticket">
         <property name="geometry">
@@ -1477,6 +1529,10 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="text">
          <string>Close</string>
+        </property>
+        <property name="icon">
+         <iconset resource="source.qrc">
+          <normaloff>:/photos/close2.png</normaloff>:/photos/close2.png</iconset>
         </property>
        </widget>
        <widget class="QLabel" name="label_53">
@@ -1554,6 +1610,10 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="text">
          <string>Supprimer</string>
+        </property>
+        <property name="icon">
+         <iconset resource="source.qrc">
+          <normaloff>:/photos/supp.png</normaloff>:/photos/supp.png</iconset>
         </property>
        </widget>
        <widget class="QPushButton" name="ModifierTicket">
@@ -1659,6 +1719,10 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         <property name="text">
          <string>Return client</string>
         </property>
+        <property name="icon">
+         <iconset resource="source.qrc">
+          <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
+        </property>
        </widget>
        <widget class="QPushButton" name="refreshT">
         <property name="geometry">
@@ -1730,6 +1794,10 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         </property>
         <property name="text">
          <string>Return </string>
+        </property>
+        <property name="icon">
+         <iconset resource="source.qrc">
+          <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
         </property>
        </widget>
        <zorder>pushButton_7</zorder>
@@ -2119,8 +2187,8 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Close</string>
         </property>
         <property name="icon">
-         <iconset>
-          <normaloff>../ProjetQT_Image/close2.png</normaloff>../ProjetQT_Image/close2.png</iconset>
+         <iconset resource="source.qrc">
+          <normaloff>:/photos/close2.png</normaloff>:/photos/close2.png</iconset>
         </property>
        </widget>
        <widget class="QLineEdit" name="recherchecase_3">
@@ -2172,8 +2240,8 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Ajouter</string>
         </property>
         <property name="icon">
-         <iconset>
-          <normaloff>../ProjetQT_Image/add1.png</normaloff>../ProjetQT_Image/add1.png</iconset>
+         <iconset resource="source.qrc">
+          <normaloff>:/photos/add1.png</normaloff>:/photos/add1.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -2218,8 +2286,8 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string> Supprimer</string>
         </property>
         <property name="icon">
-         <iconset>
-          <normaloff>../ProjetQT_Image/supp.png</normaloff>../ProjetQT_Image/supp.png</iconset>
+         <iconset resource="source.qrc">
+          <normaloff>:/photos/supp.png</normaloff>:/photos/supp.png</iconset>
         </property>
        </widget>
        <widget class="QComboBox" name="genre_filtre">
@@ -2612,8 +2680,8 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Return</string>
         </property>
         <property name="icon">
-         <iconset>
-          <normaloff>../ProjetQT_Image/return1.png</normaloff>../ProjetQT_Image/return1.png</iconset>
+         <iconset resource="source.qrc">
+          <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
         </property>
        </widget>
        <widget class="QPushButton" name="trier_client">
@@ -3820,8 +3888,8 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
        <widget class="QStackedWidget" name="stackedWidget_2">
         <property name="geometry">
          <rect>
-          <x>-30</x>
-          <y>40</y>
+          <x>20</x>
+          <y>0</y>
           <width>1231</width>
           <height>661</height>
          </rect>
@@ -3856,7 +3924,7 @@ background-color: rgb(255, 170, 255);</string>
          <number>2</number>
         </property>
         <widget class="QWidget" name="Main">
-         <widget class="QTableView" name="tableView">
+         <widget class="QTableView" name="affichage_salle">
           <property name="geometry">
            <rect>
             <x>360</x>
@@ -3887,6 +3955,10 @@ color:black;
           <property name="text">
            <string>Ajouter</string>
           </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/add1.png</normaloff>:/photos/add1.png</iconset>
+          </property>
          </widget>
          <widget class="QPushButton" name="pushButton_9">
           <property name="geometry">
@@ -3915,6 +3987,10 @@ color:black;
           </property>
           <property name="text">
            <string>Supprimer</string>
+          </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/supp.png</normaloff>:/photos/supp.png</iconset>
           </property>
          </widget>
          <widget class="QPushButton" name="pushButton_12">
@@ -3985,7 +4061,11 @@ color:black;
            <string notr="true"> padding: 8px 10px;</string>
           </property>
           <property name="text">
-           <string>Retourn menu</string>
+           <string>Return menu</string>
+          </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
           </property>
          </widget>
          <widget class="QPushButton" name="pushButton_32">
@@ -4005,6 +4085,10 @@ color:black;
           </property>
           <property name="text">
            <string>Quitter</string>
+          </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/close2.png</normaloff>:/photos/close2.png</iconset>
           </property>
          </widget>
         </widget>
@@ -4030,6 +4114,10 @@ color:black;
           <property name="text">
            <string>Quitter</string>
           </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/close2.png</normaloff>:/photos/close2.png</iconset>
+          </property>
          </widget>
          <widget class="QPushButton" name="return_from_ajout">
           <property name="geometry">
@@ -4049,6 +4137,10 @@ color:black;
           <property name="text">
            <string>Undo</string>
           </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
+          </property>
          </widget>
          <widget class="QPushButton" name="pushButton_14">
           <property name="geometry">
@@ -4067,6 +4159,10 @@ color:black;
           </property>
           <property name="text">
            <string>Ajouter</string>
+          </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/add1.png</normaloff>:/photos/add1.png</iconset>
           </property>
          </widget>
          <widget class="QWidget" name="layoutWidget">
@@ -4179,6 +4275,10 @@ color:black;
           <property name="text">
            <string>Quitter</string>
           </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/close2.png</normaloff>:/photos/close2.png</iconset>
+          </property>
          </widget>
          <widget class="QPushButton" name="return_from_ajout_2">
           <property name="geometry">
@@ -4197,6 +4297,10 @@ color:black;
           </property>
           <property name="text">
            <string>Undo</string>
+          </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
           </property>
          </widget>
          <widget class="QWidget" name="layoutWidget">
@@ -4453,7 +4557,7 @@ QLineEdit:focus {
 </string>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="Main_Reservation">
          <widget class="QTableView" name="affichage_reservation">
@@ -4461,7 +4565,7 @@ QLineEdit:focus {
            <rect>
             <x>324</x>
             <y>100</y>
-            <width>611</width>
+            <width>691</width>
             <height>311</height>
            </rect>
           </property>
@@ -4519,6 +4623,10 @@ color:black;
           <property name="text">
            <string>Ajouter</string>
           </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/add1.png</normaloff>:/photos/add1.png</iconset>
+          </property>
          </widget>
          <widget class="QPushButton" name="pushButton_21">
           <property name="geometry">
@@ -4548,12 +4656,16 @@ color:black;
           <property name="text">
            <string>Supprimer</string>
           </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/supp.png</normaloff>:/photos/supp.png</iconset>
+          </property>
          </widget>
          <widget class="QLabel" name="Pathe_2">
           <property name="geometry">
            <rect>
-            <x>1030</x>
-            <y>270</y>
+            <x>1060</x>
+            <y>330</y>
             <width>151</width>
             <height>101</height>
            </rect>
@@ -4585,7 +4697,11 @@ color:black;
            </rect>
           </property>
           <property name="text">
-           <string>Retourne Menu</string>
+           <string>Return Menu</string>
+          </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
           </property>
          </widget>
          <widget class="QPushButton" name="pushButton_34">
@@ -4600,10 +4716,14 @@ color:black;
           <property name="text">
            <string>Quitter</string>
           </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/close2.png</normaloff>:/photos/close2.png</iconset>
+          </property>
          </widget>
         </widget>
         <widget class="QWidget" name="Ajout_Reservation_2">
-         <widget class="QPushButton" name="pushButton_24">
+         <widget class="QPushButton" name="ajouter_res">
           <property name="geometry">
            <rect>
             <x>760</x>
@@ -4620,6 +4740,10 @@ color:black;
           </property>
           <property name="text">
            <string>Ajouter</string>
+          </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/mail6.png</normaloff>:/photos/mail6.png</iconset>
           </property>
          </widget>
          <widget class="QPushButton" name="pushButton_25">
@@ -4640,6 +4764,10 @@ color:black;
           <property name="text">
            <string>Quitter</string>
           </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/close2.png</normaloff>:/photos/close2.png</iconset>
+          </property>
          </widget>
          <widget class="QPushButton" name="return_from_ajout_4">
           <property name="geometry">
@@ -4658,6 +4786,10 @@ color:black;
           </property>
           <property name="text">
            <string>Undo</string>
+          </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
           </property>
          </widget>
          <widget class="QLineEdit" name="pwd">
@@ -4801,6 +4933,10 @@ color:rgba(0,0,0,0);</string>
           <property name="text">
            <string>Return menu</string>
           </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
+          </property>
          </widget>
          <widget class="QLineEdit" name="user">
           <property name="geometry">
@@ -4924,7 +5060,7 @@ color:rgba(0,0,0,0);</string>
             </widget>
            </item>
            <item row="6" column="2">
-            <widget class="QLineEdit" name="test">
+            <widget class="QLineEdit" name="mail_reservation">
              <property name="styleSheet">
               <string notr="true"/>
              </property>
@@ -4969,7 +5105,7 @@ selection-color:#FBEEE6;</string>
                <second>0</second>
                <year>2020</year>
                <month>12</month>
-               <day>4</day>
+               <day>31</day>
               </datetime>
              </property>
              <property name="time">
@@ -5026,7 +5162,7 @@ selection-color:#FBEEE6;</string>
               <date>
                <year>2020</year>
                <month>12</month>
-               <day>4</day>
+               <day>31</day>
               </date>
              </property>
             </widget>
@@ -5079,6 +5215,10 @@ selection-color:#FBEEE6;</string>
           <property name="text">
            <string>Undo</string>
           </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
+          </property>
          </widget>
          <widget class="QPushButton" name="pushButton_27">
           <property name="geometry">
@@ -5097,6 +5237,10 @@ selection-color:#FBEEE6;</string>
           </property>
           <property name="text">
            <string>Quitter</string>
+          </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/close2.png</normaloff>:/photos/close2.png</iconset>
           </property>
          </widget>
          <widget class="QWidget" name="layoutWidget">

@@ -173,7 +173,7 @@ private slots:
 
     void on_pushButton_12_clicked();
 
-    void on_tableView_activated(const QModelIndex &index);
+    void on_affichage_salle_activated(const QModelIndex &index);
 
     void on_recherche_salle_cursorPositionChanged();
 
@@ -186,8 +186,6 @@ private slots:
     void on_pushButton_22_clicked();
 
     void on_pushButton_19_clicked();
-
-    void on_pushButton_24_clicked();
 
     void on_pushButton_25_clicked();
 
@@ -206,7 +204,7 @@ private slots:
     void on_pushButton_28_clicked();
 
     void on_affichage_reservation_activated(const QModelIndex &index);
-   void sendMail();
+
    void on_pushButton_23_clicked();
 
    void on_pushButton_32_clicked();
@@ -216,6 +214,10 @@ private slots:
    void on_pushButton_33_clicked();
 
    void on_pushButton_34_clicked();
+
+   void on_ajouter_res_clicked();
+
+
 
 private:
     Ui::MainWindow *ui;
