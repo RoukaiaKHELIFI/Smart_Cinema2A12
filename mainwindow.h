@@ -219,6 +219,8 @@ private slots:
 
 
 
+   void on_pushButton_24_clicked();
+
 private:
     Ui::MainWindow *ui;
     client tmpc;

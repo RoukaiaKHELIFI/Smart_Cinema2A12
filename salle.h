@@ -3,7 +3,7 @@
 #include<QSqlQuery>
 #include <QSqlQueryModel>
 #include<QString>
-
+#include "ticket.h"
 class Salle
 {
 public:
@@ -18,6 +18,8 @@ bool ajouter();
 QSqlQueryModel * afficher();
 bool supprimer(int);
 bool Update(int);
+QString disponibilite();
+
 QSqlQueryModel * trier();
 QSqlQueryModel* rechercher(QString num_salle);
 private:

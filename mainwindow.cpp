@@ -1154,9 +1154,15 @@ void MainWindow::on_pushButton_14_clicked()
     int nb_baffles =ui->nb_baffles_ajout->text().toInt();
     int nb_chaise=ui->nb_chaise_ajout->text().toInt();
     int nb_ecrans=ui->nb_ecrans_ajout->text().toInt();
-QString dispo ="";
+    Salle s;
+QString d= s.get_dispo();
+if(num_salle==0||nb_baffles==0||nb_chaise==0||nb_ecrans==0){
+    QMessageBox::critical(nullptr,QObject::tr("Champs Vide !"),
+                          QObject::tr("Ajouter non effectuer Veillez Remplir Les Champs.\n""Click cancel to exit"),QMessageBox::Cancel);
 
-    Salle s(num_salle,nb_baffles,nb_chaise,nb_ecrans,dispo);
+}
+else{
+    Salle s(num_salle,nb_baffles,nb_chaise,nb_ecrans,d);
     bool test =s.ajouter();
     if(test){
 
@@ -1180,7 +1186,7 @@ ui->stackedWidget_2->setCurrentIndex(0);
 
     }
 }
-
+}
 void MainWindow::on_pushButton_13_clicked()
 {
        ui->stackedWidget_2->setCurrentIndex(0);
@@ -1202,6 +1208,14 @@ void MainWindow::on_pushButton_15_clicked()
     int nb_chaise=ui->nb_chaise_modif->text().toInt();
     int nb_ecrans=ui->nb_ecrans_modif->text().toInt();
     QString dispo=ui->dispo_2->text();
+    if(num_salle==0||nb_baffles==0||nb_chaise==0||nb_ecrans==0){
+
+        QMessageBox::critical(nullptr,QObject::tr("Champs Vide !"),
+                              QObject::tr("Modification non effectuer veillez Remplir Les champs.\n""Click cancel to exit"),QMessageBox::Cancel);
+
+    }
+    else {
+
     Salle s(num_salle,nb_baffles,nb_chaise,nb_ecrans,dispo);
     bool test =s.Update(num_salle);
     if(test){
@@ -1224,7 +1238,7 @@ void MainWindow::on_pushButton_15_clicked()
 
     }
 }
-
+}
 void MainWindow::on_pushButton_16_clicked()
 {
      ui->stackedWidget_2->setCurrentIndex(0);
@@ -1374,6 +1388,11 @@ void MainWindow::on_pushButton_26_clicked()
     //QString mail=ui->test->text();
 
 QString id_reservation =id_Reser;
+if(id_client==0||nb_personne==0||nomfilm==""){
+    QMessageBox::critical(nullptr,QObject::tr("Champs Vide!"),
+                          QObject::tr("Modification non effectuer Veillez Remplir Les champs.\n""Click cancel to exit"),QMessageBox::Cancel);
+
+}else{
     Reservation r(id_client,id_reservation,nb_personne,nomfilm,dater,ui->mail_reservation->text());
     bool test = r.update_res(id_client);
     if(test){
@@ -1399,7 +1418,7 @@ QString id_reservation =id_Reser;
 
     }
 }
-
+}
 void MainWindow::on_pushButton_27_clicked()
 {
     ui->stackedWidget_3->setCurrentIndex(0);
@@ -1508,7 +1527,12 @@ QDate dater= ui->date_res->date();
 QString nomfilm=ui->comboBox->currentText();
 
 QString id_reservation =id_Reser;
+if(id_client==0||nb_personne==0||nomfilm==""){
 
+    QMessageBox::critical(nullptr,QObject::tr("Champs Vide ! "),
+                          QObject::tr("Ajouter non effectuer Veillez Remplir Les champs.\n""Click cancel to exit"),QMessageBox::Cancel);
+
+}else{
     Reservation r(id_client,id_reservation,nb_personne,nomfilm,dater,ui->mail_reservation->text());
 
     bool test =r.ajouter_res();
@@ -1535,7 +1559,12 @@ ui->stackedWidget_3->setCurrentIndex(0);
 
     }
 }
+}
 
 
 
 
+void MainWindow::on_pushButton_24_clicked()
+{
+      ui->stackedWidget->setCurrentIndex(3);
+}

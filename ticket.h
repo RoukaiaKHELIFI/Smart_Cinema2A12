@@ -107,6 +107,7 @@ public:
     {
         this->id_client=id_client;
     }
+    int somme_ticket(int);
 
     bool ajouter_ticket();
     QSqlQueryModel * afficher_ticket();
@@ -116,6 +117,7 @@ public:
 
 
 };
+
 
 #endif // TICKET_H
 
