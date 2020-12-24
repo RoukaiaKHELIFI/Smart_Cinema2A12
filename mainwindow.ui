@@ -48,6 +48,9 @@ QLineEdit:focus {
         <height>51</height>
        </rect>
       </property>
+      <property name="placeholderText">
+       <string>                                          Nom</string>
+      </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_2">
       <property name="geometry">
@@ -60,6 +63,9 @@ QLineEdit:focus {
       </property>
       <property name="echoMode">
        <enum>QLineEdit::Password</enum>
+      </property>
+      <property name="placeholderText">
+       <string>                                    Mot De Passe</string>
       </property>
      </widget>
      <widget class="QPushButton" name="AjouterClient_2">
@@ -131,7 +137,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="source.qrc">:/photos/empl.png</pixmap>
+       <pixmap>:/photos/empl.png</pixmap>
       </property>
      </widget>
      <widget class="QLabel" name="label_2">
@@ -147,7 +153,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="source.qrc">:/photos/pass3.png</pixmap>
+       <pixmap>:/photos/pass3.png</pixmap>
       </property>
      </widget>
     </widget>
@@ -819,7 +825,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Close</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/close2.png</normaloff>:/photos/close2.png</iconset>
         </property>
        </widget>
@@ -872,7 +878,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string> Ajouter</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/add1.png</normaloff>:/photos/add1.png</iconset>
         </property>
        </widget>
@@ -925,7 +931,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string> Modifier</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/mod.png</normaloff>:/photos/mod.png</iconset>
         </property>
        </widget>
@@ -978,7 +984,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string> Supprimer</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/supp.png</normaloff>:/photos/supp.png</iconset>
         </property>
        </widget>
@@ -1080,7 +1086,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Rrefresh</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/filtrer1.png</normaloff>:/photos/filtrer1.png</iconset>
         </property>
        </widget>
@@ -1185,7 +1191,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Return</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
         </property>
        </widget>
@@ -1499,7 +1505,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Ajouter</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/add1.png</normaloff>:/photos/add1.png</iconset>
         </property>
        </widget>
@@ -1539,7 +1545,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Close</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/close2.png</normaloff>:/photos/close2.png</iconset>
         </property>
        </widget>
@@ -1620,7 +1626,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Supprimer</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/supp.png</normaloff>:/photos/supp.png</iconset>
         </property>
        </widget>
@@ -1660,7 +1666,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Modifier</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/mod.png</normaloff>:/photos/mod.png</iconset>
         </property>
        </widget>
@@ -1732,7 +1738,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Return client</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
         </property>
        </widget>
@@ -1772,7 +1778,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Refresh</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/filtrer1.png</normaloff>:/photos/filtrer1.png</iconset>
         </property>
        </widget>
@@ -1812,7 +1818,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Return </string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
         </property>
        </widget>
@@ -2203,7 +2209,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Close</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/close2.png</normaloff>:/photos/close2.png</iconset>
         </property>
        </widget>
@@ -2256,7 +2262,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Ajouter</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/add1.png</normaloff>:/photos/add1.png</iconset>
         </property>
         <property name="iconSize">
@@ -2302,7 +2308,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string> Supprimer</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/supp.png</normaloff>:/photos/supp.png</iconset>
         </property>
        </widget>
@@ -2557,7 +2563,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Modifier</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/mod.png</normaloff>:/photos/mod.png</iconset>
         </property>
        </widget>
@@ -2597,7 +2603,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string> Filtrer</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/filtrer1.png</normaloff>:/photos/filtrer1.png</iconset>
         </property>
         <property name="iconSize">
@@ -2696,7 +2702,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Return</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
         </property>
        </widget>
@@ -2736,7 +2742,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Trier</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/filtrer1.png</normaloff>:/photos/filtrer1.png</iconset>
         </property>
         <property name="iconSize">
@@ -2961,7 +2967,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Close</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/close2.png</normaloff>:/photos/close2.png</iconset>
         </property>
         <property name="iconSize">
@@ -3007,7 +3013,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string> Supprimer</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/supp.png</normaloff>:/photos/supp.png</iconset>
         </property>
        </widget>
@@ -3226,7 +3232,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string> Ajouter</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/add1.png</normaloff>:/photos/add1.png</iconset>
         </property>
         <property name="iconSize">
@@ -3272,7 +3278,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Mail</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/mail6.png</normaloff>:/photos/mail6.png</iconset>
         </property>
         <property name="iconSize">
@@ -3499,7 +3505,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Modifier</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/mod.png</normaloff>:/photos/mod.png</iconset>
         </property>
         <property name="iconSize">
@@ -3545,7 +3551,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Return</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
         </property>
         <property name="iconSize">
@@ -3784,7 +3790,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Return Ticket</string>
         </property>
         <property name="icon">
-         <iconset resource="source.qrc">
+         <iconset>
           <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
         </property>
         <property name="iconSize">
@@ -3820,20 +3826,31 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
      <widget class="QTabWidget" name="tabWidget_3">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>80</x>
         <y>10</y>
         <width>1261</width>
         <height>621</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 12pt &quot;Times New Roman&quot;;</string>
+       <string notr="true">font: 12pt &quot;Times New Roman&quot;;
+/*color :white;
+/*background-color:black;</string>
       </property>
       <property name="tabShape">
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
+      </property>
+      <property name="movable">
+       <bool>true</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>false</bool>
       </property>
       <widget class="QWidget" name="Salle">
        <attribute name="title">
@@ -3881,10 +3898,10 @@ background-color: rgb(255, 170, 255);</string>
          <widget class="QTableView" name="affichage_salle">
           <property name="geometry">
            <rect>
-            <x>360</x>
-            <y>90</y>
-            <width>571</width>
-            <height>311</height>
+            <x>350</x>
+            <y>140</y>
+            <width>641</width>
+            <height>331</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -3900,8 +3917,8 @@ color:black;
          <widget class="QPushButton" name="pushButton_8">
           <property name="geometry">
            <rect>
-            <x>220</x>
-            <y>110</y>
+            <x>210</x>
+            <y>180</y>
             <width>121</width>
             <height>31</height>
            </rect>
@@ -3910,15 +3927,15 @@ color:black;
            <string>Ajouter</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/add1.png</normaloff>:/photos/add1.png</iconset>
           </property>
          </widget>
          <widget class="QPushButton" name="pushButton_9">
           <property name="geometry">
            <rect>
-            <x>220</x>
-            <y>160</y>
+            <x>210</x>
+            <y>230</y>
             <width>121</width>
             <height>31</height>
            </rect>
@@ -3927,15 +3944,15 @@ color:black;
            <string>Modifier</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/mod.png</normaloff>:/photos/mod.png</iconset>
           </property>
          </widget>
          <widget class="QPushButton" name="pushButton_10">
           <property name="geometry">
            <rect>
-            <x>220</x>
-            <y>260</y>
+            <x>210</x>
+            <y>330</y>
             <width>121</width>
             <height>31</height>
            </rect>
@@ -3947,15 +3964,15 @@ color:black;
            <string>Supprimer</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/supp.png</normaloff>:/photos/supp.png</iconset>
           </property>
          </widget>
          <widget class="QPushButton" name="pushButton_12">
           <property name="geometry">
            <rect>
-            <x>220</x>
-            <y>210</y>
+            <x>210</x>
+            <y>280</y>
             <width>121</width>
             <height>31</height>
            </rect>
@@ -3964,7 +3981,7 @@ color:black;
            <string>Trier</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/filtrer1.png</normaloff>:/photos/filtrer1.png</iconset>
           </property>
          </widget>
@@ -3977,6 +3994,9 @@ color:black;
             <height>71</height>
            </rect>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgba(0,0,0,0);</string>
+          </property>
           <property name="text">
            <string>TextLabel</string>
           </property>
@@ -3986,9 +4006,12 @@ color:black;
            <rect>
             <x>1070</x>
             <y>430</y>
-            <width>151</width>
+            <width>111</width>
             <height>101</height>
            </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgba(0,0,0,0);</string>
           </property>
           <property name="text">
            <string>TextLabel</string>
@@ -3997,8 +4020,8 @@ color:black;
          <widget class="QLineEdit" name="recherche_salle">
           <property name="geometry">
            <rect>
-            <x>360</x>
-            <y>60</y>
+            <x>350</x>
+            <y>110</y>
             <width>151</width>
             <height>20</height>
            </rect>
@@ -4009,12 +4032,15 @@ color:black;
           <property name="placeholderText">
            <string>Rechercher Salle</string>
           </property>
+          <property name="clearButtonEnabled">
+           <bool>false</bool>
+          </property>
          </widget>
          <widget class="QPushButton" name="pushButton_23">
           <property name="geometry">
            <rect>
-            <x>220</x>
-            <y>310</y>
+            <x>210</x>
+            <y>380</y>
             <width>121</width>
             <height>31</height>
            </rect>
@@ -4026,15 +4052,15 @@ color:black;
            <string>Return menu</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
           </property>
          </widget>
          <widget class="QPushButton" name="pushButton_32">
           <property name="geometry">
            <rect>
-            <x>220</x>
-            <y>360</y>
+            <x>210</x>
+            <y>430</y>
             <width>121</width>
             <height>31</height>
            </rect>
@@ -4049,8 +4075,34 @@ color:black;
            <string>Quitter</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/close2.png</normaloff>:/photos/close2.png</iconset>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_35">
+          <property name="geometry">
+           <rect>
+            <x>1050</x>
+            <y>520</y>
+            <width>111</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Dark Theme</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_36">
+          <property name="geometry">
+           <rect>
+            <x>1050</x>
+            <y>560</y>
+            <width>111</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>White Theme</string>
           </property>
          </widget>
         </widget>
@@ -4077,7 +4129,7 @@ color:black;
            <string>Quitter</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/close2.png</normaloff>:/photos/close2.png</iconset>
           </property>
          </widget>
@@ -4100,7 +4152,7 @@ color:black;
            <string>Undo</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
           </property>
          </widget>
@@ -4123,11 +4175,11 @@ color:black;
            <string>Ajouter</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/add1.png</normaloff>:/photos/add1.png</iconset>
           </property>
          </widget>
-         <widget class="QWidget" name="layoutWidget">
+         <widget class="QWidget" name="widget" native="true">
           <property name="geometry">
            <rect>
             <x>480</x>
@@ -4135,6 +4187,14 @@ color:black;
             <width>234</width>
             <height>191</height>
            </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QWidget{
+background-color :rgba(0,0,0,0);
+}
+QLineEdit:focus {
+	background-color: rgb(200, 200, 200);
+ }</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_3">
            <item row="0" column="0">
@@ -4219,7 +4279,7 @@ color:black;
            <string>Modifier</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/mod.png</normaloff>:/photos/mod.png</iconset>
           </property>
          </widget>
@@ -4242,7 +4302,7 @@ color:black;
            <string>Quitter</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/close2.png</normaloff>:/photos/close2.png</iconset>
           </property>
          </widget>
@@ -4265,11 +4325,11 @@ color:black;
            <string>Undo</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
           </property>
          </widget>
-         <widget class="QWidget" name="layoutWidget">
+         <widget class="QWidget" name="widget" native="true">
           <property name="geometry">
            <rect>
             <x>440</x>
@@ -4278,28 +4338,19 @@ color:black;
             <height>201</height>
            </rect>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QWidget{
+background-color :rgba(0,0,0,0);
+}
+QLineEdit:focus {
+	background-color: rgb(200, 200, 200);
+ }</string>
+          </property>
           <layout class="QGridLayout" name="gridLayout_4">
            <item row="0" column="0">
             <widget class="QLabel" name="label_71">
              <property name="text">
               <string>Numero Salle a Modifier</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLineEdit" name="nm_salle_modif">
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="readOnly">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="label_70">
-             <property name="text">
-              <string>NB Chaise</string>
              </property>
             </widget>
            </item>
@@ -4317,8 +4368,15 @@ color:black;
              </property>
             </widget>
            </item>
-           <item row="2" column="1">
-            <widget class="QLineEdit" name="nb_baffles_modif">
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_70">
+             <property name="text">
+              <string>NB Chaise</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="nb_ecrans_modif">
              <property name="styleSheet">
               <string notr="true"/>
              </property>
@@ -4331,24 +4389,20 @@ color:black;
              </property>
             </widget>
            </item>
-           <item row="3" column="1">
-            <widget class="QLineEdit" name="nb_ecrans_modif">
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="nb_baffles_modif">
              <property name="styleSheet">
               <string notr="true"/>
              </property>
             </widget>
            </item>
-           <item row="4" column="0">
-            <widget class="QLabel" name="label_73">
-             <property name="text">
-              <string>Disponibilite</string>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="1">
-            <widget class="QLineEdit" name="dispo_2">
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="nm_salle_modif">
              <property name="styleSheet">
               <string notr="true"/>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -4470,46 +4524,6 @@ QPushButton:hover
 background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgba(233, 219, 171, 255), stop:1 rgba(253, 198, 0, 255))
 }
 
-/*
-QPushButton:hover:!pressed {
-display: inline-block;
-  padding: 20px 14px;
-
-  cursor: pointer;
-font-size: 11px;
-outline: none;
-	color: rgb(255, 255, 255);
-background-color: #F3B6B6;
-*/
-
-/*	background-color: rgb(255, 170, 255);*/
-  /*color: #fff;*/
- /* background-color: #4CAF50;*/
-/*  border: none;
- text-align: center;
-  text-decoration: none;
-  box-shadow: 0 9px #999;
-}*/
-/*
-QPushButton:hover {/*background-color: #3e8e41*/
-/*	background-color: rgb(170, 85, 255);*/
-/*background-color:#E0A2A2;
-
-
-
-}
-QPushButton:active {
-/*  background-color: #3e8e41;*/
-/*	background-color: rgb(170, 170, 255);*/
-/*background-color: #F3B6B6;
-
-
-
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-
-}
-*/
 
 QLineEdit{ background-color:#ffffff;
 
@@ -4520,6 +4534,7 @@ padding: 0 8px;
 QLineEdit:focus {
 	background-color: rgb(200, 200, 200);
  }
+
 </string>
         </property>
         <property name="frameShape">
@@ -4580,7 +4595,7 @@ color:black;
            <string>Trier</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/filtrer1.png</normaloff>:/photos/filtrer1.png</iconset>
           </property>
          </widget>
@@ -4597,7 +4612,7 @@ color:black;
            <string>Ajouter</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/add1.png</normaloff>:/photos/add1.png</iconset>
           </property>
          </widget>
@@ -4614,7 +4629,7 @@ color:black;
            <string>Modifier</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/mod.png</normaloff>:/photos/mod.png</iconset>
           </property>
          </widget>
@@ -4634,7 +4649,7 @@ color:black;
            <string>Supprimer</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/supp.png</normaloff>:/photos/supp.png</iconset>
           </property>
          </widget>
@@ -4646,6 +4661,9 @@ color:black;
             <width>151</width>
             <height>101</height>
            </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgba(0,0,0,0);</string>
           </property>
           <property name="text">
            <string>TextLabel</string>
@@ -4659,6 +4677,9 @@ color:black;
             <width>141</width>
             <height>71</height>
            </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgba(0,0,0,0);</string>
           </property>
           <property name="text">
            <string>TextLabel</string>
@@ -4677,7 +4698,7 @@ color:black;
            <string>Return Menu</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
           </property>
          </widget>
@@ -4694,7 +4715,7 @@ color:black;
            <string>Quitter</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/close2.png</normaloff>:/photos/close2.png</iconset>
           </property>
          </widget>
@@ -4711,7 +4732,7 @@ color:black;
            <string>Return Client</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
           </property>
          </widget>
@@ -4736,7 +4757,7 @@ color:black;
            <string>Ajouter</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/mail6.png</normaloff>:/photos/mail6.png</iconset>
           </property>
          </widget>
@@ -4759,7 +4780,7 @@ color:black;
            <string>Quitter</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/close2.png</normaloff>:/photos/close2.png</iconset>
           </property>
          </widget>
@@ -4782,7 +4803,7 @@ color:black;
            <string>Undo</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
           </property>
          </widget>
@@ -4928,7 +4949,7 @@ color:rgba(0,0,0,0);</string>
            <string>Return menu</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
           </property>
          </widget>
@@ -4953,7 +4974,7 @@ color:rgba(0,0,0,0);</string>
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QWidget" name="layoutWidget">
+         <widget class="QWidget" name="widget" native="true">
           <property name="geometry">
            <rect>
             <x>430</x>
@@ -4961,6 +4982,14 @@ color:rgba(0,0,0,0);</string>
             <width>299</width>
             <height>236</height>
            </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QWidget{
+background-color :rgba(0,0,0,0);
+}
+QLineEdit:focus {
+	background-color: rgb(200, 200, 200);
+ }</string>
           </property>
           <layout class="QGridLayout" name="gridLayout">
            <item row="4" column="2">
@@ -5010,6 +5039,19 @@ color:rgba(0,0,0,0);</string>
            </item>
            <item row="7" column="2">
             <widget class="QComboBox" name="comboBox">
+             <property name="styleSheet">
+              <string notr="true">QComboBox QAbstractItemView {
+ 
+        border-top: 6;
+        border-left: 6;
+        border-right: 6;
+        border-bottom: 6;
+	background-color: rgb(167, 0, 0);
+
+
+        color: #212121;
+}</string>
+             </property>
              <property name="editable">
               <bool>false</bool>
              </property>
@@ -5077,92 +5119,27 @@ color:rgba(0,0,0,0);</string>
              </property>
             </widget>
            </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_77">
+             <property name="text">
+              <string>ID Client</string>
+             </property>
+            </widget>
+           </item>
            <item row="8" column="2">
             <widget class="QDateEdit" name="date_res">
-             <property name="mouseTracking">
-              <bool>false</bool>
-             </property>
              <property name="styleSheet">
-              <string notr="true">background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgba(253, 198, 0, 255), stop:1 rgba(233, 219, 171, 255));
-border-radius:15px;
-color:white;
-
-selection-background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgba(233, 219, 171, 255), stop:1 rgba(253, 198, 0, 255))
-</string>
-             </property>
-             <property name="dateTime">
-              <datetime>
-               <hour>0</hour>
-               <minute>0</minute>
-               <second>0</second>
-               <year>2020</year>
-               <month>12</month>
-               <day>31</day>
-              </datetime>
-             </property>
-             <property name="time">
-              <time>
-               <hour>0</hour>
-               <minute>0</minute>
-               <second>0</second>
-              </time>
-             </property>
-             <property name="maximumDateTime">
-              <datetime>
-               <hour>23</hour>
-               <minute>59</minute>
-               <second>59</second>
-               <year>2021</year>
-               <month>12</month>
-               <day>30</day>
-              </datetime>
-             </property>
-             <property name="minimumDateTime">
-              <datetime>
-               <hour>0</hour>
-               <minute>0</minute>
-               <second>0</second>
-               <year>2020</year>
-               <month>11</month>
-               <day>1</day>
-              </datetime>
-             </property>
-             <property name="maximumDate">
-              <date>
-               <year>2021</year>
-               <month>12</month>
-               <day>30</day>
-              </date>
-             </property>
-             <property name="minimumDate">
-              <date>
-               <year>2020</year>
-               <month>11</month>
-               <day>1</day>
-              </date>
-             </property>
-             <property name="displayFormat">
-              <string>dd-MM-yyyy</string>
+              <string notr="true">background-color:white;</string>
              </property>
              <property name="calendarPopup">
               <bool>true</bool>
-             </property>
-             <property name="timeSpec">
-              <enum>Qt::LocalTime</enum>
              </property>
              <property name="date">
               <date>
                <year>2020</year>
                <month>12</month>
-               <day>31</day>
+               <day>1</day>
               </date>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_77">
-             <property name="text">
-              <string>ID Client</string>
              </property>
             </widget>
            </item>
@@ -5189,7 +5166,7 @@ selection-background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508
            <string>Modifier</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/mod.png</normaloff>:/photos/mod.png</iconset>
           </property>
          </widget>
@@ -5212,7 +5189,7 @@ selection-background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508
            <string>Undo</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
           </property>
          </widget>
@@ -5235,44 +5212,28 @@ selection-background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508
            <string>Quitter</string>
           </property>
           <property name="icon">
-           <iconset resource="source.qrc">
+           <iconset>
             <normaloff>:/photos/close2.png</normaloff>:/photos/close2.png</iconset>
           </property>
          </widget>
-         <widget class="QWidget" name="layoutWidget">
+         <widget class="QWidget" name="widget" native="true">
           <property name="geometry">
            <rect>
             <x>430</x>
             <y>150</y>
-            <width>301</width>
+            <width>281</width>
             <height>211</height>
            </rect>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QWidget{
+background-color :rgba(0,0,0,0);
+}
+QLineEdit:focus {
+	background-color: rgb(200, 200, 200);
+ }</string>
+          </property>
           <layout class="QGridLayout" name="gridLayout_2">
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_81">
-             <property name="text">
-              <string>ID Client</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLineEdit" name="id_client_5">
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="readOnly">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="label_83">
-             <property name="text">
-              <string>ID Reservation</string>
-             </property>
-            </widget>
-           </item>
            <item row="1" column="1">
             <widget class="QLineEdit" name="id_reservation_2">
              <property name="styleSheet">
@@ -5290,22 +5251,28 @@ selection-background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508
              </property>
             </widget>
            </item>
-           <item row="2" column="1">
-            <widget class="QLineEdit" name="nb_personne_2">
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="0">
-            <widget class="QLabel" name="label_85">
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_82">
              <property name="text">
-              <string>Nom Film</string>
+              <string>Date</string>
              </property>
             </widget>
            </item>
            <item row="3" column="1">
             <widget class="QComboBox" name="comboBox_2">
+             <property name="styleSheet">
+              <string notr="true">QComboBox QAbstractItemView {
+ 
+        border-top: 6;
+        border-left: 6;
+        border-right: 6;
+        border-bottom: 6;
+	background-color: rgb(167, 0, 0);
+
+
+        color: #212121;
+}</string>
+             </property>
              <item>
               <property name="text">
                <string>Mort Sur le Nill</string>
@@ -5343,87 +5310,57 @@ selection-background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508
              </item>
             </widget>
            </item>
-           <item row="4" column="0">
-            <widget class="QLabel" name="label_82">
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_85">
              <property name="text">
-              <string>Date</string>
+              <string>Nom Film</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_83">
+             <property name="text">
+              <string>ID Reservation</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_81">
+             <property name="text">
+              <string>ID Client</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="id_client_5">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="nb_personne_2">
+             <property name="styleSheet">
+              <string notr="true"/>
              </property>
             </widget>
            </item>
            <item row="4" column="1">
             <widget class="QDateEdit" name="date_res_2">
-             <property name="mouseTracking">
-              <bool>false</bool>
-             </property>
              <property name="styleSheet">
-              <string notr="true">/*background-color:#FFCAD4;
-selection-background-color:#F3ABB6;
-selection-color:#FBEEE6;*/
-background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgba(253, 198, 0, 255), stop:1 rgba(233, 219, 171, 255));
-border-radius:15px;
-color:white;
-
-selection-background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgba(233, 219, 171, 255), stop:1 rgba(253, 198, 0, 255))
-</string>
-             </property>
-             <property name="dateTime">
-              <datetime>
-               <hour>0</hour>
-               <minute>0</minute>
-               <second>0</second>
-               <year>2020</year>
-               <month>12</month>
-               <day>31</day>
-              </datetime>
-             </property>
-             <property name="maximumDateTime">
-              <datetime>
-               <hour>23</hour>
-               <minute>59</minute>
-               <second>59</second>
-               <year>2021</year>
-               <month>12</month>
-               <day>30</day>
-              </datetime>
-             </property>
-             <property name="minimumDateTime">
-              <datetime>
-               <hour>0</hour>
-               <minute>0</minute>
-               <second>0</second>
-               <year>2020</year>
-               <month>11</month>
-               <day>1</day>
-              </datetime>
-             </property>
-             <property name="maximumDate">
-              <date>
-               <year>2021</year>
-               <month>12</month>
-               <day>30</day>
-              </date>
-             </property>
-             <property name="minimumDate">
-              <date>
-               <year>2020</year>
-               <month>11</month>
-               <day>1</day>
-              </date>
-             </property>
-             <property name="displayFormat">
-              <string>dd-MM-yyyy</string>
+              <string notr="true">background-color:white;</string>
              </property>
              <property name="calendarPopup">
               <bool>true</bool>
-             </property>
-             <property name="timeSpec">
-              <enum>Qt::LocalTime</enum>
              </property>
              <property name="date">
               <date>
                <year>2020</year>
                <month>12</month>
-               <day>31</day>
+               <day>1</day>
               </date>
              </property>
             </widget>

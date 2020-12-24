@@ -13,7 +13,7 @@
 #include <QPropertyAnimation>
 #include"salle.h"
 #include"reservation.h"
-
+#include <QFile>
 
 #include "ui_mainwindow.h"
 
@@ -220,6 +220,7 @@ private slots:
 
 
    void on_pushButton_24_clicked();
+
 
 private:
     Ui::MainWindow *ui;

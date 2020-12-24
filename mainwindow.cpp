@@ -67,22 +67,23 @@ MainWindow::MainWindow(QWidget *parent)
                 ui->affichage_salle->setModel(Etmp.afficher());
 ui->stackedWidget_3->setCurrentIndex(0);
 ui->stackedWidget_2->setCurrentIndex(0);
-                ui->affichage_reservation->setModel(Etmp1.afficher_res());
-                setWindowIcon(QIcon("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/popcorn"));
 
-                QPixmap pixel4 ("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/logo");
+                ui->affichage_reservation->setModel(Etmp1.afficher_res());
+                setWindowIcon(QIcon(":/photos/popcorn.png"));
+
+                QPixmap pixel4 (":/photos/logoexcode.png");
                 ui->expertCode->setPixmap(pixel4.scaled(200,50,Qt::KeepAspectRatio));
 
-                QPixmap pixel1 ("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/popcorn");
+                QPixmap pixel1 (":/photos/popcorn.png");
                 ui->Pathe->setPixmap(pixel1.scaled(200,100,Qt::KeepAspectRatio));
 
-                QPixmap pixel2 ("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/logo");
+                QPixmap pixel2 (":/photos/logoexcode.png");
                 ui->expertCode_2->setPixmap(pixel4.scaled(200,50,Qt::KeepAspectRatio));
 
-                QPixmap pixel3 ("C:/Users/khelifi/Desktop/ROU/qtprojects/Gerer_Salle_Reservation_Roukaia_Khelifi/popcorn");
+                QPixmap pixel3 (":/photos/popcorn.png");
                 ui->Pathe_2->setPixmap(pixel1.scaled(200,100,Qt::KeepAspectRatio));
 
-                //animation pour logo pathé
+                //animation pour logo popcorn
                 int w3=ui->Pathe_2->width();
                 int h3=ui->Pathe_2->height();
 
@@ -90,7 +91,7 @@ ui->stackedWidget_2->setCurrentIndex(0);
                 animation2->setDuration(1999);
                 animation2->setStartValue(ui->Pathe_2->geometry());
 
-                animation2->setEndValue(QRect(600,20,w3,h3));
+                animation2->setEndValue(QRect(1100,20,w3,h3));
                 animation2->setLoopCount(-1);
                 animation2->start();
 
@@ -101,11 +102,11 @@ ui->stackedWidget_2->setCurrentIndex(0);
                 animation1 = new QPropertyAnimation(ui->expertCode_2,"geometry");
                 animation1->setDuration(1999);
                 animation1->setStartValue(ui->expertCode_2->geometry());
-                animation1->setEndValue(QRect(980,600,w1,h1));
+                animation1->setEndValue(QRect(1100,500,w1,h1));
 
                 animation1->setLoopCount(-1);
                 animation1->start();
-                //animation pour logo pathé
+                //animation pour logo popcorn
                 int w0=ui->Pathe->width();
                 int h0=ui->Pathe->height();
 
@@ -113,7 +114,7 @@ ui->stackedWidget_2->setCurrentIndex(0);
                 animation2->setDuration(1999);
                 animation2->setStartValue(ui->Pathe->geometry());
 
-                animation2->setEndValue(QRect(600,20,w0,h0));
+                animation2->setEndValue(QRect(1100,20,w0,h0));
                 animation2->setLoopCount(-1);
                 animation2->start();
 
@@ -124,12 +125,12 @@ ui->stackedWidget_2->setCurrentIndex(0);
                 animation1 = new QPropertyAnimation(ui->expertCode,"geometry");
                 animation1->setDuration(1999);
                 animation1->setStartValue(ui->expertCode->geometry());
-                animation1->setEndValue(QRect(600,300,w2,h2));
+                animation1->setEndValue(QRect(1100,500,w2,h2));
 
                 animation1->setLoopCount(-1);
                 animation1->start();
                 //Controle De saisie
-                //ui->nm_salle_ajout->setValidator(new QIntValidator(0,999,this));
+                ui->nm_salle_ajout->setValidator(new QIntValidator(0,99,this));
                 ui->nm_salle_modif->setValidator(new QIntValidator(0,999,this));
                 ui->nm_salle_supp->setValidator(new QIntValidator(0,999,this));
                 ui->nb_chaise_ajout->setValidator(new QIntValidator(0,999,this));
@@ -191,7 +192,7 @@ client cli;
     }
     else
     {
-    QMessageBox::information(this,"erreur","verifier votre adresse ou mod de passe ");
+    QMessageBox::information(this,"Erreur","Verifier Votre Adresse ou Mot De Passe ");
     }
 }
 
@@ -1207,7 +1208,15 @@ void MainWindow::on_pushButton_15_clicked()
     int nb_baffles =ui->nb_baffles_modif->text().toInt();
     int nb_chaise=ui->nb_chaise_modif->text().toInt();
     int nb_ecrans=ui->nb_ecrans_modif->text().toInt();
-    QString dispo=ui->dispo_2->text();
+    QString dispo;
+    Ticket t;
+    Salle s;
+    if(t.somme_ticket(num_salle)>=nb_chaise){
+        s.disponibilite()="Salle Pas Disponible";
+        dispo = s.disponibilite();
+    }
+    else dispo = s.get_dispo();
+
     if(num_salle==0||nb_baffles==0||nb_chaise==0||nb_ecrans==0){
 
         QMessageBox::critical(nullptr,QObject::tr("Champs Vide !"),
@@ -1225,7 +1234,7 @@ void MainWindow::on_pushButton_15_clicked()
         ui->nb_baffles_modif->setText(mt);
         ui->nb_chaise_modif->setText(mt);
         ui->nb_ecrans_modif->setText(mt);
-        ui->dispo_2->setText(mt);
+
         ui->stackedWidget_2->setCurrentIndex(0);
         QMessageBox::information(nullptr,QObject::tr("OK"),
                                  QObject::tr("Modification Effectuer.\n""Click cancel to exit"),QMessageBox::Cancel);
@@ -1234,7 +1243,7 @@ void MainWindow::on_pushButton_15_clicked()
     else
     {
         QMessageBox::critical(nullptr,QObject::tr("NOT OK"),
-                              QObject::tr("Modification non effectuer.\n""Click cancel to exit"),QMessageBox::Cancel);
+                              QObject::tr("Modification non effectuer Veillez Verifier Les Champs.\n""Click cancel to exit"),QMessageBox::Cancel);
 
     }
 }
@@ -1302,7 +1311,7 @@ void MainWindow::on_affichage_salle_activated(const QModelIndex &index)
             ui->nb_chaise_modif->setText(query.value(1).toString());
             ui->nb_baffles_modif->setText(query.value(2).toString());
             ui->nb_ecrans_modif->setText(query.value(3).toString());
-            ui->dispo_2->setText(query.value(4).toString());
+
             ui->nm_salle_supp->setText(query.value(0).toString());
         }
 
@@ -1527,7 +1536,8 @@ QDate dater= ui->date_res->date();
 QString nomfilm=ui->comboBox->currentText();
 
 QString id_reservation =id_Reser;
-if(id_client==0||nb_personne==0||nomfilm==""){
+QString mail=ui->mail_reservation->text();
+if(id_client==0||nb_personne==0||nomfilm==""||mail==""){
 
     QMessageBox::critical(nullptr,QObject::tr("Champs Vide ! "),
                           QObject::tr("Ajouter non effectuer Veillez Remplir Les champs.\n""Click cancel to exit"),QMessageBox::Cancel);
@@ -1555,7 +1565,7 @@ ui->stackedWidget_3->setCurrentIndex(0);
     else
     {
         QMessageBox::critical(nullptr,QObject::tr("NOT OK"),
-                              QObject::tr("Ajouter non effectuer Vous pouvez Verifier l'IDs (Unique).\n""Click cancel to exit"),QMessageBox::Cancel);
+                              QObject::tr("Ajouter non effectuer Vous pouvez Verifier les Champs.\n""Click cancel to exit"),QMessageBox::Cancel);
 
     }
 }
@@ -1568,3 +1578,4 @@ void MainWindow::on_pushButton_24_clicked()
 {
       ui->stackedWidget->setCurrentIndex(3);
 }
+
