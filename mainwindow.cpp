@@ -67,7 +67,7 @@ MainWindow::MainWindow(QWidget *parent)
                 ui->affichage_salle->setModel(Etmp.afficher());
 ui->stackedWidget_3->setCurrentIndex(0);
 ui->stackedWidget_2->setCurrentIndex(0);
-
+ui->mail_modif->setVisible(false);
                 ui->affichage_reservation->setModel(Etmp1.afficher_res());
                 setWindowIcon(QIcon(":/photos/popcorn.png"));
 
@@ -1110,23 +1110,40 @@ void MainWindow::on_triperso_3_clicked()
 
 void MainWindow::on_pushButton_3_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
+
     ui->stackedWidget->setCurrentIndex(4);
 }
 
 
 void MainWindow::on_pushButton_8_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
     ui->stackedWidget_2->setCurrentIndex(1);
 }
 
 void MainWindow::on_pushButton_9_clicked()
+
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
      ui->stackedWidget_2->setCurrentIndex(2);
 }
 
 void MainWindow::on_pushButton_10_clicked()
 {
-    // ui->stackedWidget_2->setCurrentIndex(3);
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
     QString idd=ui->nm_salle_supp->text();
       Salle *Etmp=new Salle();
         if (idd=="")
@@ -1151,6 +1168,10 @@ void MainWindow::on_pushButton_10_clicked()
 
 void MainWindow::on_pushButton_14_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
     int num_salle = ui->nm_salle_ajout->text().toInt();
     int nb_baffles =ui->nb_baffles_ajout->text().toInt();
     int nb_chaise=ui->nb_chaise_ajout->text().toInt();
@@ -1190,12 +1211,19 @@ ui->stackedWidget_2->setCurrentIndex(0);
 }
 void MainWindow::on_pushButton_13_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
        ui->stackedWidget_2->setCurrentIndex(0);
 }
 
 void MainWindow::on_return_from_ajout_clicked()
 {
-
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
     QString vide="";
     ui->nm_salle_ajout->setText(vide);
     ui->nb_chaise_ajout->setText(vide);
@@ -1204,6 +1232,10 @@ void MainWindow::on_return_from_ajout_clicked()
 
 void MainWindow::on_pushButton_15_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
     int num_salle = ui->nm_salle_modif->text().toInt();
     int nb_baffles =ui->nb_baffles_modif->text().toInt();
     int nb_chaise=ui->nb_chaise_modif->text().toInt();
@@ -1250,11 +1282,19 @@ void MainWindow::on_pushButton_15_clicked()
 }
 void MainWindow::on_pushButton_16_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
      ui->stackedWidget_2->setCurrentIndex(0);
 }
 
 void MainWindow::on_return_from_ajout_2_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
     QString vide="";
     ui->nm_salle_modif->setText(vide);
     ui->nb_chaise_modif->setText(vide);
@@ -1263,6 +1303,10 @@ void MainWindow::on_return_from_ajout_2_clicked()
 
 void MainWindow::on_pushButton_17_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
     int nums = ui->nm_salle_supp->text().toInt();
     bool test= Etmp.supprimer(nums);
     if(test){
@@ -1285,11 +1329,19 @@ void MainWindow::on_pushButton_17_clicked()
 
 void MainWindow::on_pushButton_18_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
      ui->stackedWidget_2->setCurrentIndex(0);
 }
 
 void MainWindow::on_return_from_ajout_3_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
     QString vide="";
     ui->nm_salle_supp->setText(vide);
 
@@ -1297,7 +1349,11 @@ void MainWindow::on_return_from_ajout_3_clicked()
 
 void MainWindow::on_pushButton_12_clicked()
 {
-      ui->affichage_salle->setModel(Etmp.trier());
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
+    ui->affichage_salle->setModel(Etmp.trier());
 }
 
 void MainWindow::on_affichage_salle_activated(const QModelIndex &index)
@@ -1320,6 +1376,7 @@ void MainWindow::on_affichage_salle_activated(const QModelIndex &index)
 
 void MainWindow::on_recherche_salle_cursorPositionChanged()
 {
+
     Salle s;
 
     ui->affichage_salle->setModel(s.rechercher(ui->recherche_salle->text()));
@@ -1328,24 +1385,36 @@ void MainWindow::on_recherche_salle_cursorPositionChanged()
 
 void MainWindow::on_recherche_reservation_cursorPositionChanged()
 {
-    Reservation r;
+Reservation r;
     ui->affichage_reservation->setModel(r.rechercher_res(ui->recherche_reservation->text()));
     r.afficher_res();
 }
 
 void MainWindow::on_pushButton_20_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
     ui->stackedWidget_3->setCurrentIndex(1);
     ui->id_reservation->setText(id_Reser);
 }
 
 void MainWindow::on_pushButton_21_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
     ui->stackedWidget_3->setCurrentIndex(2);
 }
 
 void MainWindow::on_pushButton_22_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
 QString idd=ui->id_client_6->text();
     Reservation *Etmp1=new Reservation();
     if (idd=="")
@@ -1369,17 +1438,29 @@ int x = ui->id_client_6->text().toInt();
 }
 void MainWindow::on_pushButton_19_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
      ui->affichage_reservation->setModel(Etmp1.trier_res());
 }
 
 
 void MainWindow::on_pushButton_25_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
 ui->stackedWidget_3->setCurrentIndex(0);
 }
 
 void MainWindow::on_return_from_ajout_4_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
     QString empty="";
     ui->id_client_4->setText(empty);
     //ui->id_reservation->setText(empty);
@@ -1387,54 +1468,21 @@ void MainWindow::on_return_from_ajout_4_clicked()
 
 }
 
-void MainWindow::on_pushButton_26_clicked()
-{
-
-    int id_client = ui->id_client_5->text().toInt();
-    int nb_personne=ui->nb_personne->text().toInt();
-    QDate dater= ui->date_res->date();
-    QString nomfilm=ui->comboBox->currentText();
-    //QString mail=ui->test->text();
-
-QString id_reservation =id_Reser;
-if(id_client==0||nb_personne==0||nomfilm==""){
-    QMessageBox::critical(nullptr,QObject::tr("Champs Vide!"),
-                          QObject::tr("Modification non effectuer Veillez Remplir Les champs.\n""Click cancel to exit"),QMessageBox::Cancel);
-
-}else{
-    Reservation r(id_client,id_reservation,nb_personne,nomfilm,dater,ui->mail_reservation->text());
-    bool test = r.update_res(id_client);
-    if(test){
-
-        ui->affichage_reservation->setModel(Etmp1.afficher_res());
-        QString m="";
-        ui->id_client_5->setText(m);
-        ui->id_reservation_2->setText(m);
-        ui->nb_personne_2->setText(m);
-        ui->comboBox_2->setCurrentIndex(0);
-
-
-        dater.currentDate();
-    ui->stackedWidget_3->setCurrentIndex(0);
-        QMessageBox::information(nullptr,QObject::tr("OK"),
-                                 QObject::tr("Modification Effectuer.\n""Click cancel to exit"),QMessageBox::Cancel);
-
-    }
-    else
-    {
-        QMessageBox::critical(nullptr,QObject::tr("NOT OK"),
-                              QObject::tr("Modification non effectuer.\n""Click cancel to exit"),QMessageBox::Cancel);
-
-    }
-}
-}
 void MainWindow::on_pushButton_27_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
     ui->stackedWidget_3->setCurrentIndex(0);
 }
 
 void MainWindow::on_return_from_ajout_5_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
     QString empty="";
     ui->id_client_5->setText(empty);
     ui->id_reservation_2->setText(empty);
@@ -1445,7 +1493,10 @@ void MainWindow::on_return_from_ajout_5_clicked()
 
 void MainWindow::on_pushButton_29_clicked()
 {
-
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
     int id_client = ui->id_client_6->text().toInt();
     bool test= Etmp1.supprimer_res(id_client);
   if(test){
@@ -1467,17 +1518,26 @@ void MainWindow::on_pushButton_29_clicked()
 
 void MainWindow::on_return_from_ajout_6_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
     QString empty="";
     ui->id_client_3->setText(empty);
 }
 
 void MainWindow::on_pushButton_28_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
     ui->stackedWidget_3->setCurrentIndex(0);
 }
 
 void MainWindow::on_affichage_reservation_activated(const QModelIndex &index)
 {
+
     QString ch =ui->affichage_reservation->model()->data(index).toString();
     QSqlQuery query;
     query.prepare("select * from reservation where id_client='"+ch+"' ");
@@ -1487,9 +1547,10 @@ void MainWindow::on_affichage_reservation_activated(const QModelIndex &index)
             ui->id_client_5->setText(query.value(0).toString());
             ui->id_reservation_2->setText(query.value(1).toString());
             ui->nb_personne_2->setText(query.value(2).toString());
-            ui->comboBox->currentText();
+            ui->comboBox_2->setCurrentText(query.value(3).toString());
             ui->date_res_2->setDate(query.value(4).toDate());
             ui->id_client_6->setText(query.value(0).toString());
+            ui->mail_modif->setText(query.value(5).toString());
 
         }
     }
@@ -1499,36 +1560,60 @@ void MainWindow::on_affichage_reservation_activated(const QModelIndex &index)
 
 void MainWindow::on_pushButton_23_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
     ui->stackedWidget->setCurrentIndex(1);
 }
 
 void MainWindow::on_pushButton_32_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
    ui->stackedWidget->setCurrentIndex(0);
 }
 
 void MainWindow::on_pushButton_31_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
    ui->stackedWidget->setCurrentIndex(1);
 }
 
 void MainWindow::on_pushButton_33_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
 ui->stackedWidget->setCurrentIndex(1);
 }
 
 void MainWindow::on_pushButton_34_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
     ui->stackedWidget->setCurrentIndex(0);
 }
 
 void MainWindow::on_ajouter_res_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
     Smtp* smtp = new Smtp("roukaia70@gmail.com","sousourourou9899@", ui->server->text(), ui->port->text().toInt());
     connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
-QString msg ="Date De Reservation : "+ui->date_res->text()+"\n"+"ID Reservation : "+id_Reser;
+QString msg ="Date De Reservation : "+ui->date_res->text()+"\n"+"ID Reservation : "+id_Reser+"\n"+"Nom Film : "+ui->comboBox->currentText();
 
-smtp->sendMail("roukaia70@gmail.com", ui->mail_reservation->text(), "TEEEEST",msg);
+smtp->sendMail("roukaia70@gmail.com", ui->mail_reservation->text(), "Reservation Confirmé",msg);
 
 int id_client = ui->id_client_4->text().toInt();
 int nb_personne=ui->nb_personne->text().toInt();
@@ -1576,6 +1661,62 @@ ui->stackedWidget_3->setCurrentIndex(0);
 
 void MainWindow::on_pushButton_24_clicked()
 {
+    QMediaPlayer *player= new QMediaPlayer;
+    player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+       player->play();
+       player->setVolume(1000);
       ui->stackedWidget->setCurrentIndex(3);
 }
 
+
+void MainWindow::on_modif_res_clicked()
+{
+
+    Smtp* smtp = new Smtp("roukaia70@gmail.com","sousourourou9899@", ui->server->text(), ui->port->text().toInt());
+    connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+QString msg ="Date De Reservation : "+ui->date_res_2->text()+"\n"+"ID Reservation : "+id_Reser+"\n"+"Nom Film : "+ui->comboBox_2->currentText();
+
+smtp->sendMail("roukaia70@gmail.com", ui->mail_modif->text(), "Reservation Modifié",msg);
+
+      QMediaPlayer *player= new QMediaPlayer;
+      player->setMedia(QUrl("C:/Users/khelifi/Documents/projet/Bouttons/Pop.mp3"));
+         player->play();
+         player->setVolume(1000);
+       int id_client = ui->id_client_5->text().toInt();
+       int nb_personne=ui->nb_personne_2->text().toInt();
+       QDate dater= ui->date_res_2->date();
+       QString nomfilm=ui->comboBox_2->currentText();
+
+
+   QString id_reservation =id_Reser;
+   if(id_client==0||nb_personne==0||nomfilm==""){
+       QMessageBox::critical(nullptr,QObject::tr("Champs Vide!"),
+                             QObject::tr("Modification non effectuer Veillez Remplir Les champs.\n""Click cancel to exit"),QMessageBox::Cancel);
+
+   }else{
+       Reservation r(id_client,id_reservation,nb_personne,nomfilm,dater,ui->mail_reservation->text());
+       bool test = r.update_res(id_client);
+       if(test){
+
+           ui->affichage_reservation->setModel(Etmp1.afficher_res());
+           QString m="";
+           ui->id_client_5->setText(m);
+           ui->id_reservation_2->setText(m);
+           ui->nb_personne_2->setText(m);
+           ui->comboBox_2->setCurrentIndex(0);
+
+
+           dater.currentDate();
+       ui->stackedWidget_3->setCurrentIndex(0);
+           QMessageBox::information(nullptr,QObject::tr("OK"),
+                                    QObject::tr("Modification Effectuer.\n""Click cancel to exit"),QMessageBox::Cancel);
+
+       }
+       else
+       {
+           QMessageBox::critical(nullptr,QObject::tr("NOT OK"),
+                                 QObject::tr("Modification non effectuer.\n""Click cancel to exit"),QMessageBox::Cancel);
+
+       }
+   }
+}

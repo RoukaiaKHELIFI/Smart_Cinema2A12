@@ -191,7 +191,6 @@ private slots:
 
     void on_return_from_ajout_4_clicked();
 
-    void on_pushButton_26_clicked();
 
     void on_pushButton_27_clicked();
 
@@ -221,6 +220,8 @@ private slots:
 
    void on_pushButton_24_clicked();
 
+
+   void on_modif_res_clicked();
 
 private:
     Ui::MainWindow *ui;
