@@ -4,6 +4,7 @@
 #include <QSqlQueryModel>
 #include <QString>
 #include <QDate>
+
 class Reservation
 {
 public:
@@ -23,6 +24,19 @@ QSqlQueryModel * afficher_res();
 bool supprimer_res(int);
 bool update_res(int);
 QSqlQueryModel * trier_res();
+bool verif(QString ch)
+{
+    ch=ch.toUpper();
+    if(ch=="")
+        return true;
+    else
+    for(int i=0;i<ch.length();i++)
+        if((ch[i]<'A' || ch[i]>'Z') && ch[i]!=" " )
+            return true;
+
+    return false;
+}
+
 QSqlQueryModel *rechercher_res(QString);
 QSqlQueryModel * trier_res2();
 private:

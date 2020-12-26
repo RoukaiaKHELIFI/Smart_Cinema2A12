@@ -84,12 +84,12 @@ QSqlQueryModel * Ticket::rechercher_ticket(QString num)
 
 }
 int Ticket::somme_ticket(int num_salle){
-    QSqlQuery  *query  = new QSqlQuery();
-           query->prepare("select sum(id_ticket) from ticket where num_salle=:num_salle" );
-query->bindValue(":num_salle",num_salle);
-           query->exec();
+    QSqlQuery  query;
+           query.prepare("select id_ticket from ticket where num_salle=:num_salle" );
+query.bindValue(":num_salle",num_salle);
+           query.exec();
            int count=0;
-           while(query->next())
+           while(query.next())
            {
             count++;
            }

@@ -40,7 +40,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-QString id_Reser="150447";
+QString id_Reser="55012";
 private slots:
     void on_AjouterClient_2_clicked();
 
@@ -222,6 +222,13 @@ private slots:
 
 
    void on_modif_res_clicked();
+
+
+
+   void on_id_client_4_textChanged();
+
+   void on_nb_personne_textChanged();
+
 
 private:
     Ui::MainWindow *ui;
