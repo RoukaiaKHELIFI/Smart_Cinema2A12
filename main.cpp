@@ -2,9 +2,25 @@
 #include <QMessageBox>
 #include <QApplication>
 #include "connexion.h"
+#include <QTranslator>
+#include <QInputDialog>
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    QTranslator t ;
+
+    QStringList languages ;
+    languages << "French" << "English" ;
+    QString lang = QInputDialog::getItem(NULL,"Selectionner Une Langue ","Langages",languages);
+    if(lang=="English")
+    {
+        t.load(":/english/english.qm");
+
+    }
+    if (lang!="French"){
+        a.installTranslator(&t);
+    }
+
     connexion c;
     bool test=c.ouvrirconnection();
     MainWindow w;
@@ -15,12 +31,13 @@ int main(int argc, char *argv[])
                                          QObject::tr("connection successful.\n""Click cancel to exit"),QMessageBox::Cancel);
 
             }
-            else
+       else
             {
                 QMessageBox::critical(nullptr,QObject::tr("database is not open"),
                                          QObject::tr("connection failed.\n""Click cancel to exit"),QMessageBox::Cancel);
 
     }
+
     w.show();
     return a.exec();
 }

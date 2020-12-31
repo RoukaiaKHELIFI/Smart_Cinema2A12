@@ -36,7 +36,7 @@ QLineEdit:focus {
 </string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLineEdit" name="lineEdit">
@@ -3843,7 +3843,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="tabsClosable">
        <bool>false</bool>
@@ -4057,7 +4057,7 @@ border-radius :10px;
            <string notr="true"> padding: 8px 10px;</string>
           </property>
           <property name="text">
-           <string>Return menu</string>
+           <string>Retour Menu</string>
           </property>
           <property name="icon">
            <iconset resource="source.qrc">
@@ -4157,7 +4157,7 @@ border-radius :10px;
            <string notr="true"/>
           </property>
           <property name="text">
-           <string>Undo</string>
+           <string>Annuler</string>
           </property>
           <property name="icon">
            <iconset resource="source.qrc">
@@ -4225,7 +4225,7 @@ QLineEdit:focus {
            <item row="1" column="0">
             <widget class="QLabel" name="label_65">
              <property name="text">
-              <string>NB Chaise</string>
+              <string>Nombre Chaise</string>
              </property>
             </widget>
            </item>
@@ -4239,7 +4239,7 @@ QLineEdit:focus {
            <item row="2" column="0">
             <widget class="QLabel" name="label_67">
              <property name="text">
-              <string>NB Baffles</string>
+              <string>Nombre Baffles</string>
              </property>
             </widget>
            </item>
@@ -4253,7 +4253,7 @@ QLineEdit:focus {
            <item row="3" column="0">
             <widget class="QLabel" name="label_66">
              <property name="text">
-              <string>NB Ecran</string>
+              <string>Nombre Ecrans</string>
              </property>
             </widget>
            </item>
@@ -4330,7 +4330,7 @@ QLineEdit:focus {
            <string notr="true"/>
           </property>
           <property name="text">
-           <string>Undo</string>
+           <string>Annuler</string>
           </property>
           <property name="icon">
            <iconset resource="source.qrc">
@@ -4341,7 +4341,7 @@ QLineEdit:focus {
           <property name="geometry">
            <rect>
             <x>390</x>
-            <y>40</y>
+            <y>50</y>
             <width>351</width>
             <height>491</height>
            </rect>
@@ -4372,14 +4372,14 @@ QLineEdit:focus {
            <item row="2" column="0">
             <widget class="QLabel" name="label_72">
              <property name="text">
-              <string>NB Baffles</string>
+              <string>Nombre Baffles</string>
              </property>
             </widget>
            </item>
            <item row="1" column="0">
             <widget class="QLabel" name="label_70">
              <property name="text">
-              <string>NB Chaise</string>
+              <string>Nombre Chaise</string>
              </property>
             </widget>
            </item>
@@ -4393,7 +4393,7 @@ QLineEdit:focus {
            <item row="3" column="0">
             <widget class="QLabel" name="label_69">
              <property name="text">
-              <string>NB Ecran</string>
+              <string>Nombre Ecrans</string>
              </property>
             </widget>
            </item>
@@ -4549,7 +4549,7 @@ QLineEdit:focus {
          <enum>QFrame::NoFrame</enum>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="Main_Reservation">
          <widget class="QTableView" name="affichage_reservation">
@@ -4703,7 +4703,7 @@ color:black;
            </rect>
           </property>
           <property name="text">
-           <string>Return Menu</string>
+           <string>Retour Menu</string>
           </property>
           <property name="icon">
            <iconset resource="source.qrc">
@@ -4737,7 +4737,7 @@ color:black;
            </rect>
           </property>
           <property name="text">
-           <string>Return Client</string>
+           <string>Retour Client</string>
           </property>
           <property name="icon">
            <iconset resource="source.qrc">
@@ -4808,7 +4808,7 @@ color:black;
            <string notr="true"/>
           </property>
           <property name="text">
-           <string>Undo</string>
+           <string>Annuler</string>
           </property>
           <property name="icon">
            <iconset resource="source.qrc">
@@ -4954,7 +4954,7 @@ color:rgba(0,0,0,0);</string>
            <string notr="true"> padding: 8px 10px;</string>
           </property>
           <property name="text">
-           <string>Return menu</string>
+           <string>Retour Menu</string>
           </property>
           <property name="icon">
            <iconset resource="source.qrc">
@@ -5229,7 +5229,7 @@ QLineEdit:focus {
            <string notr="true"/>
           </property>
           <property name="text">
-           <string>Undo</string>
+           <string>Annuler</string>
           </property>
           <property name="icon">
            <iconset resource="source.qrc">
