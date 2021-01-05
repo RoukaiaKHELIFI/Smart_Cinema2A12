@@ -7,6 +7,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
     QTranslator t ;
 
     QStringList languages ;
@@ -17,10 +18,9 @@ int main(int argc, char *argv[])
         t.load(":/Language/english.qm");
 
     }
-    if (lang!="French"){
-        a.installTranslator(&t);
-    }
-
+   if (lang!="French"){
+      a.installTranslator(&t);
+}
     connexion c;
     bool test=c.ouvrirconnection();
     MainWindow w;

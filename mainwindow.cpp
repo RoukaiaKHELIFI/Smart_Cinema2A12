@@ -70,6 +70,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->stackedWidget_3->setCurrentIndex(0);
     ui->stackedWidget_2->setCurrentIndex(0);
     ui->mail_modif->setVisible(false);
+    ui->pushButton_36->setVisible(false);
     //ui->tabWidget_3->setStyleSheet("background-color:qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgb(0,0,0), stop:1 rgb(255, 0, 0)); ; color :white ");
     ui->affichage_reservation->setModel(Etmp1.afficher_res());
     setWindowIcon(QIcon(":/photos/popcorn.png"));
@@ -173,7 +174,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->affichage_salle->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->affichage_salle->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
     ui->affichage_salle->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
-
 
 }
 
@@ -1753,5 +1753,27 @@ void MainWindow::on_nb_personne_textChanged()
 
 
     }
+}
+
+
+
+void MainWindow::on_pushButton_26_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(4);
+}
+
+void MainWindow::on_pushButton_35_clicked()
+{
+    ui->tabWidget_3->setStyleSheet("background-color:qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgb(0,0,0), stop:1 rgba(233, 219, 171, 255)); ; color :white ");
+   ui->pushButton_35->setVisible(false);
+   ui->pushButton_36->setVisible(true);
+
+}
+
+void MainWindow::on_pushButton_36_clicked()
+{
+    ui->tabWidget_3->setStyleSheet("background-color:white ; color :black ");
+     ui->pushButton_35->setVisible(true);
+     ui->pushButton_36->setVisible(false);
 }
 

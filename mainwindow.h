@@ -16,7 +16,7 @@
 #include <QFile>
 
 #include "ui_mainwindow.h"
-
+#include <QTextDocument>
 #include <QMainWindow>
 #include <QPixmap>
 #include <QIcon>
@@ -29,6 +29,12 @@
 #include <QFileDialog>
 #include <QRandomGenerator>
 #include "random.h"
+#include <QTranslator>
+#include <QInputDialog>
+#include <QPrinter>
+#include <QPrintDialog>
+#include <QPainter>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -228,6 +234,13 @@ private slots:
    void on_id_client_4_textChanged();
 
    void on_nb_personne_textChanged();
+
+
+   void on_pushButton_26_clicked();
+
+   void on_pushButton_35_clicked();
+
+   void on_pushButton_36_clicked();
 
 
 private:
