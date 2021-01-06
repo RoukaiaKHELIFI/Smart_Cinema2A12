@@ -20,5 +20,8 @@
         <file>rechercher.png</file>
         <file>filtrer1.png</file>
         <file>mod.png</file>
+        <file>photosSmart/pdf.png</file>
+        <file>photosSmart/fax.png</file>
+        <file>photosSmart/LogoExKBIRA.png</file>
     </qresource>
 </RCC>

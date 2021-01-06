@@ -246,6 +246,10 @@ private slots:
    void on_pdf_clicked();
    void update_nombre();
 
+   void on_pushButton_7_clicked();
+
+   void on_pushButton_37_clicked();
+
 private:
     Ui::MainWindow *ui;
     client tmpc;

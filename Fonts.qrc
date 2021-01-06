@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/Fonts">
+        <file>Zilla_SlabFont/ZillaSlab-Light.ttf</file>
+        <file>Zilla_SlabFont/ZillaSlab-LightItalic.ttf</file>
+    </qresource>
+</RCC>

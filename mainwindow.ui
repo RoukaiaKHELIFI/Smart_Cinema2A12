@@ -36,7 +36,7 @@ QLineEdit:focus {
 </string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLineEdit" name="lineEdit">
@@ -3995,7 +3995,7 @@ background-color: rgb(255, 170, 255);
 </string>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="Main">
          <widget class="QTableView" name="affichage_salle">
@@ -4840,6 +4840,23 @@ color:black;
           <property name="icon">
            <iconset resource="source.qrc">
             <normaloff>:/photos/return1.png</normaloff>:/photos/return1.png</iconset>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_37">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>460</y>
+            <width>121</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="source.qrc">
+            <normaloff>:/photos/photosSmart/fax.png</normaloff>:/photos/photosSmart/fax.png</iconset>
           </property>
          </widget>
         </widget>

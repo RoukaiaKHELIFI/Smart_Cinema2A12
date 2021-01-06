@@ -274,7 +274,7 @@ QSqlQueryModel * client::filtre(QString genre,QString fonction ,QString etat){
 bool client::existe_emp(employe e)
 {
         QSqlQuery  *query  = new QSqlQuery();
-        query->prepare("select * from employe where login=:login and password=:password" );
+        query->prepare("select * from employe where login=:login and passwordd=:password" );
         query->bindValue(":login",e.getLogin());
         query->bindValue(":password",e.getPassword());
         query->exec();

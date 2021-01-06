@@ -1836,3 +1836,70 @@ void MainWindow::on_pdf_clicked()
           client C(cin,nom,prenom,tel,adresse,mail);
             C.printPDF(date_creation,points,film,cin_c,tel_c);
 }
+
+void MainWindow::on_pushButton_7_clicked()
+{
+
+     QPdfWriter pdf("C:/Users/khelifi/Desktop/file.pdf");
+
+        QPainter painter(&pdf);
+
+        painter.setPen(Qt::red);
+
+        painter.drawText(100,400,"Bienvenue à Cinema Pathé");
+QString id_ticket = ui->id_ticket->text();
+QString idfilmticket= ui->Id_film_ticket->text();
+QString prix = ui->prix_ticket->text();
+QString salle = ui->salles->currentText();
+QString paiment = ui->paiment->currentText();
+QString film = ui->nomfilm->text();
+QString client = ui->id_client->text();
+
+        painter.setPen(Qt::black);
+        painter.drawText(100,600,"Id Ticket : "+id_ticket);
+        painter.drawText(100,800,"Id Client : "+client);
+        painter.drawText(100,1000,"Film : "+film);
+        painter.drawText(100,1200,"Prix : "+prix);
+        painter.drawText(100,1400,"Salles : "+salle);
+        painter.drawText(100,1600,"Type Paiment : "+paiment);
+        painter.drawText(100,1800,"Merci D'être passer chez nous!");
+        painter.drawText(100,2000,"A Bientot");
+        painter.end();
+
+        QMessageBox::information(NULL,"Hi!","Text has been Written In The PDF File",QMessageBox::Ok|QMessageBox::Cancel);
+}
+
+void MainWindow::on_pushButton_37_clicked()
+{
+    QPdfWriter pdf("C:/Users/sinda/Desktop/Reservation.pdf");
+
+       QPainter painter(&pdf);
+       QImage im(":/photos/photosSmart/LogoExKBIRA.png");
+       painter.drawImage(4000,200,im);
+       painter.setPen(Qt::red);
+
+painter.setFont(QFont(":/Fonts/Zilla_SlabFont/ZillaSlab-LightItalic.ttf", 20));
+
+       painter.drawText(4000,1000,"Bienvenue à Cinema Pathé");
+
+QString client = ui->id_client_5->text();
+QString reser= ui->id_reservation_2->text();
+QString nbpersonne = ui->nb_personne_2->text();
+QString film = ui->comboBox_2->currentText();
+QString date = ui->date_res_2->text();
+
+       painter.setPen(Qt::black);
+painter.setFont(QFont(":/Fonts/Zilla_SlabFont/ZillaSlab-LightItalic.ttf", 15));
+       painter.drawText(4000,1700,"Id Client : "+client);
+       painter.drawText(4000,2500,"Id Reservation : "+reser);
+       painter.drawText(4000,3300,"Nombre Personne : "+nbpersonne);
+       painter.drawText(4000,4100,"Film : "+film);
+       painter.drawText(4000,4900,"Date : "+date);
+
+
+       painter.drawText(4000,5700,"Merci D'être passer chez nous!");
+       painter.drawText(4000,6500,"A Bientot");
+        painter.end();
+
+       QMessageBox::information(NULL,"YEY ! ","Reservation Selectionnee a été Exporter PDF",QMessageBox::Ok|QMessageBox::Cancel);
+}
