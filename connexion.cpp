@@ -9,10 +9,10 @@ bool connexion::ouvrirconnection()
 {
     bool test=false;
   db=QSqlDatabase::addDatabase("QODBC");
-  db.setDatabaseName("SmartCinema2A12");
+  db.setDatabaseName("base");
 
-  db.setUserName("roukaia");
-  db.setPassword("roukaia");
+  db.setUserName("sinda");
+  db.setPassword("sinda");
 
     if(db.open())
     test=true;
