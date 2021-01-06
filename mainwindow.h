@@ -14,7 +14,7 @@
 #include"salle.h"
 #include"reservation.h"
 #include <QFile>
-
+#include "capteur_mouvement.h"
 #include "ui_mainwindow.h"
 #include <QTextDocument>
 #include <QMainWindow>
@@ -244,6 +244,7 @@ private slots:
 
 
    void on_pdf_clicked();
+   void update_nombre();
 
 private:
     Ui::MainWindow *ui;
@@ -257,6 +258,8 @@ private:
     QMediaPlayer *musicConect=new QMediaPlayer;
     Salle Etmp;
     Reservation Etmp1;
+    QByteArray data;
+    capteur_mouvement C;
 
 
 };

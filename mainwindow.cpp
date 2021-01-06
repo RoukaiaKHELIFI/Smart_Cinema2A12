@@ -64,6 +64,16 @@ MainWindow::MainWindow(QWidget *parent)
     ui->telephone_ajouter_2->setEnabled(false);
     ui->adresse_ajouter_2->setEnabled(false);
     ui->mail_ajouter_2->setEnabled(false);
+    //connect arduino sinda
+    int ard_connect=C.connect_capteur();
+    qDebug()<<"ret"<<ard_connect;
+    switch(ard_connect)
+    {
+      case(0): qDebug()<<"arduino is available and connected to:"<< C.get_capteur_port_name();
+      case(1):qDebug()<<"arduino is available and not connected to:"<< C.get_capteur_port_name();
+      case(-1) : qDebug()<<"arduino is not available ";
+      break;
+    }
 
     // ************************************************************ROUKAIA***************************************************
     ui->affichage_salle->setModel(Etmp.afficher());
@@ -579,7 +589,29 @@ void MainWindow::Afficher_Client_Table2(){
     ui->AfficherClient2->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
     ui->AfficherClient2->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
 }
+void MainWindow::update_nombre()
+{
+    data=C.read_from_capteur();
+    C.write_to_arduino(data);
+    qDebug()<<"entrain de calculer le nombre de clients";
+        int val=data.toInt();
+        QString nombre= QString::number(val);
+         qDebug()<<data.toInt();
+        if(data.toInt()>=20)
+          {
+            qDebug()<<"la salle est remplie";
+              //ui->Notif_irrigation->show();
+              ui->lineEdit_3->setText(nombre);
 
+          }
+            else
+        {
+            qDebug()<<"la salle n'est pas encore remplie, il vous reste des places vides";
+               //ui->Notif_irrigation->hide();
+            ui->lineEdit_3->setText(nombre);
+
+        }
+}
 void MainWindow::refraiche()
 {
     ui->id_client_2->setText("");

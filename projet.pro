@@ -1,4 +1,5 @@
-QT       += core gui multimedia sql network printsupport
+QT       += core gui multimedia sql network printsupport serialport \
+quick
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -9,6 +10,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    capteur_mouvement.cpp \
     carte_fidelite.cpp \
     client.cpp \
     connexion.cpp \
@@ -22,6 +24,7 @@ SOURCES += \
     ticket.cpp
 
 HEADERS += \
+    capteur_mouvement.h \
     carte_fidelite.h \
     client.h \
     connexion.h \
