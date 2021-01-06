@@ -11,6 +11,12 @@
 #include <QSystemTrayIcon>
 #include "employe.h"
 #include <string>
+#include<QMessageBox>
+#include <QPrinter>
+#include <QPainter>
+#include<QPrintDialog>
+#include<QPdfWriter>
+#include <QImage>
 using namespace std;
 class client
 {
@@ -59,6 +65,16 @@ public:
              this->etat_civil=etat_civil;
 
         }
+    //constrcteur pdf
+    client(int cin, QString nom, QString prenom, int tel, QString adresse, QString mail)
+    {
+        this->cin=cin;
+        this->nom=nom;
+        this->prenom=prenom;
+        this->numTel=tel;
+        this->adresse=adresse;
+        this->mail_client=mail;
+    }
     int getID()
     {
         return id;
@@ -174,8 +190,7 @@ public:
     QSqlQueryModel * trier_personaliser_client(QString c);
 
     QSqlQueryModel *trier_client();
-
-
+    void printPDF(QString date_creation,QString points,QString film,QString cin_c,QString tel_c);
 };
 #endif // CLIENT_H
 

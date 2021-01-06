@@ -282,4 +282,10 @@ QSqlQueryModel * carte_fidelite::trier_personaliser_cartefidelite_multiple(int t
 
 }
 
-
+QSqlQuery carte_fidelite::select(int id)
+{
+    QSqlQuery query;
+    QString s = QString::number(id);
+    query.prepare("SELECT * FROM CARTE_FIDELITE WHERE ID_CARTE='"+s+"'");
+    return query;
+}

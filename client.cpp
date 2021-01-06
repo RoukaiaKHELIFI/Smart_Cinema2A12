@@ -372,3 +372,42 @@ QSqlQueryModel * client::trier_personaliser_client(QString c)
     return model;
 }
 
+void client::printPDF(QString date_creation,QString points,QString film,QString cin_c,QString tel_c)
+{
+    QPdfWriter pdf("C:/Users/sinda/Desktop/file.pdf"); //création du pdf
+
+    QPainter painter(&pdf);
+    //QImage image("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Actee.jpg"); //recupération de l'image
+
+       QString DATE =QDate::currentDate().toString();
+
+      /* QFile file;
+       QDir::setCurrent("/tmp");
+       file.setFileName("ActeF.pdf");
+       //QDir::setCurrent("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3");
+       QDir::setCurrent("C:/Users/user/Desktop/Smart_Municipality_2A3");
+       file.open(QIODevice::ReadOnly);
+       QImage image(file.fileName());
+       painter.drawImage(0,0,image.scaled(4958,7017, Qt::IgnoreAspectRatio, Qt::FastTransformation));*/
+        QFont font = painter.font();
+        font.setPointSize(font.pointSize());
+        painter.setFont(font);
+       // painter.drawImage(0,0,image.scaled(7000,10000,Qt::IgnoreAspectRatio, Qt::FastTransformation));
+        painter.setPen(Qt::black);
+        painter.drawText(4700, 2900, cin_c);
+        painter.drawText(2000, 4300, this->nom);
+        painter.drawText(2000, 4600, this->prenom);
+        painter.drawText(2000, 4900, this->adresse);
+        painter.drawText(2500, 5350, this->mail_client);
+        painter.drawText(2500, 5700, tel_c);
+        painter.drawText(2500, 6000, date_creation);
+        painter.drawText(2500, 6350, points);
+         painter.drawText(2500,6700, film);
+        painter.drawText(2900, 7700, DATE);
+        painter.end();
+        QMessageBox msgBox;
+        msgBox.setIcon(QMessageBox::Information);
+        msgBox.setText("A pdf has been created.");
+        msgBox.exec();
+}
+

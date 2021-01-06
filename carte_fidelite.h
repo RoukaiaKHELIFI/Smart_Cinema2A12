@@ -107,6 +107,7 @@ QSqlQueryModel * rechercher_existe(QString num);
 QSqlQueryModel * trier_cartefidelite();
 QSqlQueryModel * trier_personaliser_cartefidelite(QString c);
 QSqlQueryModel * trier_personaliser_cartefidelite_multiple(int tri,QString chaine);
+QSqlQuery select(int id);
 
 };
 

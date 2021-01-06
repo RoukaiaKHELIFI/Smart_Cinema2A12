@@ -31,8 +31,8 @@
 #include "random.h"
 #include <QTranslator>
 #include <QInputDialog>
-#include <QPrinter>
-#include <QPrintDialog>
+//#include <QPrinter>
+//#include <QPrintDialog>
 #include <QPainter>
 
 QT_BEGIN_NAMESPACE
@@ -242,6 +242,8 @@ private slots:
 
    void on_pushButton_36_clicked();
 
+
+   void on_pdf_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -1777,3 +1777,30 @@ void MainWindow::on_pushButton_36_clicked()
      ui->pushButton_36->setVisible(false);
 }
 
+
+void MainWindow::on_pdf_clicked()
+{
+    QString nom,prenom,adresse,mail,date_creation,points,film,cin_c,tel_c;
+    int cin,tel;
+     cin=ui->AfficherClient2->selectionModel()->selectedIndexes().at(1).data().toInt();
+     cin_c=ui->AfficherClient2->selectionModel()->selectedIndexes().at(1).data().toString();
+     nom=ui->AfficherClient2->selectionModel()->selectedIndexes().at(2).data().toString();
+     prenom=ui->AfficherClient2->selectionModel()->selectedIndexes().at(3).data().toString();
+     tel=ui->AfficherClient2->selectionModel()->selectedIndexes().at(5).data().toInt();
+     tel_c=ui->AfficherClient2->selectionModel()->selectedIndexes().at(5).data().toString();
+     adresse=ui->AfficherClient2->selectionModel()->selectedIndexes().at(7).data().toString();
+     mail=ui->AfficherClient2->selectionModel()->selectedIndexes().at(9).data().toString();
+     int id_carte=ui->id_carte_2->text().toInt();
+        QSqlQuery query=tmpf.select(id_carte);
+        if(query.exec())
+        {
+            while(query.next())
+            {
+                date_creation= query.value(2).toString();
+                points= query.value(3).toString();
+                film= query.value(4).toString();
+            }
+        }
+          client C(cin,nom,prenom,tel,adresse,mail);
+            C.printPDF(date_creation,points,film,cin_c,tel_c);
+}

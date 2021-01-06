@@ -36,7 +36,7 @@ QLineEdit:focus {
 </string>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLineEdit" name="lineEdit">
@@ -1883,7 +1883,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>10</y>
+        <y>30</y>
         <width>1271</width>
         <height>621</height>
        </rect>
@@ -3132,8 +3132,8 @@ color:black;
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>100</width>
-           <height>30</height>
+           <width>881</width>
+           <height>385</height>
           </rect>
          </property>
          <attribute name="label">
@@ -3837,6 +3837,52 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          </size>
         </property>
        </widget>
+       <widget class="QPushButton" name="pdf">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>520</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*background-color:#C70039;
+color:white;*/
+QPushButton
+{
+background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgba(98, 234, 255, 255), stop:1 rgba(119, 0, 153, 255));
+border-radius:15px;
+color:white;
+}
+QPushButton:hover
+{
+background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgba(119, 0, 153, 255), stop:1 rgba(98, 234, 255, 255))
+}</string>
+        </property>
+        <property name="text">
+         <string>PDF</string>
+        </property>
+        <property name="icon">
+         <iconset resource="source.qrc">
+          <normaloff>:/photos/mod.png</normaloff>:/photos/mod.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </widget>
        <zorder>id_client_3</zorder>
        <zorder>id_carte_2</zorder>
        <zorder>close_2</zorder>
@@ -3856,6 +3902,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
        <zorder>checkBox_2</zorder>
        <zorder>checkBox_3</zorder>
        <zorder>return_ticket</zorder>
+       <zorder>pdf</zorder>
       </widget>
      </widget>
     </widget>
