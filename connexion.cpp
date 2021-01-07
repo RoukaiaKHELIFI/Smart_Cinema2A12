@@ -12,7 +12,7 @@ bool connexion::ouvrirconnection()
   db.setDatabaseName("base");
 
   db.setUserName("sinda");
-  db.setPassword("sinda");
+  db.setPassword("esprit18");
 
     if(db.open())
     test=true;

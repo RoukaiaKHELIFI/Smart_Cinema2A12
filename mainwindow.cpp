@@ -18,13 +18,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->AfficherTicketTable->resizeColumnsToContents();
     ui->AfficherTicketTable->resizeRowsToContents();
     ui->AfficherTicketTable->setSelectionBehavior(QAbstractItemView::SelectRows);
-    ui->AfficherTicketTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
+    //ui->AfficherTicketTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
     ui->AfficherTicketTable->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     //selection d'une ligne
     ui->AfficherFilmTable->resizeColumnsToContents();
     ui->AfficherFilmTable->resizeRowsToContents();
     ui->AfficherFilmTable->setSelectionBehavior(QAbstractItemView::SelectRows);
-    ui->AfficherFilmTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
+    //ui->AfficherFilmTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
     ui->AfficherFilmTable->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
 
     //*******************************************************************sinda************************************************************
@@ -176,13 +176,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->affichage_reservation->resizeColumnsToContents();
     ui->affichage_reservation->resizeRowsToContents();
     ui->affichage_reservation->setSelectionBehavior(QAbstractItemView::SelectRows);
-    ui->affichage_reservation->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
+  //  ui->affichage_reservation->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
     ui->affichage_reservation->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     //selection d'une ligne
     ui->affichage_salle->resizeColumnsToContents();
     ui->affichage_salle->resizeRowsToContents();
     ui->affichage_salle->setSelectionBehavior(QAbstractItemView::SelectRows);
-    ui->affichage_salle->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
+  //  ui->affichage_salle->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
     ui->affichage_salle->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
 
 }
@@ -570,7 +570,7 @@ void MainWindow::Afficher_Client_Table(){
     ui->AfficherClient->resizeColumnsToContents();
     ui->AfficherClient->resizeRowsToContents();
     ui->AfficherClient->setSelectionBehavior(QAbstractItemView::SelectRows);
-    ui->AfficherClient->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
+    //ui->AfficherClient->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
     ui->AfficherClient->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
 }
 //selection de toute une ligne tab carte
@@ -586,7 +586,7 @@ void MainWindow::Afficher_Client_Table2(){
     ui->AfficherClient2->resizeColumnsToContents();
     ui->AfficherClient2->resizeRowsToContents();
     ui->AfficherClient2->setSelectionBehavior(QAbstractItemView::SelectRows);
-    ui->AfficherClient2->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
+  //  ui->AfficherClient2->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
     ui->AfficherClient2->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
 }
 void MainWindow::update_nombre()
@@ -862,7 +862,7 @@ void MainWindow::on_ajouter_carte_clicked()
     Smtp* smtp = new Smtp("sindachamakh27@gmail.com", "27Novembre", ui->server->text(), ui->port->text().toInt());
     connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
 
-    smtp->sendMail("sindachamakh27@gmail.com",ui->mail_ajouter_2->text(), "Smart_Cinema","Carte Fidilite Cree Pour L'utilisateur Identifier Par : "+ui->cin_client_ajouter_2->text());
+    smtp->sendMail("sindachamakh27@gmail.com","sinda.chamekh@esprit.tn", "Smart_Cinema","Carte Fidilite Cree Pour L'utilisateur Identifier Par :"+ui->id_client_3->text()+" CIN :  "+ui->cin_client_ajouter_2->text()+" Nom et prénom : "+ui->nom_ajouter_2->text()+" "+ui->prenom_ajouter_2->text()+" Numero de téléphonne : "+ui->telephone_ajouter_2->text()+" Mail : "+ui->mail_ajouter_2->text());
 
     QString idd=ui->id_client_3->text();
 
@@ -944,6 +944,13 @@ void MainWindow::on_SupprimerCarte_clicked()
     player->play();
     player->setVolume(1000);
 
+
+    Smtp* smtp = new Smtp("sindachamakh27@gmail.com", "27Novembre", ui->server->text(), ui->port->text().toInt());
+    connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+
+    smtp->sendMail("sindachamakh27@gmail.com","sinda.chamekh@esprit.tn", "Smart_Cinema","Carte Fidilite Supprimée Pour L'utilisateur Identifier Par CIN :  "+ui->cin_client_ajouter_2->text());
+
+
     QString idd=ui->id_carte_2->text();
     carte_fidelite *tmpcf=new carte_fidelite();
     if (idd=="")
@@ -978,6 +985,13 @@ void MainWindow::on_modifier_carte_clicked()
     player->setMedia(QUrl("D:/Techargement/mouse.mp3"));
     player->play();
     player->setVolume(1000);
+
+
+    Smtp* smtp = new Smtp("sindachamakh27@gmail.com", "27Novembre", ui->server->text(), ui->port->text().toInt());
+    connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+
+    smtp->sendMail("sindachamakh27@gmail.com","sinda.chamekh@esprit.tn", "Smart_Cinema","Carte Fidilite modifiée Pour L'utilisateur Identifier Par CIN :  "+ui->cin_client_ajouter_2->text()+"merci pour votre fidelité");
+
 
     QString idd=ui->id_client_3->text();
 
@@ -1809,7 +1823,7 @@ void MainWindow::on_pushButton_36_clicked()
      ui->pushButton_36->setVisible(false);
 }
 
-
+//sinda
 void MainWindow::on_pdf_clicked()
 {
     QString nom,prenom,adresse,mail,date_creation,points,film,cin_c,tel_c;
@@ -1836,6 +1850,7 @@ void MainWindow::on_pdf_clicked()
           client C(cin,nom,prenom,tel,adresse,mail);
             C.printPDF(date_creation,points,film,cin_c,tel_c);
 }
+//
 
 void MainWindow::on_pushButton_7_clicked()
 {
@@ -1902,4 +1917,18 @@ painter.setFont(QFont(":/Fonts/Zilla_SlabFont/ZillaSlab-LightItalic.ttf", 15));
         painter.end();
 
        QMessageBox::information(NULL,"YEY ! ","Reservation Selectionnee a été Exporter PDF",QMessageBox::Ok|QMessageBox::Cancel);
+}
+
+void MainWindow::on_dark_theme_clicked()
+{
+    ui->tabWidget_2->setStyleSheet("background-color:qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgb(0,0,0), stop:1 rgba(50, 2, 138, 255)); ; color :white ");
+    ui->dark_theme->setVisible(false);
+    ui->white_theme->setVisible(true);
+}
+
+void MainWindow::on_white_theme_clicked()
+{
+    ui->tabWidget_2->setStyleSheet("background-color:white ; color :black ");
+    ui->dark_theme->setVisible(true);
+    ui->white_theme->setVisible(false);
 }

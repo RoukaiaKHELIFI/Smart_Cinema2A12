@@ -394,20 +394,27 @@ void client::printPDF(QString date_creation,QString points,QString film,QString 
         painter.setFont(font);
        // painter.drawImage(0,0,image.scaled(7000,10000,Qt::IgnoreAspectRatio, Qt::FastTransformation));
         painter.setPen(Qt::black);
-        painter.drawText(4700, 2900, cin_c);
+        painter.drawText(1000,4000,"CIN: ");
+        painter.drawText(2000, 4000, cin_c);
+        painter.drawText(1000,4300,"NOM: ");
         painter.drawText(2000, 4300, this->nom);
+        painter.drawText(1000,4600,"PRENOM: ");
         painter.drawText(2000, 4600, this->prenom);
+        painter.drawText(1000,4900,"ADRESSE:");
         painter.drawText(2000, 4900, this->adresse);
-        painter.drawText(2500, 5350, this->mail_client);
-        painter.drawText(2500, 5700, tel_c);
-        painter.drawText(2500, 6000, date_creation);
-        painter.drawText(2500, 6350, points);
-         painter.drawText(2500,6700, film);
-        painter.drawText(2900, 7700, DATE);
+        painter.drawText(1000,5200,"MAIL: ");
+        painter.drawText(2000, 5200, this->mail_client);
+        painter.drawText(1000,5500,"TELEPHONE: ");
+        painter.drawText(2000, 5500, tel_c);
+        painter.drawText(2000, 5800, date_creation);
+        painter.drawText(2000, 6100, points);
+         painter.drawText(2000,6400, film);
+         painter.drawText(1000,6700,"DATE: ");
+        painter.drawText(2000, 6700, DATE);
         painter.end();
         QMessageBox msgBox;
         msgBox.setIcon(QMessageBox::Information);
-        msgBox.setText("A pdf has been created.");
+        msgBox.setText("A pdf : fiche client has been created.");
         msgBox.exec();
 }
 

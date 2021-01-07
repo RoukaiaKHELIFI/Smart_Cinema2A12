@@ -250,6 +250,10 @@ private slots:
 
    void on_pushButton_37_clicked();
 
+   void on_dark_theme_clicked();
+
+   void on_white_theme_clicked();
+
 private:
     Ui::MainWindow *ui;
     client tmpc;
