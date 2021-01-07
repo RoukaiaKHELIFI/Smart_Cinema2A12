@@ -1,7 +1,7 @@
 #include "ticket.h"
 #include <QSqlQueryModel>
 #include <QSqlQuery>
-
+//ddd
 bool Ticket:: ajouter_ticket()
 {
     QSqlQuery query;

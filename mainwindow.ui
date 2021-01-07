@@ -36,7 +36,7 @@ QLineEdit:focus {
 </string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLineEdit" name="lineEdit">
@@ -1858,6 +1858,56 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
          <string>Voir Les Salles</string>
         </property>
        </widget>
+       <widget class="QPushButton" name="ModifierTicket_2">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>520</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*background-color:#C70039;
+color:white;*/
+QPushButton
+{
+background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgba(209, 46, 40, 255), stop:1 rgba(241, 181, 172, 255));
+border-radius:15px;
+color:white;
+}
+QPushButton:hover
+{
+background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgba(241, 181, 172, 255), stop:1 rgba(209, 46, 40, 255))
+}</string>
+        </property>
+        <property name="text">
+         <string>Editer Stat</string>
+        </property>
+        <property name="icon">
+         <iconset resource="source.qrc">
+          <normaloff>:/photos/mod.png</normaloff>:/photos/mod.png</iconset>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="stat">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>530</y>
+          <width>161</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
        <zorder>pushButton_7</zorder>
        <zorder>label_32</zorder>
        <zorder>layoutWidget_5</zorder>
@@ -1875,6 +1925,8 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
        <zorder>refreshT</zorder>
        <zorder>returnTick</zorder>
        <zorder>pushButton_26</zorder>
+       <zorder>ModifierTicket_2</zorder>
+       <zorder>stat</zorder>
       </widget>
      </widget>
     </widget>
@@ -4069,7 +4121,7 @@ background-color: rgb(255, 170, 255);
 </string>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="Main">
          <widget class="QTableView" name="affichage_salle">
@@ -4721,7 +4773,7 @@ QLineEdit:focus {
          <enum>QFrame::NoFrame</enum>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="Main_Reservation">
          <widget class="QTableView" name="affichage_reservation">

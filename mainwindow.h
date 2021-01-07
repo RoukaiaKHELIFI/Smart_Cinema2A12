@@ -254,6 +254,8 @@ private slots:
 
    void on_white_theme_clicked();
 
+   void on_ModifierTicket_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     client tmpc;

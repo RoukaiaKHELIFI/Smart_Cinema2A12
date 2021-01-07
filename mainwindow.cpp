@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->AfficherFilmTable->resizeColumnsToContents();
     ui->AfficherFilmTable->resizeRowsToContents();
     ui->AfficherFilmTable->setSelectionBehavior(QAbstractItemView::SelectRows);
-    //ui->AfficherFilmTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
+    ui->AfficherFilmTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
     ui->AfficherFilmTable->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
 
     //*******************************************************************sinda************************************************************
@@ -176,13 +176,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->affichage_reservation->resizeColumnsToContents();
     ui->affichage_reservation->resizeRowsToContents();
     ui->affichage_reservation->setSelectionBehavior(QAbstractItemView::SelectRows);
-  //  ui->affichage_reservation->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
+ ui->affichage_reservation->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
     ui->affichage_reservation->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     //selection d'une ligne
     ui->affichage_salle->resizeColumnsToContents();
     ui->affichage_salle->resizeRowsToContents();
     ui->affichage_salle->setSelectionBehavior(QAbstractItemView::SelectRows);
-  //  ui->affichage_salle->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
+  ui->affichage_salle->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed,QHeaderView::Stretch);
     ui->affichage_salle->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
 
 }
@@ -385,7 +385,7 @@ void MainWindow::on_ajouterTicket_clicked()
     Ticket t(ui->id_ticket->text().toInt(),ui->Id_film_ticket->text(),ui->prix_ticket->text().toInt(),
              ui->salles->currentText(),ui->paiment->currentText(),ui->nomfilm->text(),ui->id_client->text().toInt());
     t.ajouter_ticket();
-    ui->AfficherTicketTable->setModel(empc.afficher_ticket());
+    ui->AfficherTicketTable->setModel(t.afficher_ticket());
 
     //carte_fidelite cf(ui->id_carte->text().toInt(),0,0,0);
 
@@ -556,8 +556,8 @@ void MainWindow::on_AfficherTicketTable_activated(const QModelIndex &index)
             ui->prix_ticket->setText(query.value(2).toString());
             ui->salles->setCurrentText(query.value(3).toString());
             ui->paiment->setCurrentText(query.value(4).toString());
-            ui->nomfilm->setText(query.value(6).toString());
-            ui->id_client->setText(query.value(7).toString());
+            ui->nomfilm->setText(query.value(5).toString());
+            ui->id_client->setText(query.value(6).toString());
 
         }
     }
@@ -1855,7 +1855,7 @@ void MainWindow::on_pdf_clicked()
 void MainWindow::on_pushButton_7_clicked()
 {
 
-     QPdfWriter pdf("C:/Users/khelifi/Desktop/file.pdf");
+     QPdfWriter pdf("C:/Users/sinda/Desktop/ticket.pdf");
 
         QPainter painter(&pdf);
 
@@ -1921,7 +1921,7 @@ painter.setFont(QFont(":/Fonts/Zilla_SlabFont/ZillaSlab-LightItalic.ttf", 15));
 
 void MainWindow::on_dark_theme_clicked()
 {
-    ui->tabWidget_2->setStyleSheet("background-color:qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgb(0,0,0), stop:1 rgba(50, 2, 138, 255)); ; color :white ");
+    ui->tabWidget_2->setStyleSheet("background-color:qlineargradent(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgb(0,0,0), stop:1 rgba(50, 2, 138, 255)); ; color :white ");
     ui->dark_theme->setVisible(false);
     ui->white_theme->setVisible(true);
 }
@@ -1931,4 +1931,16 @@ void MainWindow::on_white_theme_clicked()
     ui->tabWidget_2->setStyleSheet("background-color:white ; color :black ");
     ui->dark_theme->setVisible(true);
     ui->white_theme->setVisible(false);
+}
+
+void MainWindow::on_ModifierTicket_2_clicked()
+{
+
+
+        QSqlQueryModel * model = new QSqlQueryModel();
+
+                  model->setQuery("select * from ticket");
+
+                 ui->AfficherTicketTable->setModel(model);
+                 ui->stat->setText(QString::number(model->rowCount()));
 }
